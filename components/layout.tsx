@@ -1,5 +1,3 @@
-import { ReactNode } from 'react';
-
 const Layout = ({ children }: any) => {
   // console.log(props);
 

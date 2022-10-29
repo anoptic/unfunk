@@ -1,8 +1,16 @@
 import { createClient } from 'contentful';
 import Image from 'next/image';
-import { Remark } from 'react-remark';
-import { remark } from 'remark';
-import remarkHtml from 'remark-html';
+import styles from './home.module.css';
+
+type LoaderProps = {
+  src: string;
+  // width: number;
+  // quality: number;
+};
+
+const loader = ({ src }: LoaderProps) => {
+  return `https:${src}?fit=crop`;
+};
 
 export const getStaticProps = async () => {
   const client = createClient({
@@ -21,29 +29,29 @@ export const getStaticProps = async () => {
   };
 };
 
-// async function mdParse(mdText: string) {
-//   const parsedMd = await remark().use(remarkHtml).process(mdText);
-
-//   console.log(parsedMd.toString());
-//   // return parsedMd.toString();
-// }
-
 const Home = ({ stuff }: any) => {
-  // console.log(stuff[0].fields.post);
+  console.log(stuff[0].fields.post);
   const posts = stuff[0].fields.post;
 
   return (
-    <>
-      {/* <h2>Content!</h2> */}
+    <section className={styles.blogList}>
       {posts.map((post: any) => (
-        <section key={post.fields.slug}>
-          <h3>{post.fields.heading}</h3>
-          <p>{post.fields.slug}</p>
-          {/* <Remark>{post.fields.text}</Remark> */}
-          {/* <div>{post.fields.text}</div> */}
-        </section>
+        <article className={styles.blogCard} key={post.fields.slug}>
+          <h2 className={styles.blogTitle}>{post.fields.title}</h2>
+          <div className={styles.cardImage}>
+            <Image
+              loader={loader}
+              src={post.fields.heroImg.fields.file.url}
+              alt="section hero"
+              layout="fill"
+              objectFit="cover"
+              // sizes="(max-width: 600px) 100vw, 50vw"
+            />
+          </div>
+          <p>{post.fields.caption}</p>
+        </article>
       ))}
-    </>
+    </section>
   );
 };
 

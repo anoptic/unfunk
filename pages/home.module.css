@@ -1,0 +1,29 @@
+.blogList {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  /* width: 90vw; */
+}
+
+.blogCard {
+  display: flex;
+  flex-direction: column;
+  margin-block: 1rem;
+  width: 90vw;
+}
+
+.blogCard .cardImage {
+  height: 90vw;
+  max-width: 90vw;
+  position: relative;
+  width: 100%;
+}
+
+.blogCard .blogTitle {
+  background-color: rgba(0, 0, 0, 0.35);
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  position: absolute;
+  z-index: 2;
+}
