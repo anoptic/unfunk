@@ -19,6 +19,7 @@
 .DS_Store
 *.pem
 /public/assets/
+x_*
 
 # debug
 npm-debug.log*

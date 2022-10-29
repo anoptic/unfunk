@@ -1,5 +1,8 @@
 import { createClient } from 'contentful';
 import Image from 'next/image';
+import { Remark } from 'react-remark';
+import { remark } from 'remark';
+import remarkHtml from 'remark-html';
 
 export const getStaticProps = async () => {
   const client = createClient({
@@ -8,7 +11,7 @@ export const getStaticProps = async () => {
   });
 
   const response = await client.getEntries({
-    content_type: 'blogPost',
+    content_type: 'allBlogPosts',
   });
 
   return {
@@ -18,44 +21,28 @@ export const getStaticProps = async () => {
   };
 };
 
+// async function mdParse(mdText: string) {
+//   const parsedMd = await remark().use(remarkHtml).process(mdText);
+
+//   console.log(parsedMd.toString());
+//   // return parsedMd.toString();
+// }
+
 const Home = ({ stuff }: any) => {
-  const images = stuff[0].fields.blogImages;
-  console.log(images);
+  // console.log(stuff[0].fields.post);
+  const posts = stuff[0].fields.post;
 
   return (
     <>
-      <h2>{stuff[0].fields.title}</h2>
-      <Image
-        src={`https:${stuff[0].fields.heroImg.fields.file.url}`}
-        alt={stuff[0].fields.heroImg.fields.description}
-        width={540}
-        height={360}
-      />
-      {images.map((img: any) => {
-        const wh = { w: 540, h: 360 };
-        if (
-          img.fields.file.details.image.height >
-          img.fields.file.details.image.width
-        ) {
-          wh.w = 360;
-          wh.h = 540;
-        }
-        return (
-          <>
-            <p>
-              {img.fields.title}---
-              {img.fields.description}
-            </p>
-            <Image
-              key={img.fields.title}
-              src={`https:${img.fields.file.url}`}
-              alt={img.fields.description}
-              width={wh.w}
-              height={wh.h}
-            />
-          </>
-        );
-      })}
+      {/* <h2>Content!</h2> */}
+      {posts.map((post: any) => (
+        <section key={post.fields.slug}>
+          <h3>{post.fields.heading}</h3>
+          <p>{post.fields.slug}</p>
+          {/* <Remark>{post.fields.text}</Remark> */}
+          {/* <div>{post.fields.text}</div> */}
+        </section>
+      ))}
     </>
   );
 };
