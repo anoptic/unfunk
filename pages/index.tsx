@@ -1,16 +1,10 @@
 import { createClient } from 'contentful';
-import Image from 'next/image';
+import BlogCard from '../components/blog-card';
+import CollectionCard from '../components/collection-card';
+// import Image from 'next/image';
+import SectionCard from '../components/section-card';
+import BlogPost from './blog/[slug]';
 import styles from './home.module.css';
-
-type LoaderProps = {
-  src: string;
-  // width: number;
-  // quality: number;
-};
-
-const loader = ({ src }: LoaderProps) => {
-  return `https:${src}?fit=crop`;
-};
 
 export const getStaticProps = async () => {
   const client = createClient({
@@ -19,39 +13,41 @@ export const getStaticProps = async () => {
   });
 
   const response = await client.getEntries({
-    content_type: 'allBlogPosts',
+    content_type: 'homePage',
+    include: 10,
+    select: 'fields.sections',
   });
 
   return {
     props: {
-      stuff: response.items,
+      stuff: response,
     },
   };
 };
 
 const Home = ({ stuff }: any) => {
-  console.log(stuff[0].fields.post);
-  const posts = stuff[0].fields.post;
+  // console.log('stuff', stuff);
+  const sections = stuff.items[0].fields.sections;
+  console.log('sections', sections);
 
   return (
-    <section className={styles.blogList}>
-      {posts.map((post: any) => (
-        <article className={styles.blogCard} key={post.fields.slug}>
-          <h2 className={styles.blogTitle}>{post.fields.title}</h2>
-          <div className={styles.cardImage}>
-            <Image
-              loader={loader}
-              src={post.fields.heroImg.fields.file.url}
-              alt="section hero"
-              layout="fill"
-              objectFit="cover"
-              // sizes="(max-width: 600px) 100vw, 50vw"
-            />
-          </div>
-          <p>{post.fields.caption}</p>
-        </article>
-      ))}
-    </section>
+    <>
+      <div className={styles.sectionList}>
+        {sections.map(
+          (section: any) => {
+            if (section.fields.type === 'Collection') {
+              return <CollectionCard key={section.sys.id} section={section} />;
+            }
+            if (section.fields.type === 'Blog') {
+              return <BlogCard key={section.sys.id} section={section} />;
+            }
+          }
+          // <SectionCard key={section.sys.id} section={section} />
+
+          //TODO --- separate <collection-card> and <blog-card>
+        )}
+      </div>
+    </>
   );
 };
 
