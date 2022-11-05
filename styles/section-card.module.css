@@ -1,46 +1,6 @@
 .card {
-  --wide: clamp(300px, 90vw, 720px);
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  /* margin-block: 3rem; */
-  width: var(--wide);
-}
-
-.image {
-  height: var(--wide);
-  /* max-width: 90vw; */
-  position: relative;
-  width: 100%;
-}
-
-.id {
-  background-color: rgba(0, 0, 0, 0.35);
-  color: white;
-  padding: 1rem;
-  /* padding-left: 1.5rem; */
-  position: absolute;
-  text-align: center;
-  top: 30%;
-  width: 100%;
-  z-index: 2;
-}
-
-.title {
-  /* font-size: 2rem; */
-  font-size: 3rem;
-  margin: 0;
-  padding: 0;
-}
-
-.blogTitle {
-  font-size: 1.5rem;
-  /* padding-left: 1rem; */
-  text-align: left;
-}
-
-.caption {
-  margin: 0;
-  padding-top: 0.2rem;
+  margin: 0 auto;
 }

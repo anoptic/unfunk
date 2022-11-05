@@ -1,9 +1,9 @@
 .card {
   --wide: clamp(300px, 90vw, 720px);
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
+  /* cursor: pointer; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* margin: 0 auto; */
   width: var(--wide);
 }
 
@@ -16,25 +16,8 @@
 }
 
 .id {
-  background-color: rgba(0, 0, 0, 0.35);
-  color: white;
   grid-column-start: 1;
   grid-row-start: 1;
-  margin: auto auto;
-  padding: 1rem 0;
-  text-align: center;
-  width: 100%;
-  z-index: 2;
-}
-
-.altId {
-  background-color: rgba(0, 0, 0, 0.35);
-  color: white;
-  grid-column-start: 1;
-  grid-row-start: 1;
-  /* margin: 3rem 0; */
-  /* padding: 1rem 0; */
-  /* text-align: center; */
   width: 100%;
   z-index: 2;
 }
@@ -44,20 +27,34 @@
   grid-row-start: 1;
 }
 
+.vertCenter {
+  margin: auto 0;
+}
+
 .title {
+  background-color: rgba(0, 0, 0, 0.35);
+  color: white;
   font-size: 3rem;
-  margin: 0;
-  padding: 0;
+  text-align: center;
 }
 
 .altTitle {
   font-size: 1.5rem;
+  padding: 1rem 0;
   padding-left: 1rem;
+  position: relative;
   text-align: left;
+  top: 15%;
 }
 
 .caption {
   margin: 0;
-  /* padding-inline: 1rem; */
   padding-top: 0.2rem;
+}
+
+@media (min-width: 600px) {
+  .altTitle {
+    font-size: 2rem;
+    padding-left: 3rem;
+  }
 }

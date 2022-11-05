@@ -40,12 +40,12 @@ const Home = ({ stuff }: HomeProps) => {
           <Section key={section.sys.id}>
             {section.fields.type === 'Collection' && (
               <CollectionCard section={section}>
-                <CoverImage />
+                <CoverImage source={section.fields.cover.fields.file.url} />
               </CollectionCard>
             )}
             {section.fields.type === 'Blog' && (
               <BlogCard section={section}>
-                <CoverImage />
+                <CoverImage source={section.fields.cover.fields.file.url} />
               </BlogCard>
             )}
           </Section>
