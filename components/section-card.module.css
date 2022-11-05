@@ -14,14 +14,14 @@
   width: var(--wide);
 }
 
-.sectionCard .sectionImage {
+.sectionImage {
   height: var(--wide);
   /* max-width: 90vw; */
   position: relative;
   width: 100%;
 }
 
-.sectionCard .sectionId {
+.sectionId {
   background-color: rgba(0, 0, 0, 0.35);
   color: white;
   padding: 1rem;
@@ -32,28 +32,28 @@
   width: 100%;
   z-index: 2;
 }
-.sectionCard .sectionTitle {
+.sectionTitle {
   /* font-size: 2rem; */
   font-size: 3rem;
   margin: 0;
   padding: 0;
 }
-.sectionCard .collectionTitle {
+.collectionTitle {
   font-size: 5rem;
   line-height: 4rem;
 }
-.sectionCard .sectionSubtitle {
+.sectionSubtitle {
   font-size: 1.4rem;
   margin: 0;
   padding: 0;
 }
-.sectionCard .blogTitle {
+.blogTitle {
   font-size: 1.5rem;
   /* padding-left: 1rem; */
   text-align: left;
 }
 
-.sectionCard .sectionCaption {
+.sectionCaption {
   margin: 0;
   padding-top: 0.2rem;
 }

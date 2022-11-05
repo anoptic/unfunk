@@ -14,7 +14,7 @@ const BlogCard = ({ section }: any) => {
           <div className={styles.sectionId}>
             <h3
               className={`${styles.sectionTitle} ${
-                section.fields.slug !== 'event' ? styles.blogTitle : null
+                section.fields.slug !== 'unfunktion' ? styles.blogTitle : ''
               }`}
             >
               {title}

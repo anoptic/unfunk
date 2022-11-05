@@ -2,8 +2,8 @@ import { createClient } from 'contentful';
 import BlogCard from '../components/blog-card';
 import CollectionCard from '../components/collection-card';
 // import Image from 'next/image';
-import SectionCard from '../components/section-card';
-import BlogPost from './blog/[slug]';
+// import SectionCard from '../components/section-card';
+// import BlogPost from './blog/[slug]';
 import styles from './home.module.css';
 
 export const getStaticProps = async () => {
@@ -43,8 +43,6 @@ const Home = ({ stuff }: any) => {
             }
           }
           // <SectionCard key={section.sys.id} section={section} />
-
-          //TODO --- separate <collection-card> and <blog-card>
         )}
       </div>
     </>
