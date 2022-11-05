@@ -1,40 +1,43 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from './section-card.module.css';
-import collectionStyles from './collection-card.module.css';
+import sectionStyles from '../styles/section-card.module.css';
+import collectionStyles from '../styles/collection-card.module.css';
+import { ReactNode } from 'react';
 
-const CollectionCard = ({ section }: any) => {
+interface CardProps {
+  section: any;
+  children: ReactNode;
+}
+
+const CollectionCard = ({ section, children }: CardProps) => {
   const { type, title, slug, caption, images } = section.fields;
 
   return (
     <>
-      <div className={collectionStyles.carousel}>
+      {/* <div className={collectionStyles.carousel}>
         <h3>Product Carousel</h3>
-      </div>
+      </div> */}
       <Link href={`/collections/${slug}`}>
-        <div className={collectionStyles.collectionCard}>
-          {/* <h3 className={styles.sectionTitle}>{section.fields.title}</h3> */}
-          <div className={collectionStyles.collectionImage}>
-            <div className={collectionStyles.collectionId}>
-              <h3
-                className={`${styles.sectionTitle} ${styles.collectionTitle}`}
-              >
-                {title}
-              </h3>
-              <p className={styles.sectionSubtitle}>{section.fields.type}</p>
+        <div className={collectionStyles.card}>
+          <div className={collectionStyles.cover}>
+            <div className={collectionStyles.id}>
+              <h3 className={collectionStyles.title}>{title}</h3>
+              <p className={collectionStyles.subtitle}>{type}</p>
             </div>
-            <Image
-              src={`https:${section.fields.cover.fields.file.url}`}
-              alt="section cover"
-              // width="360"
-              // height="180"
-              layout="fill"
-              objectFit="cover"
-              placeholder="blur"
-              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkKAcAAH0AecUT9IwAAAAASUVORK5CYII="
-            />
+            <div className={collectionStyles.image}>
+              <Image
+                src={`https:${section.fields.cover.fields.file.url}`}
+                alt="section cover"
+                // width="360"
+                // height="180"
+                layout="fill"
+                objectFit="cover"
+                placeholder="blur"
+                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkKAcAAH0AecUT9IwAAAAASUVORK5CYII="
+              />
+            </div>
           </div>
-          <p className={styles.sectionCaption}>{caption}</p>
+          <p className={collectionStyles.caption}>{caption}</p>
         </div>
       </Link>
     </>

@@ -1,10 +1,13 @@
-import { createClient } from 'contentful';
+import { createClient, EntryCollection } from 'contentful';
 import BlogCard from '../components/blog-card';
 import CollectionCard from '../components/collection-card';
-// import Image from 'next/image';
-// import SectionCard from '../components/section-card';
-// import BlogPost from './blog/[slug]';
-import styles from './home.module.css';
+import CoverImage from '../components/cover-image';
+import Section from '../components/section';
+import styles from '../styles/home.module.css';
+
+interface HomeProps {
+  stuff: any;
+}
 
 export const getStaticProps = async () => {
   const client = createClient({
@@ -25,7 +28,7 @@ export const getStaticProps = async () => {
   };
 };
 
-const Home = ({ stuff }: any) => {
+const Home = ({ stuff }: HomeProps) => {
   // console.log('stuff', stuff);
   const sections = stuff.items[0].fields.sections;
   console.log('sections', sections);
@@ -33,17 +36,20 @@ const Home = ({ stuff }: any) => {
   return (
     <>
       <div className={styles.sectionList}>
-        {sections.map(
-          (section: any) => {
-            if (section.fields.type === 'Collection') {
-              return <CollectionCard key={section.sys.id} section={section} />;
-            }
-            if (section.fields.type === 'Blog') {
-              return <BlogCard key={section.sys.id} section={section} />;
-            }
-          }
-          // <SectionCard key={section.sys.id} section={section} />
-        )}
+        {sections.map((section: any) => (
+          <Section key={section.sys.id}>
+            {section.fields.type === 'Collection' && (
+              <CollectionCard section={section}>
+                <CoverImage />
+              </CollectionCard>
+            )}
+            {section.fields.type === 'Blog' && (
+              <BlogCard section={section}>
+                <CoverImage />
+              </BlogCard>
+            )}
+          </Section>
+        ))}
       </div>
     </>
   );

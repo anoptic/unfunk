@@ -2,37 +2,33 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  /* width: 90vw; */
 }
 
-.sectionCard {
+/* .sectionCard {
   --wide: clamp(300px, 90vw, 720px);
   display: flex;
   flex-direction: column;
   margin-block: 3rem;
   width: var(--wide);
-}
+} */
 
-.sectionCard .sectionImage {
+/* .sectionCard .sectionImage {
   height: var(--wide);
-  /* max-width: 90vw; */
   position: relative;
   width: 100%;
-}
+} */
 
-.sectionCard .sectionId {
+/* .sectionCard .sectionId {
   background-color: rgba(0, 0, 0, 0.35);
   color: white;
   padding: 1rem;
-  /* padding-left: 1.5rem; */
   position: absolute;
   text-align: center;
   top: 30%;
   width: 100%;
   z-index: 2;
-}
-.sectionCard .sectionTitle {
-  /* font-size: 2rem; */
+} */
+/* .sectionCard .sectionTitle {
   font-size: 3rem;
   margin: 0;
   padding: 0;
@@ -48,11 +44,10 @@
 }
 .sectionCard .blogTitle {
   font-size: 1.5rem;
-  /* padding-left: 1rem; */
   text-align: left;
-}
+} */
 
-.sectionCard .sectionCaption {
+/* .sectionCard .sectionCaption {
   margin: 0;
   padding-top: 0.2rem;
-}
+} */

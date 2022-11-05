@@ -1,0 +1,63 @@
+.card {
+  --wide: clamp(300px, 90vw, 720px);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: var(--wide);
+}
+
+.cover {
+  display: grid;
+  grid: 1fr / 1fr;
+  height: var(--wide);
+  position: relative;
+  width: 100%;
+}
+
+.id {
+  background-color: rgba(0, 0, 0, 0.35);
+  color: white;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  margin: auto auto;
+  padding: 1rem 0;
+  text-align: center;
+  width: 100%;
+  z-index: 2;
+}
+
+.altId {
+  background-color: rgba(0, 0, 0, 0.35);
+  color: white;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  /* margin: 3rem 0; */
+  /* padding: 1rem 0; */
+  /* text-align: center; */
+  width: 100%;
+  z-index: 2;
+}
+
+.image {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+.title {
+  font-size: 3rem;
+  margin: 0;
+  padding: 0;
+}
+
+.altTitle {
+  font-size: 1.5rem;
+  padding-left: 1rem;
+  text-align: left;
+}
+
+.caption {
+  margin: 0;
+  /* padding-inline: 1rem; */
+  padding-top: 0.2rem;
+}

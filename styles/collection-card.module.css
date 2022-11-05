@@ -1,0 +1,55 @@
+.carousel {
+}
+
+.card {
+  --wide: clamp(300px, 100vw, 720px);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 960px;
+  width: 100%;
+}
+
+.cover {
+  --high: clamp(240px, 67vw, 480px);
+  display: grid;
+  grid: 1fr / 1fr;
+  height: var(--high);
+  position: relative;
+  width: 100%;
+}
+
+.id {
+  background-color: rgba(0, 0, 0, 0.35);
+  color: white;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  margin: auto auto;
+  padding: 1rem 0;
+  text-align: center;
+  width: 100%;
+  z-index: 2;
+}
+
+.image {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+.title {
+  font-size: 5rem;
+  line-height: 4rem;
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  margin: 0;
+  padding: 0;
+}
+
+.caption {
+  margin: 0;
+  /* padding-inline: 1rem; */
+  padding-top: 0.2rem;
+}
