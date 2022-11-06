@@ -1,16 +1,24 @@
 import Image from 'next/image';
 
-interface CoverImageProps {
+interface SectionCoverProps {
   source: string;
 }
+export interface LoaderProps {
+  src: string;
+}
 
-const CoverImage = ({ source }: CoverImageProps) => {
+export const loader = ({ src }: LoaderProps) => {
+  return `https:${src}`;
+};
+
+const SectionCover = ({ source }: SectionCoverProps) => {
   // console.log(props);
 
   return (
     <>
       <Image
-        src={`https:${source}`}
+        loader={loader}
+        src={source}
         alt="section cover"
         layout="fill"
         objectFit="cover"
@@ -21,4 +29,4 @@ const CoverImage = ({ source }: CoverImageProps) => {
   );
 };
 
-export default CoverImage;
+export default SectionCover;

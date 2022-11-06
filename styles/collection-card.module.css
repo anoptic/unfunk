@@ -34,6 +34,7 @@
 .image {
   grid-column-start: 1;
   grid-row-start: 1;
+  position: relative;
 }
 
 .title {
@@ -49,6 +50,6 @@
 
 .caption {
   margin: 0;
-  /* padding-inline: 1rem; */
+  padding-left: 1rem;
   padding-top: 0.2rem;
 }
