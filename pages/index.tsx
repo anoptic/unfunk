@@ -16,11 +16,12 @@ export const getStaticProps = async () => {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN as string,
   });
 
-  const response = await client.getEntries({
-    content_type: 'homePage',
-    include: 10,
-    select: 'fields.sections',
-  });
+  // const response = await client.getEntries({
+  // content_type: 'homePage',
+  // include: 10,
+  // select: 'items',
+  // });
+  const response = await client.getEntry('CaPxFldqNC38EM4QU7Ju5');
 
   return {
     props: {
@@ -30,16 +31,16 @@ export const getStaticProps = async () => {
 };
 
 const Home = ({ stuff }: HomeProps) => {
-  // console.log('stuff', stuff);
-  const sections = stuff.items[0].fields.sections;
-  console.log('sections', sections);
+  console.log('stuff', stuff);
+  // const sections = stuff.items[0].fields.sections;
+  // console.log('sections', sections);
 
   return (
     <>
-      <div className={styles.appCover}>
+      {/* <div className={styles.cover}>
         <Cover />
-      </div>
-      <div className={styles.sectionList}>
+      </div> */}
+      {/* <div className={styles.sectionList}>
         {sections.map((section: any) => (
           <Section key={section.sys.id}>
             {section.fields.type === 'Collection' && (
@@ -54,7 +55,7 @@ const Home = ({ stuff }: HomeProps) => {
             )}
           </Section>
         ))}
-      </div>
+      </div> */}
     </>
   );
 };

@@ -3,3 +3,9 @@
   display: flex;
   flex-direction: column;
 }
+
+.cover {
+  background-color: lightgray;
+  height: 100vh;
+  width: 100vw;
+}
