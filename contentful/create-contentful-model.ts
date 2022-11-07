@@ -10,6 +10,7 @@ export type FieldsSchemaCreator<TDataIn extends {}, TDataOut> = (
 
 export function createContentfulModel<TDataIn extends {}, TDataOut>(
   contentType: string,
+  id: string,
   fieldsSchemaCreator: FieldsSchemaCreator<TDataIn, TDataOut>
 ) {
   // Set up an empty context. We'll return to this in the next article.
@@ -42,9 +43,18 @@ export function createContentfulModel<TDataIn extends {}, TDataOut>(
     return parsed.data;
   };
 
+  const getId = async () => {
+    const response = await contentfulClient.getEntry(id);
+
+    const parsed = entrySchema.parse(response);
+
+    return parsed;
+  };
+
   return {
     fieldsSchema,
     entrySchema,
     getAll,
+    getId,
   };
 }
