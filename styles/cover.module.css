@@ -1,5 +1,4 @@
 .cover {
-  /* background-color: lightsteelblue; */
   display: grid;
   grid: 1fr / 1fr;
   height: 100vh;
@@ -9,19 +8,16 @@
 }
 
 .overlay {
-  /* background-color: rgba(0, 0, 0, 0.2); */
   color: white;
   grid-column-start: 1;
   grid-column-end: 1;
-  /* position: relative; */
-  /* top: -50px; */
   z-index: 2;
 }
 
 .title {
   font-size: 3rem;
+  left: 5vw;
   line-height: 3rem;
-  padding-left: 1rem;
   position: relative;
   top: 40vh;
   width: 80vw;
@@ -29,14 +25,20 @@
 }
 
 .subtitle {
-  font-size: 2rem;
-  left: 20vw;
+  left: 10vw;
   line-height: 2rem;
-  padding-right: 1rem;
   position: relative;
   text-align: right;
   top: 70vh;
-  width: 75vw;
+  width: 85vw;
+}
+
+.firstLine {
+  font-size: 1.8rem;
+}
+
+.secondLine {
+  font-size: 2rem;
 }
 
 .image {

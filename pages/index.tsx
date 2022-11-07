@@ -5,6 +5,7 @@ import CoverImage from '../components/cover-image';
 import Section from '../components/section';
 import styles from '../styles/home.module.css';
 import Cover from '../components/cover';
+import useMatchMedia from '../hooks/useMatchmedia';
 
 interface HomeProps {
   page: any;
@@ -45,17 +46,26 @@ export const getStaticProps = async () => {
 
 const Home = ({ page, something }: HomeProps) => {
   // console.log('**Home Page**', page);
-  // console.log(something);
+  const matches = useMatchMedia();
+
   const sections = page.fields.sections;
   const covers = {
     coverMobile: page.fields.coverMobile.fields.file.url,
     coverDesktop: page.fields.coverDesktop.fields.file.url,
   };
-  // console.log('**Sections**', sections);
+  const coverOverlay = {
+    filter: 'brightness(0.8)',
+  };
 
   return (
     <div className={styles.homePage}>
-      <Cover covers={covers} />
+      <Cover>
+        {matches ? (
+          <CoverImage source={covers.coverMobile} style={coverOverlay} />
+        ) : (
+          <CoverImage source={covers.coverDesktop} style={coverOverlay} />
+        )}
+      </Cover>
       <div className={styles.sectionList}>
         {sections.map((section: any) => (
           <Section key={section.sys.id}>
