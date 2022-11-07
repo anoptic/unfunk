@@ -1,0 +1,5 @@
+.header {
+  background-color: lightyellow;
+  position: relative;
+  z-index: 9;
+}

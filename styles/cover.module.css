@@ -1,0 +1,47 @@
+.cover {
+  /* background-color: lightsteelblue; */
+  display: grid;
+  grid: 1fr / 1fr;
+  height: 100vh;
+  position: relative;
+  top: -50px;
+  width: 100vw;
+}
+
+.overlay {
+  /* background-color: rgba(0, 0, 0, 0.2); */
+  color: white;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  /* position: relative; */
+  /* top: -50px; */
+  z-index: 2;
+}
+
+.title {
+  font-size: 3rem;
+  line-height: 3rem;
+  padding-left: 1rem;
+  position: relative;
+  top: 40vh;
+  width: 80vw;
+  z-index: 3;
+}
+
+.subtitle {
+  font-size: 2rem;
+  left: 20vw;
+  line-height: 2rem;
+  padding-right: 1rem;
+  position: relative;
+  text-align: right;
+  top: 70vh;
+  width: 75vw;
+}
+
+.image {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  height: 100%;
+  width: 100%;
+}

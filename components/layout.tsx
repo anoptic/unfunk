@@ -1,9 +1,9 @@
-const Layout = ({ children }: any) => {
-  // console.log(props);
+import styles from '../styles/layout.module.css';
 
+const Layout = ({ children }: any) => {
   return (
     <>
-      <header>
+      <header className={styles.header}>
         <h1>Unfunk</h1>
         <hr />
       </header>
