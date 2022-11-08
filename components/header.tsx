@@ -1,0 +1,38 @@
+import { useState } from 'react';
+import useModal from '../hooks/useModal';
+import styles from '../styles/header.module.css';
+import Hamburger from './hamburger';
+import MobileMenu from './mobile-menu';
+
+export const logo =
+  'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE5IiBoZWlnaHQ9IjM1IiB2aWV3Qm94PSIwIDAgMTE5IDM1IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KPHBhdGggZD0iTTU3LjUzNiAwSDUzLjQ1NkM0OC4xNzYgMCA0My45MDQgNC4yNzIgNDMuOTA0IDkuNTUyVjM0LjcwNEg0Ny45ODRWMTUuNTUySDU3LjA4MTlINTcuNTg0VjExLjQ3Mkg0Ny45ODRWOS41NTJDNDcuOTg0IDYuNTI4IDUwLjQ4IDQuMDggNTMuNDU2IDQuMDhINTcuNTM2VjBaIiBmaWxsPSJibGFjayIvPg0KPHBhdGggZD0iTTYxLjIwOTkgMTEuNDcySDU3LjA4MTlWMTUuNTUyVjI1LjE1MkM1Ny4xNzc5IDMwLjQzMiA2MS40NDk5IDM0LjcwNCA2Ni43Nzc5IDM0LjcwNEM3Mi4xMDU5IDM0LjcwNCA3Ni4zNzc5IDMwLjQzMiA3Ni40NzM5IDI1LjE1MlYxMS40NzJINzIuMzQ1OVYyNS4wMDhDNzIuMzQ1OSAyOC4wOCA2OS44OTc5IDMwLjU3NiA2Ni43Nzc5IDMwLjU3NkM2My42NTc5IDMwLjU3NiA2MS4yMDk5IDI4LjA4IDYxLjIwOTkgMjUuMDA4VjExLjQ3MloiIGZpbGw9ImJsYWNrIi8+DQo8cGF0aCBkPSJNODIuNTQxNyAxMS40NzJINzguNDEzN1YzNC43MDRIODIuNTQxN1YyMS4xNjhDODIuNTQxNyAxOC4wNDggODUuMDM3NyAxNS42IDg4LjEwOTcgMTUuNkM5MS4xODE3IDE1LjYgOTMuNjc3NyAxOCA5My43NzM3IDIxLjAyNFYzNC43MDRIOTcuODA1N1YyMS4wMjRDOTcuNzA5NyAxNS43NDQgOTMuNDM3NyAxMS40NzIgODguMTA5NyAxMS40NzJDODYuMDQ1NyAxMS40NzIgODQuMTI1NyAxMi4xNDQgODIuNTQxNyAxMy4yNDhWMTEuNDcyWiIgZmlsbD0iYmxhY2siLz4NCjxwYXRoIGQ9Ik0xMTguNTYyIDM0LjcwNEwxMTEuNzk0IDIxLjE2OEwxMTcuNjUgMTEuNDcySDExMi44OThMMTAzLjYzNCAyNy4zMTJWMEg5OS41MDU2VjM0LjcwNEgxMDMuNTg2TDEwOS41MzggMjQuOTEyTDExNC4zODYgMzQuNzA0SDExOC41NjJaIiBmaWxsPSJibGFjayIvPg0KPHBhdGggZD0iTTE5LjM5MiAwLjI5NTk5OEgxNS4zNlYyNS4zMDRDMTUuMzYgMjguNDI0IDEyLjgxNiAzMC45NjggOS42OTYgMzAuOTY4QzYuNTc2IDMwLjk2OCA0LjAzMiAyOC40MjQgNC4wMzIgMjUuMzA0VjAuMjk1OTk4SDBWMjUuNDQ4QzAgMzAuNzI4IDQuMzY4IDM1IDkuNjk2IDM1QzE1LjAyNCAzNSAxOS4zOTIgMzAuNzI4IDE5LjM5MiAyNS40NDhWMC4yOTU5OThaIiBmaWxsPSJibGFjayIvPg0KPHBhdGggZD0iTTIxLjg0OCAzNC43MDRIMjUuODhWOS42OTZDMjUuODggNi41NzYgMjguNDI0IDQuMDMyIDMxLjU0NCA0LjAzMkMzNC42NjQgNC4wMzIgMzcuMjA4IDYuNTc2IDM3LjIwOCA5LjY5NlYzNC43MDRINDEuMjRWOS41NTJDNDEuMjQgNC4yNzIgMzYuODcyIDAgMzEuNTQ0IDBDMjYuMjE2IDAgMjEuODQ4IDQuMjcyIDIxLjg0OCA5LjU1MlYzNC43MDRaIiBmaWxsPSJibGFjayIvPg0KPC9zdmc+DQo=';
+export const cart =
+  'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik02IDRIMzRDMzUuMTA0NiA0IDM2IDQuODk1NDMgMzYgNlYzNEMzNiAzNS4xMDQ2IDM1LjEwNDYgMzYgMzQgMzZINkM0Ljg5NTQzIDM2IDQgMzUuMTA0NiA0IDM0VjZDNCA0Ljg5NTQzIDQuODk1NDMgNCA2IDRaTTAgNkMwIDIuNjg2MjkgMi42ODYyOSAwIDYgMEgzNEMzNy4zMTM3IDAgNDAgMi42ODYyOSA0MCA2VjM0QzQwIDM3LjMxMzcgMzcuMzEzNyA0MCAzNCA0MEg2QzIuNjg2MjkgNDAgMCAzNy4zMTM3IDAgMzRWNlpNMjAgMjBDMTQuNDc3MiAyMCAxMCAxNC42Mjc0IDEwIDhIMTRDMTQgMTMuMTMyMSAxNy4zMzgyIDE2IDIwIDE2QzIyLjY2MTggMTYgMjYgMTMuMTMyMSAyNiA4SDMwQzMwIDE0LjYyNzQgMjUuNTIyOCAyMCAyMCAyMFoiIGZpbGw9ImJsYWNrIi8+Cjwvc3ZnPgo=';
+
+const Header = () => {
+  // const [menuActive, setMenuActive] = useState(false);
+  const { isVisible, toggleModal } = useModal();
+
+  // const handleHamburgerClick = () => {
+  //   // setMenuActive((menuActive) => !menuActive);
+  //   toggleModal();
+  // };
+
+  return (
+    <>
+      <div className={styles.header}>
+        <Hamburger
+          isVisible={isVisible}
+          // handleHamburgerClick={handleHamburgerClick}
+          toggleModal={toggleModal}
+        />
+        <img src={logo} alt="unfunk logo" />
+        <img src={cart} alt="shopping cart" />
+      </div>
+      <hr />
+      <MobileMenu isVisible={isVisible} toggleModal={toggleModal} />
+    </>
+  );
+};
+
+export default Header;

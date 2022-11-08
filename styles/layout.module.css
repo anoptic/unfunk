@@ -1,5 +1,17 @@
+.layout {
+  /* overflow-y: scroll; */
+}
+
 .header {
   background-color: lightyellow;
-  position: relative;
+  /* left: 0; */
+  position: sticky;
+  /* right: 0; */
+  top: 0;
+  width: 100%;
   z-index: 9;
+}
+
+.main {
+  /* width: 100vw; */
 }

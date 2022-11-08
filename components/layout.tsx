@@ -1,20 +1,20 @@
 import styles from '../styles/layout.module.css';
+import Header from './header';
 
 const Layout = ({ children }: any) => {
   return (
-    <>
+    <div className={styles.layout}>
       <header className={styles.header}>
-        <h1>Unfunk</h1>
-        <hr />
+        <Header />
       </header>
 
-      <main>{children}</main>
+      <main className={styles.main}>{children}</main>
 
       <footer>
         <hr />
         <p>shoes you need</p>
       </footer>
-    </>
+    </div>
   );
 };
 
