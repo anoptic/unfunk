@@ -1,5 +1,6 @@
 import '../styles/reset.css';
 import '../styles/globals.css';
+import '../public/fonts.css';
 import type { AppProps } from 'next/app';
 import Layout from '../components/layout';
 

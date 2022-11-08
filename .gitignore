@@ -18,7 +18,7 @@
 # misc
 .DS_Store
 *.pem
-/public/assets/
+/public/assets/images
 x_*
 
 # debug
