@@ -14,7 +14,7 @@ const CollectionCard = ({ section, children }: CardProps) => {
 
   return (
     <>
-      <ProductCarousel images={images} />
+      {/* <ProductCarousel images={images} /> */}
 
       <Link href={`/collections/${slug}`}>
         <div className={`${collectionStyles.card} ${sectionStyles.card}`}>

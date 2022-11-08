@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import { createContentfulModel } from './create-contentful-model';
 
-const fileObj = z.object({
+const asset = z.object({
   fields: z.object({
     file: z.object({
       contentType: z.string(),
@@ -18,6 +18,22 @@ const fileObj = z.object({
   }),
 });
 
+const section = z.array(
+  z.object({
+    fields: z.object({
+      title: z.string(),
+      slug: z.string(),
+      type: z.string(),
+      caption: z.string(),
+      cover: asset,
+      images: z.array(asset).optional(),
+    }),
+    sys: z.object({
+      id: z.string(),
+    }),
+  })
+);
+
 export const homepageModel = createContentfulModel(
   'homePage',
   'CaPxFldqNC38EM4QU7Ju5',
@@ -25,11 +41,8 @@ export const homepageModel = createContentfulModel(
     z.object({
       title: z.string(),
       slug: z.string(),
-      // coverDesktop: z.object({
-      //   fileObj,
-      // }),
-      // coverMobile: z.object({
-      //   fileObj,
-      // }),
+      coverDesktop: asset,
+      coverMobile: asset,
+      sections: section,
     })
 );

@@ -8,9 +8,9 @@ import styles from '../styles/home.module.css';
 import Cover from '../components/cover';
 import { homepageModel } from '../contentful/homepage-model';
 
-interface HomeProps {
-  homePage: any;
-}
+// interface HomeProps {
+//   homePage: any;
+// }
 
 // export const getStaticProps = async () => {
 //   const client = createClient({
@@ -27,15 +27,12 @@ interface HomeProps {
 
 //   return {
 //     props: {
-//       stuff: response,
+//       homePage: response,
 //     },
 //   };
 // };
 
-//! fix nested objects in model
-//! coverDesktop, coverMobile
-//! zod problem
-
+//* getAll
 // export const getStaticProps: GetStaticProps<{
 //   homePage: HomepageModelEntry[];
 // }> = async () => {
@@ -45,6 +42,8 @@ interface HomeProps {
 //     },
 //   };
 // };
+
+//* getId
 export const getStaticProps: GetStaticProps<{
   homePage: HomepageModelEntry;
 }> = async () => {
@@ -58,6 +57,7 @@ export const getStaticProps: GetStaticProps<{
 const Home = ({ homePage }: InferGetStaticPropsType<typeof getStaticProps>) => {
   console.log('stuff', homePage);
   // const sections = stuff.items[0].fields.sections;
+  const sections = homePage.fields.sections;
   // console.log('sections', sections);
 
   return (
@@ -65,7 +65,7 @@ const Home = ({ homePage }: InferGetStaticPropsType<typeof getStaticProps>) => {
       {/* <div className={styles.cover}>
         <Cover />
       </div> */}
-      {/* <div className={styles.sectionList}>
+      <div className={styles.sectionList}>
         {sections.map((section: any) => (
           <Section key={section.sys.id}>
             {section.fields.type === 'Collection' && (
@@ -80,7 +80,7 @@ const Home = ({ homePage }: InferGetStaticPropsType<typeof getStaticProps>) => {
             )}
           </Section>
         ))}
-      </div> */}
+      </div>
     </>
   );
 };
