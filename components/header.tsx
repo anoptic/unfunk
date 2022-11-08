@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import useModal from '../hooks/useModal';
 import styles from '../styles/header.module.css';
 import Hamburger from './hamburger';
@@ -10,27 +9,20 @@ export const cart =
   'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik02IDRIMzRDMzUuMTA0NiA0IDM2IDQuODk1NDMgMzYgNlYzNEMzNiAzNS4xMDQ2IDM1LjEwNDYgMzYgMzQgMzZINkM0Ljg5NTQzIDM2IDQgMzUuMTA0NiA0IDM0VjZDNCA0Ljg5NTQzIDQuODk1NDMgNCA2IDRaTTAgNkMwIDIuNjg2MjkgMi42ODYyOSAwIDYgMEgzNEMzNy4zMTM3IDAgNDAgMi42ODYyOSA0MCA2VjM0QzQwIDM3LjMxMzcgMzcuMzEzNyA0MCAzNCA0MEg2QzIuNjg2MjkgNDAgMCAzNy4zMTM3IDAgMzRWNlpNMjAgMjBDMTQuNDc3MiAyMCAxMCAxNC42Mjc0IDEwIDhIMTRDMTQgMTMuMTMyMSAxNy4zMzgyIDE2IDIwIDE2QzIyLjY2MTggMTYgMjYgMTMuMTMyMSAyNiA4SDMwQzMwIDE0LjYyNzQgMjUuNTIyOCAyMCAyMCAyMFoiIGZpbGw9ImJsYWNrIi8+Cjwvc3ZnPgo=';
 
 const Header = () => {
-  // const [menuActive, setMenuActive] = useState(false);
   const { isVisible, toggleModal } = useModal();
-
-  // const handleHamburgerClick = () => {
-  //   // setMenuActive((menuActive) => !menuActive);
-  //   toggleModal();
-  // };
 
   return (
     <>
       <div className={styles.header}>
-        <Hamburger
-          isVisible={isVisible}
-          // handleHamburgerClick={handleHamburgerClick}
-          toggleModal={toggleModal}
-        />
+        <Hamburger isVisible={isVisible} toggleModal={toggleModal} />
         <img src={logo} alt="unfunk logo" />
         <img src={cart} alt="shopping cart" />
       </div>
       <hr />
-      <MobileMenu isVisible={isVisible} toggleModal={toggleModal} />
+      <MobileMenu isVisible={isVisible}>
+        <h5>Modal</h5>
+        <span>Why this modal has popped up</span>
+      </MobileMenu>
     </>
   );
 };

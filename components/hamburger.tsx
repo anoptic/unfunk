@@ -2,7 +2,6 @@ import styles from '../styles/hamburger.module.css';
 
 interface HamburgerProps {
   isVisible: boolean;
-  // handleHamburgerClick: () => void;
   toggleModal: () => void;
 }
 

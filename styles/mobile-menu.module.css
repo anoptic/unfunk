@@ -5,14 +5,18 @@
   display: flex;
   justify-content: center;
   left: 0;
+  padding-top: 56px;
   position: fixed;
   right: 0;
   top: 0;
+  z-index: 8;
 }
 
 .modal {
   background-color: azure;
   color: black;
+  height: 100%;
   padding: 1rem;
-  width: 50vw;
+  position: relative;
+  width: 100%;
 }
