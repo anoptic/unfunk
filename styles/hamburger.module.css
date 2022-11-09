@@ -27,7 +27,7 @@
 
 .hamburgerBox {
   width: 40px;
-  height: 24px;
+  height: 40px;
   display: inline-block;
   position: relative;
 }
@@ -55,10 +55,10 @@
   display: block;
 }
 .hamburgerInner::before {
-  top: -10px;
+  top: -13px;
 }
 .hamburgerInner::after {
-  bottom: -10px;
+  bottom: -13px;
 }
 
 .hamburgerSqueeze .hamburgerInner {

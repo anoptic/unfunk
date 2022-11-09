@@ -9,6 +9,7 @@
   position: fixed;
   right: 0;
   top: 0;
+  /* transition: left 1s ease-out; */
   z-index: 8;
 }
 
@@ -20,3 +21,7 @@
   position: relative;
   width: 100%;
 }
+
+/* .visible {
+  left: 0;
+} */

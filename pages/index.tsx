@@ -14,6 +14,8 @@ interface HomeProps {
   something: string;
 }
 
+//! clean up before merge
+
 export const getStaticProps = async () => {
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID as string,
@@ -44,6 +46,10 @@ export const getStaticProps = async () => {
   };
 };
 
+const coverOverlay = {
+  filter: 'brightness(0.9)',
+};
+
 const Home = ({ page, something }: HomeProps) => {
   // console.log('**Home Page**', page);
   const matches = useMatchMedia();
@@ -52,9 +58,6 @@ const Home = ({ page, something }: HomeProps) => {
   const covers = {
     coverMobile: page.fields.coverMobile.fields.file.url,
     coverDesktop: page.fields.coverDesktop.fields.file.url,
-  };
-  const coverOverlay = {
-    filter: 'brightness(0.8)',
   };
 
   return (

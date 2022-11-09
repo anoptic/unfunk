@@ -1,15 +1,17 @@
 import { useState } from 'react';
 
-const useModal = () => {
-  const [isVisible, setIsVisible] = useState(false);
+export type Modal = 'menu' | 'cart' | null;
 
-  const toggleModal = () => {
-    setIsVisible((isVisible) => !isVisible);
+const useModal = () => {
+  const [modal, setModal] = useState<Modal>(null);
+
+  const showModal = (v: Modal) => {
+    setModal((modal) => (modal = v));
   };
 
   return {
-    isVisible,
-    toggleModal,
+    modal,
+    showModal,
   };
 };
 

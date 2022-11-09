@@ -1,0 +1,19 @@
+.container {
+}
+
+.container ul {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  /* gap: 1rem; */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 1rem;
+}
+
+.container li {
+  /* cursor: pointer; */
+  margin-top: 1.5rem;
+}
