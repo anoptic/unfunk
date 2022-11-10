@@ -1,10 +1,10 @@
 import { createClient, EntryCollection } from 'contentful';
-import BlogCard from '../components/blog-card';
-import CollectionCard from '../components/collection-card';
-import CoverImage from '../components/cover-image';
-import Section from '../components/section';
-import styles from '../styles/home.module.css';
-import Cover from '../components/cover';
+import BlogCard from '../components/home/blog-card';
+import CollectionCard from '../components/home/collection-card';
+import CoverImage from '../components/home/cover-image';
+import Section from '../components/home/section';
+import styles from './home.module.css';
+import Cover from '../components/home/cover';
 import useMatchMedia from '../hooks/useMatchmedia';
 
 interface HomeProps {

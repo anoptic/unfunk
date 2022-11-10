@@ -1,7 +1,7 @@
 // import Image from 'next/image';
 import Link from 'next/link';
-import sectionStyles from '../styles/section-card.module.css';
-import blogStyles from '../styles/blog-card.module.css';
+import sectionStyles from './section-card.module.css';
+import blogStyles from './blog-card.module.css';
 import { CardProps } from './collection-card';
 
 const BlogCard = ({ section, children }: CardProps) => {

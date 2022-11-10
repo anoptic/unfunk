@@ -1,9 +1,8 @@
 import { Modal } from '../../hooks/useModal';
-import styles from '../../styles/hamburger.module.css';
+import styles from './hamburger.module.css';
 
 interface HamburgerProps {
   modal: Modal;
-  // isVisible: boolean;
   showModal: (v: Modal) => void;
 }
 

@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import sectionStyles from '../styles/section-card.module.css';
-import collectionStyles from '../styles/collection-card.module.css';
+import sectionStyles from './section-card.module.css';
+import collectionStyles from './collection-card.module.css';
 import { ReactNode } from 'react';
 import ProductCarousel from './product-carousel';
 

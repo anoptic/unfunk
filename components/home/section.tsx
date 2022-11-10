@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import styles from '../styles/section.module.css';
+import styles from './section.module.css';
 
 interface SectionProps {
   children: ReactNode;

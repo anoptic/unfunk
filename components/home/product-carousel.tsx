@@ -1,4 +1,4 @@
-import styles from '../styles/carousel.module.css';
+import styles from './carousel.module.css';
 
 interface CarouselProps {
   images: any[];

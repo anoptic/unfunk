@@ -1,16 +1,13 @@
 import { Modal } from '../../hooks/useModal';
 import ShoppingBag from './shopping-bag';
-import styles from '../../styles/bag.module.css';
+import styles from './bag.module.css';
 
 interface BagProps {
   modal: Modal;
-  // isVisible: boolean;
   showModal: (v: Modal) => void;
 }
 
 const Bag = ({ modal, showModal }: BagProps) => {
-  // console.log(props);
-
   return (
     <>
       <button

@@ -1,11 +1,11 @@
-import useModal from '../hooks/useModal';
-import styles from '../styles/header.module.css';
+import useModal from '../../hooks/useModal';
+import styles from './header.module.css';
 import Cart from './cart';
-import Bag from './header/bag';
-import Hamburger from './header/hamburger';
-import Logo from './header/logo';
-import MobileModal from './mobile-modal';
-import MobileNav from './mobile-nav';
+import Bag from './bag';
+import Hamburger from './hamburger';
+import Logo from './logo';
+import MobileModal from '../nav/mobile-modal';
+import MobileNav from '../nav/mobile-nav';
 
 const Header = () => {
   const { modal, showModal } = useModal();

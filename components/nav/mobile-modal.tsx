@@ -1,11 +1,10 @@
 import { ReactNode } from 'react';
 import { createPortal } from 'react-dom';
-import { Modal } from '../hooks/useModal';
-import styles from '../styles/mobile-menu.module.css';
+import { Modal } from '../../hooks/useModal';
+import styles from './mobile-menu.module.css';
 
 interface MobileModalProps {
   modal: Modal;
-  // toggleModal: () => void;
   children: ReactNode;
 }
 
@@ -21,5 +20,3 @@ const MobileModal = ({ modal, children }: MobileModalProps) => {
 };
 
 export default MobileModal;
-
-// ${isVisible ? styles.visible : ''}

@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import styles from '../styles/cover.module.css';
+import styles from './cover.module.css';
 
 interface CoverProps {
   children: ReactNode;
