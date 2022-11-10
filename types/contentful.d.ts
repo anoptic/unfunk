@@ -13,7 +13,13 @@ type ExtractModelType<
 > = Inner<Inner<ReturnType<Model['getAll']>>>;
 
 type HomepageModelEntry = ExtractModelType<
-  typeof import('../contentful/homepage-model')['homepageModel']
+  typeof import('../contentful/content-models')['homepageModel']
 >;
 
 type HomepageModelFields = HomepageModelEntry['fields'];
+
+type BlogpostModelEntry = ExtractModelType<
+  typeof import('../contentful/content-models')['blogpostModel']
+>;
+
+type BlogpostModelFields = BlogpostModelEntry['fields'];

@@ -1,12 +1,13 @@
 import type { GetStaticProps, InferGetStaticPropsType } from 'next';
-import { createClient, EntryCollection } from 'contentful';
+import { createClient, EntryCollection, RichTextContent } from 'contentful';
 import BlogCard from '../components/blog-card';
 import CollectionCard from '../components/collection-card';
 import SectionCover from '../components/section-cover';
 import Section from '../components/section';
 import styles from '../styles/home.module.css';
 import Cover from '../components/cover';
-import { homepageModel } from '../contentful/homepage-model';
+import { homepageModel, blogpostModel } from '../contentful/content-models';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 // interface HomeProps {
 //   homePage: any;
@@ -23,7 +24,7 @@ import { homepageModel } from '../contentful/homepage-model';
 //   //   include: 10,
 //   //   // select: 'items',
 //   // });
-//   const response = await client.getEntry('CaPxFldqNC38EM4QU7Ju5');
+//   const response = await client.getEntry('1cYqcObX5zY3LDNokbA9oD');
 
 //   return {
 //     props: {
@@ -31,6 +32,9 @@ import { homepageModel } from '../contentful/homepage-model';
 //     },
 //   };
 // };
+
+//* homePage EntryID: CaPxFldqNC38EM4QU7Ju5
+//* streetStyle EntryID: 1cYqcObX5zY3LDNokbA9oD
 
 //* getAll
 // export const getStaticProps: GetStaticProps<{
@@ -43,29 +47,45 @@ import { homepageModel } from '../contentful/homepage-model';
 //   };
 // };
 
-//* getId
+//* getId - homePage
+// export const getStaticProps: GetStaticProps<{
+//   homePage: HomepageModelEntry;
+// }> = async () => {
+//   return {
+//     props: {
+//       homePage: await homepageModel.getId(),
+//     },
+//   };
+// };
+
+//* getId - blogPost
 export const getStaticProps: GetStaticProps<{
-  homePage: HomepageModelEntry;
+  blogPost: BlogpostModelEntry;
 }> = async () => {
   return {
     props: {
-      homePage: await homepageModel.getId(),
+      blogPost: await blogpostModel.getId(),
     },
   };
 };
 
-const Home = ({ homePage }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  console.log('stuff', homePage);
+const Home = ({ blogPost }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  console.log('stuff', blogPost);
+  const text: RichTextContent = blogPost.fields.rtext;
+  console.log('rich text', text);
   // const sections = stuff.items[0].fields.sections;
-  const sections = homePage.fields.sections;
+  // const sections = homePage.fields.sections;
   // console.log('sections', sections);
 
   return (
     <>
+      <div className={styles.copy}>
+        {documentToReactComponents(text as any)}
+      </div>
       {/* <div className={styles.cover}>
         <Cover />
       </div> */}
-      <div className={styles.sectionList}>
+      {/* <div className={styles.sectionList}>
         {sections.map((section: any) => (
           <Section key={section.sys.id}>
             {section.fields.type === 'Collection' && (
@@ -80,7 +100,7 @@ const Home = ({ homePage }: InferGetStaticPropsType<typeof getStaticProps>) => {
             )}
           </Section>
         ))}
-      </div>
+      </div> */}
     </>
   );
 };

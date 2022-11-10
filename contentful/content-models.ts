@@ -15,24 +15,23 @@ const asset = z.object({
       fileName: z.string(),
       url: z.string(),
     }),
+    title: z.string(),
   }),
 });
 
-const section = z.array(
-  z.object({
-    fields: z.object({
-      title: z.string(),
-      slug: z.string(),
-      type: z.string(),
-      caption: z.string(),
-      cover: asset,
-      images: z.array(asset).optional(),
-    }),
-    sys: z.object({
-      id: z.string(),
-    }),
-  })
-);
+const section = z.object({
+  fields: z.object({
+    title: z.string(),
+    slug: z.string(),
+    type: z.string(),
+    caption: z.string(),
+    cover: asset,
+    images: z.array(asset).optional(),
+  }),
+  sys: z.object({
+    id: z.string(),
+  }),
+});
 
 export const homepageModel = createContentfulModel(
   'homePage',
@@ -43,6 +42,21 @@ export const homepageModel = createContentfulModel(
       slug: z.string(),
       coverDesktop: asset,
       coverMobile: asset,
-      sections: section,
+      sections: z.array(section),
+    })
+);
+
+export const blogpostModel = createContentfulModel(
+  'blogPost',
+  '1cYqcObX5zY3LDNokbA9oD',
+  (ctx) =>
+    z.object({
+      title: z.string(),
+      slug: z.string(),
+      heading: z.string(),
+      caption: z.string(),
+      cover: asset,
+      rtext: ctx.contentfulFields.richText(),
+      blogImages: z.array(asset),
     })
 );
