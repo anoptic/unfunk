@@ -1,0 +1,21 @@
+.container {
+  padding-top: 1.5rem;
+}
+
+.container ul {
+  align-items: baseline;
+  display: flex;
+  /* gap: 2rem; */
+  justify-content: space-between;
+  line-height: 0;
+  list-style: none;
+  margin: 0;
+  /* margin-left: 15vw; */
+  padding: 0;
+}
+
+.container li {
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-left: 5vw;
+}

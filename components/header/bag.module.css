@@ -2,7 +2,9 @@
   background-color: transparent;
   border: 0;
   cursor: pointer;
-  display: inline-block;
+  /* display: inline-block; */
+  height: 40px;
   margin: 0;
+  margin-left: 15vw;
   padding: 0;
 }

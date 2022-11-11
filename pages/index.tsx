@@ -9,9 +9,9 @@ import useMatchMedia from '../hooks/useMatchmedia';
 
 interface HomeProps {
   page: any;
-  sections: any;
-  covers: any;
-  something: string;
+  // sections: any;
+  // covers: any;
+  // something: string;
 }
 
 //! clean up before merge
@@ -28,7 +28,7 @@ export const getStaticProps = async () => {
   // select: 'items',
   // });
   const response = await client.getEntry('CaPxFldqNC38EM4QU7Ju5');
-  const something = 'anything';
+  // const something = 'anything';
   // const sections = response.fields.sections;
   // console.log('**Sections Fetch**', sections);
   // const covers = {
@@ -41,7 +41,7 @@ export const getStaticProps = async () => {
       page: response,
       // sections: sections,
       // covers: covers,
-      something,
+      // something,
     },
   };
 };
@@ -50,9 +50,9 @@ const coverOverlay = {
   filter: 'brightness(0.9)',
 };
 
-const Home = ({ page, something }: HomeProps) => {
+const Home = ({ page }: HomeProps) => {
   // console.log('**Home Page**', page);
-  const matches = useMatchMedia();
+  const mobileMatches = useMatchMedia();
 
   const sections = page.fields.sections;
   const covers = {
@@ -61,31 +61,33 @@ const Home = ({ page, something }: HomeProps) => {
   };
 
   return (
-    <div className={styles.homePage}>
-      <Cover>
-        {matches ? (
-          <CoverImage source={covers.coverMobile} style={coverOverlay} />
-        ) : (
-          <CoverImage source={covers.coverDesktop} style={coverOverlay} />
-        )}
-      </Cover>
-      <div className={styles.sectionList}>
-        {sections.map((section: any) => (
-          <Section key={section.sys.id}>
-            {section.fields.type === 'Collection' && (
-              <CollectionCard section={section}>
-                <CoverImage source={section.fields.cover.fields.file.url} />
-              </CollectionCard>
-            )}
-            {section.fields.type === 'Blog' && (
-              <BlogCard section={section}>
-                <CoverImage source={section.fields.cover.fields.file.url} />
-              </BlogCard>
-            )}
-          </Section>
-        ))}
+    <>
+      <div className={styles.homePage}>
+        <Cover>
+          {mobileMatches ? (
+            <CoverImage source={covers.coverMobile} style={coverOverlay} />
+          ) : (
+            <CoverImage source={covers.coverDesktop} style={coverOverlay} />
+          )}
+        </Cover>
+        <div className={styles.sectionList}>
+          {sections.map((section: any) => (
+            <Section key={section.sys.id}>
+              {section.fields.type === 'Collection' && (
+                <CollectionCard section={section}>
+                  <CoverImage source={section.fields.cover.fields.file.url} />
+                </CollectionCard>
+              )}
+              {section.fields.type === 'Blog' && (
+                <BlogCard section={section}>
+                  <CoverImage source={section.fields.cover.fields.file.url} />
+                </BlogCard>
+              )}
+            </Section>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

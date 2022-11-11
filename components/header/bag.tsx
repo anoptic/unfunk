@@ -2,18 +2,18 @@ import { Modal } from '../../hooks/useModal';
 import ShoppingBag from './shopping-bag';
 import styles from './bag.module.css';
 
-interface BagProps {
-  modal: Modal;
+export interface MenuProps {
+  modalOpen: Modal;
   showModal: (v: Modal) => void;
 }
 
-const Bag = ({ modal, showModal }: BagProps) => {
+const Bag = ({ modalOpen, showModal }: MenuProps) => {
   return (
     <>
       <button
         className={styles.bag}
         type="button"
-        onClick={() => showModal(modal === 'cart' ? null : 'cart')}
+        onClick={() => showModal(modalOpen === 'cart' ? null : 'cart')}
       >
         <span>
           <ShoppingBag />

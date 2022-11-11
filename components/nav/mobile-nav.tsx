@@ -2,7 +2,7 @@ import styles from './mobile-nav.module.css';
 
 const MobileNav = () => {
   return (
-    <div className={styles.container}>
+    <nav className={styles.container}>
       <ul>
         <li>Home</li>
         <li>All Shoes</li>
@@ -12,7 +12,7 @@ const MobileNav = () => {
         <li>Blog</li>
         <li>About</li>
       </ul>
-    </div>
+    </nav>
   );
 };
 
