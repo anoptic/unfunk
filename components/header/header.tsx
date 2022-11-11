@@ -1,15 +1,15 @@
 import useMatchMedia from '../../hooks/useMatchmedia';
 import useModal from '../../hooks/useModal';
-import MobileNav from '../nav/mobile-nav';
-import Modal from '../nav/modal';
-import About from './about';
+import MobileNav from './mobile-nav/mobile-nav';
+import Modal from '../modal';
+import About from './desktop-nav/about';
 import Bag from './bag';
-import BlogNav from './blog-nav';
-import Cart from './cart';
-import HeaderDesktop from './header-desktop';
-import HeaderMobile from './header-mobile';
+import BlogNav from './desktop-nav/blog-nav';
+import Cart from '../cart/cart';
+import HeaderDesktop from './desktop-nav/header-desktop';
+import HeaderMobile from './mobile-nav/header-mobile';
 import styles from './header.module.css';
-import ShoesNav from './shoes-nav';
+import ShoesNav from './desktop-nav/shoes-nav';
 
 const Header = () => {
   const { modalOpen, showModal } = useModal();

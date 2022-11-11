@@ -1,15 +1,9 @@
-import useModal from '../../hooks/useModal';
 import styles from './header-mobile.module.css';
-import Cart from './cart';
-import { MenuProps } from './bag';
+import { MenuProps } from '../bag';
 import Hamburger from './hamburger';
-import Logo from './logo';
-import Modal from '../nav/modal';
-import MobileNav from '../nav/mobile-nav';
+import Logo from '../logo';
 
 const HeaderMobile = ({ modalOpen, showModal }: MenuProps) => {
-  // const { modalOpen, showModal } = useModal();
-
   return (
     <>
       <div className={styles.header}>

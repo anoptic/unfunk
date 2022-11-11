@@ -1,4 +1,4 @@
-import { Modal } from '../../hooks/useModal';
+import { Modal } from '../../../hooks/useModal';
 import DesktopItem from './desktop-item';
 import styles from './desktop-nav.module.css';
 

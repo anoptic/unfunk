@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Modal } from '../../hooks/useModal';
+import { Modal } from '../../../hooks/useModal';
 
 interface DesktopItemProps {
   showModal: (v: Modal) => void;
