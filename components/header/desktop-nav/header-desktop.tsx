@@ -1,16 +1,16 @@
 import styles from './header-desktop.module.css';
-import Bag, { MenuProps } from '../bag';
+import { MenuProps } from '../mobile-nav/header-mobile';
 import Logo from '../logo';
 import DesktopNav from './desktop-nav';
 
-const HeaderDesktop = ({ modalOpen, showModal }: MenuProps) => {
+const HeaderDesktop = () => {
   return (
     <>
       <div className={styles.header}>
         <div className={styles.logo}>
           <Logo />
         </div>
-        <DesktopNav modalOpen={modalOpen} showModal={showModal} />
+        <DesktopNav />
       </div>
     </>
   );

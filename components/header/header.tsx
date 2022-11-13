@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import useMatchMedia from '../../hooks/useMatchmedia';
 import useModal from '../../hooks/useModal';
 import MobileNav from './mobile-nav/mobile-nav';
@@ -11,27 +12,34 @@ import HeaderMobile from './mobile-nav/header-mobile';
 import styles from './header.module.css';
 import ShoesNav from './desktop-nav/shoes-nav';
 
+export type ModalContents = 'menu' | 'shoes' | 'blog' | 'about' | null;
+
 const Header = () => {
   const { modalOpen, showModal } = useModal();
+  const [modalContents, setModalContents] = useState<ModalContents>(null);
   const mobileMatches = useMatchMedia();
 
   return (
     <>
       <div className={styles.header}>
         {mobileMatches ? (
-          <HeaderMobile modalOpen={modalOpen} showModal={showModal} />
+          <HeaderMobile
+            modalOpen={modalOpen}
+            showModal={showModal}
+            setModalContents={setModalContents}
+          />
         ) : (
-          <HeaderDesktop modalOpen={modalOpen} showModal={showModal} />
+          <HeaderDesktop />
         )}
-        <Bag modalOpen={modalOpen} showModal={showModal} />
+        <Bag />
       </div>
 
       <Modal modalOpen={modalOpen} showModal={showModal}>
-        {modalOpen === 'cart' && <Cart />}
-        {modalOpen === 'menu' && <MobileNav />}
-        {modalOpen === 'shoes' && <ShoesNav />}
-        {modalOpen === 'blog' && <BlogNav />}
-        {modalOpen === 'about' && <About />}
+        {/* {modalContents === 'cart' && <Cart />} */}
+        {modalContents === 'menu' && <MobileNav />}
+        {modalContents === 'shoes' && <ShoesNav />}
+        {modalContents === 'blog' && <BlogNav />}
+        {modalContents === 'about' && <About />}
       </Modal>
     </>
   );

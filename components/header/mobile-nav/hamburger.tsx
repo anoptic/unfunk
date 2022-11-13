@@ -1,20 +1,19 @@
-import { Modal } from '../../hooks/useModal';
+// import { Modal } from '../../hooks/useModal';
 import styles from './hamburger.module.css';
+import { MenuProps } from './header-mobile';
 
-interface HamburgerProps {
-  modalOpen: Modal;
-  showModal: (v: Modal) => void;
-}
-
-const Hamburger = ({ modalOpen, showModal }: HamburgerProps) => {
+const Hamburger = ({ modalOpen, showModal, setModalContents }: MenuProps) => {
   return (
     <>
       <button
         className={`${styles.hamburger} ${styles.hamburgerSqueeze} ${
-          modalOpen === 'menu' ? styles.isActive : ''
+          modalOpen ? styles.isActive : ''
         }`}
         type="button"
-        onClick={() => showModal(modalOpen === 'menu' ? null : 'menu')}
+        onClick={() => {
+          showModal();
+          setModalContents('menu');
+        }}
       >
         <span className={styles.hamburgerBox}>
           <span className={styles.hamburgerInner}></span>

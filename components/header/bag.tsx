@@ -1,25 +1,24 @@
-import { Modal } from '../../hooks/useModal';
+// import { Modal } from '../../hooks/useModal';
+// import { ModalHook } from '../modal';
 import ShoppingBag from './shopping-bag';
 import styles from './bag.module.css';
+import Link from 'next/link';
+// import { ModalContents } from './header';
 
-export interface MenuProps {
-  modalOpen: Modal;
-  showModal: (v: Modal) => void;
-}
+// export interface MenuProps {
+//   showModal: () => void;
+//   setModalContents: (v: ModalContents) => void;
+// }
 
-const Bag = ({ modalOpen, showModal }: MenuProps) => {
+const Bag = () => {
   return (
-    <>
-      <button
-        className={styles.bag}
-        type="button"
-        onClick={() => showModal(modalOpen === 'cart' ? null : 'cart')}
-      >
+    <Link href="/cart">
+      <button className={styles.bag} type="button">
         <span>
           <ShoppingBag />
         </span>
       </button>
-    </>
+    </Link>
   );
 };
 

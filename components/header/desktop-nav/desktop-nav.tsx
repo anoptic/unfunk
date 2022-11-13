@@ -1,27 +1,52 @@
-import { Modal } from '../../../hooks/useModal';
-import DesktopItem from './desktop-item';
+import * as NavMenu from '@radix-ui/react-navigation-menu';
+// import DesktopItem from './desktop-item';
 import styles from './desktop-nav.module.css';
 
-interface DesktopNavProps {
-  modalOpen: Modal;
-  showModal: (v: Modal) => void;
-}
-
-const DesktopNav = ({ modalOpen, showModal }: DesktopNavProps) => {
+const DesktopNav = () => {
   return (
-    <nav className={styles.container}>
-      <ul>
-        <DesktopItem showModal={showModal} slug="shoes">
-          Shoes
-        </DesktopItem>
-        <DesktopItem showModal={showModal} slug="blog">
-          Blog
-        </DesktopItem>
-        <DesktopItem showModal={showModal} slug="about">
-          About
-        </DesktopItem>
-      </ul>
-    </nav>
+    <NavMenu.Root className={styles.root}>
+      <NavMenu.List className={styles.list}>
+        <NavMenu.Item className={styles.item}>
+          <NavMenu.Trigger className={styles.trigger}>Shoes</NavMenu.Trigger>
+          <NavMenu.Content className={styles.content}>
+            <ul className={styles.menu}>
+              <li>All Shoes</li>
+              <li>Casual Collection</li>
+              <li>Work Collection</li>
+              <li>Dress Collection</li>
+            </ul>
+          </NavMenu.Content>
+        </NavMenu.Item>
+
+        <NavMenu.Item className={styles.item}>
+          <NavMenu.Trigger className={styles.trigger}>Blog</NavMenu.Trigger>
+          <NavMenu.Content className={styles.content}>
+            <ul className={styles.menu}>
+              <li>Unfunktion</li>
+              <li>Moodboard: Autumn</li>
+              <li>Street Style</li>
+              <li>Hangin Around</li>
+            </ul>
+          </NavMenu.Content>
+        </NavMenu.Item>
+
+        <NavMenu.Item className={styles.item}>
+          <NavMenu.Trigger className={styles.trigger}>About</NavMenu.Trigger>
+          <NavMenu.Content className={styles.content}>
+            <ul className={styles.menu}>
+              <li>About Us</li>
+              <li>Shipping</li>
+              <li>Returns</li>
+              <li>Support</li>
+            </ul>
+          </NavMenu.Content>
+        </NavMenu.Item>
+      </NavMenu.List>
+
+      <div className={styles.viewportPosition}>
+        <NavMenu.Viewport className={styles.viewport} />
+      </div>
+    </NavMenu.Root>
   );
 };
 
