@@ -1,4 +1,4 @@
-import { createClient, EntryCollection } from 'contentful';
+import { contentfulClient } from '../contentful/client';
 import BlogCard from '../components/home/blog-card';
 import CollectionCard from '../components/home/collection-card';
 import CoverImage from '../components/home/cover-image';
@@ -9,39 +9,14 @@ import useMatchMedia from '../hooks/useMatchmedia';
 
 interface HomeProps {
   page: any;
-  // sections: any;
-  // covers: any;
-  // something: string;
 }
 
-//! clean up before merge
-
 export const getStaticProps = async () => {
-  const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID as string,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN as string,
-  });
-
-  // const response = await client.getEntries({
-  // content_type: 'homePage',
-  // include: 10,
-  // select: 'items',
-  // });
-  const response = await client.getEntry('CaPxFldqNC38EM4QU7Ju5');
-  // const something = 'anything';
-  // const sections = response.fields.sections;
-  // console.log('**Sections Fetch**', sections);
-  // const covers = {
-  //   coverMobile: response.fields.coverMobile.fields.file.url,
-  //   coverDesktop: response.fields.coverDesktop.fields.file.url,
-  // };
+  const response = await contentfulClient.getEntry('CaPxFldqNC38EM4QU7Ju5');
 
   return {
     props: {
       page: response,
-      // sections: sections,
-      // covers: covers,
-      // something,
     },
   };
 };
