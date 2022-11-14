@@ -7,7 +7,7 @@ import styles from '../styles/home.module.css';
 import Cover from '../components/cover';
 import { homepageModel, blogpostModel } from '../contentful/content-models';
 
-///* homePage EntryID: CaPxFldqNC38EM4QU7Ju5
+//* homePage EntryID: CaPxFldqNC38EM4QU7Ju5
 //* streetStyle EntryID: 1cYqcObX5zY3LDNokbA9oD
 
 //* getAll
@@ -22,29 +22,18 @@ import { homepageModel, blogpostModel } from '../contentful/content-models';
 // };
 
 //* getId - homePage
-// export const getStaticProps: GetStaticProps<{
-//   homePage: HomepageModelEntry;
-// }> = async () => {
-//   return {
-//     props: {
-//       homePage: await homepageModel.getId(),
-//     },
-//   };
-// };
-
-//* getId - blogPost
 export const getStaticProps: GetStaticProps<{
-  blogPost: BlogpostModelEntry;
+  homePage: HomepageModelEntry;
 }> = async () => {
   return {
     props: {
-      blogPost: await blogpostModel.getId(),
+      homePage: await homepageModel.getId(),
     },
   };
 };
 
-const Home = ({ blogPost }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  console.log('stuff', blogPost);
+const Home = ({ homePage }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  console.log('stuff', homePage);
   // const sections = stuff.items[0].fields.sections;
   // const sections = homePage.fields.sections;
   // console.log('sections', sections);
