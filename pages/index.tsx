@@ -12,12 +12,16 @@ import { homepageModel, blogpostModel } from '../contentful/content-models';
 interface HomeProps {
   page: any;
 }
-//* homePage EntryID: CaPxFldqNC38EM4QU7Ju5
-//* streetStyle EntryID: 1cYqcObX5zY3LDNokbA9oD
-
 export const getStaticProps = async () => {
   const response = await contentfulClient.getEntry('CaPxFldqNC38EM4QU7Ju5');
+  return {
+    props: {
+      page: response,
+    },
+  };
 
+  //* homePage EntryID: CaPxFldqNC38EM4QU7Ju5
+  //* streetStyle EntryID: 1cYqcObX5zY3LDNokbA9oD
   //* getAll
   // export const getStaticProps: GetStaticProps<{
   //   homePage: HomepageModelEntry[];
@@ -33,18 +37,18 @@ export const getStaticProps = async () => {
   // export const getStaticProps: GetStaticProps<{
   // homePage: HomepageModelEntry;
   // }> = async () => {
-  return {
-    props: {
-      page: response,
-      // homePage: await homepageModel.getId(),
-    },
-  };
+  // return {
+  //   props: {
+  //     homePage: await homepageModel.getId(),
+  //   },
+  // };
 };
 
 const coverOverlay = {
   filter: 'brightness(0.9)',
 };
 
+// const Home = ({ homePage }: InferGetStaticPropsType<typeof getStaticProps>) => {
 const Home = ({ page }: HomeProps) => {
   // console.log('**Home Page**', page);
   const mobileMatches = useMatchMedia();
@@ -54,8 +58,6 @@ const Home = ({ page }: HomeProps) => {
     coverMobile: page.fields.coverMobile.fields.file.url,
     coverDesktop: page.fields.coverDesktop.fields.file.url,
   };
-  // const Home = ({ homePage }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  // console.log('stuff', homePage);
 
   return (
     <>
