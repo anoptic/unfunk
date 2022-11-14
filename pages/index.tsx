@@ -6,17 +6,37 @@ import Section from '../components/home/section';
 import styles from './home.module.css';
 import Cover from '../components/home/cover';
 import useMatchMedia from '../hooks/useMatchmedia';
+import type { GetStaticProps, InferGetStaticPropsType } from 'next';
+import { homepageModel, blogpostModel } from '../contentful/content-models';
 
 interface HomeProps {
   page: any;
 }
+//* homePage EntryID: CaPxFldqNC38EM4QU7Ju5
+//* streetStyle EntryID: 1cYqcObX5zY3LDNokbA9oD
 
 export const getStaticProps = async () => {
   const response = await contentfulClient.getEntry('CaPxFldqNC38EM4QU7Ju5');
 
+  //* getAll
+  // export const getStaticProps: GetStaticProps<{
+  //   homePage: HomepageModelEntry[];
+  // }> = async () => {
+  //   return {
+  //     props: {
+  //       homePage: await homepageModel.getAll(),
+  //     },
+  //   };
+  // };
+
+  //* getId - homePage
+  // export const getStaticProps: GetStaticProps<{
+  // homePage: HomepageModelEntry;
+  // }> = async () => {
   return {
     props: {
       page: response,
+      // homePage: await homepageModel.getId(),
     },
   };
 };
@@ -34,6 +54,8 @@ const Home = ({ page }: HomeProps) => {
     coverMobile: page.fields.coverMobile.fields.file.url,
     coverDesktop: page.fields.coverDesktop.fields.file.url,
   };
+  // const Home = ({ homePage }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  // console.log('stuff', homePage);
 
   return (
     <>
