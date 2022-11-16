@@ -1,5 +1,4 @@
 import styles from './header-desktop.module.css';
-import { MenuProps } from '../mobile-nav/header-mobile';
 import Logo from '../logo';
 import DesktopNav from './desktop-nav';
 

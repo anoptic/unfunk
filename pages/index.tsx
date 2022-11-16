@@ -1,4 +1,4 @@
-import { contentfulClient } from '../contentful/client';
+// import { contentfulClient } from '../contentful/client';
 import BlogCard from '../components/home/blog-card';
 import CollectionCard from '../components/home/collection-card';
 import CoverImage from '../components/home/cover-image';
@@ -8,12 +8,19 @@ import Cover from '../components/home/cover';
 import useMatchMedia from '../hooks/useMatchmedia';
 import type { GetStaticProps, InferGetStaticPropsType } from 'next';
 import { homepageModel, blogpostModel } from '../contentful/content-models';
+import { createClient } from 'contentful';
 
 interface HomeProps {
   page: any;
 }
 export const getStaticProps = async () => {
-  const response = await contentfulClient.getEntry('CaPxFldqNC38EM4QU7Ju5');
+  const client = createClient({
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN as string,
+    space: process.env.CONTENTFUL_SPACE_ID as string,
+  });
+
+  const response = await client.getEntry('CaPxFldqNC38EM4QU7Ju5');
+
   return {
     props: {
       page: response,

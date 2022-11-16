@@ -1,7 +1,7 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 
 interface CoverImageProps {
-  source: string;
+  source: string | StaticImageData;
   style?: object;
 }
 interface LoaderProps {
@@ -15,8 +15,8 @@ const loader = ({ src }: LoaderProps) => {
 const CoverImage = ({ source, style }: CoverImageProps) => {
   return (
     <Image
-      loader={loader}
-      src={source}
+      // loader={loader}
+      src={`https:${source}`}
       alt="section cover"
       layout="fill"
       objectFit="cover"
