@@ -2,12 +2,16 @@ import * as NavMenu from '@radix-ui/react-navigation-menu';
 import Link from 'next/link';
 import { ReactNode } from 'react';
 import styles from './desktop-nav.module.css';
-import allShoes from '../../../public/assets/menu-images/all-shoes.jpg';
-import casualShoes from '../../../public/assets/menu-images/casual-shoes1.jpg';
-import workShoes from '../../../public/assets/menu-images/work-shoes.jpg';
-import dressShoes from '../../../public/assets/menu-images/dress-shoes.jpg';
+import CoverImage from '@/home/local-image';
 
-import CoverImage from '../../home/local-image';
+import allShoes from 'public/assets/menu-images/all-shoes.jpg';
+import casualShoes from 'public/assets/menu-images/casual-shoes1.jpg';
+import workShoes from 'public/assets/menu-images/work-shoes.jpg';
+import dressShoes from 'public/assets/menu-images/dress-shoes.jpg';
+import unfunktion from 'public/assets/menu-images/unfunktion-bg.jpg';
+import moodboard from 'public/assets/menu-images/moodboard.jpg';
+import streetStyle from 'public/assets/menu-images/street-style.jpg';
+import hanging from 'public/assets/menu-images/hanging.jpg';
 
 interface ListItemProps {
   href: string;
@@ -64,10 +68,30 @@ const DesktopNav = () => {
           <NavMenu.Trigger className={styles.trigger}>Blog</NavMenu.Trigger>
           <NavMenu.Content className={styles.content}>
             <ul className={styles.menu}>
-              <li>Unfunktion</li>
-              <li>Moodboard: Autumn</li>
-              <li>Street Style</li>
-              <li>Hangin Around</li>
+              <ListItem href="/blog/unfunktion">
+                <div className={styles.image}>
+                  <CoverImage source={unfunktion} />
+                  <div className={styles.title}>Unfunktion</div>
+                </div>
+              </ListItem>
+              <ListItem href="/blog/moodboard">
+                <div className={styles.image}>
+                  <CoverImage source={moodboard} />
+                  <div className={styles.title}>Moodboard: Autumn</div>
+                </div>
+              </ListItem>
+              <ListItem href="/blog/street-style">
+                <div className={styles.image}>
+                  <CoverImage source={streetStyle} />
+                  <div className={styles.title}>Street Style</div>
+                </div>
+              </ListItem>
+              <ListItem href="/blog/hanging">
+                <div className={styles.image}>
+                  <CoverImage source={hanging} />
+                  <div className={styles.title}>Hanging Around</div>
+                </div>
+              </ListItem>
             </ul>
           </NavMenu.Content>
         </NavMenu.Item>

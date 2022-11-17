@@ -42,13 +42,14 @@
 
 .content {
   /* height: 80%; */
-  width: 80%;
+  padding: 2rem;
+  width: 100%;
 }
 
 .menu {
   all: unset;
   display: grid;
-  gap: 1rem;
+  gap: 2rem;
   grid-template-columns: repeat(4, 1fr);
   /* height: 100%; */
   list-style: none;
@@ -66,7 +67,7 @@
 .image {
   /* grid-column-start: 1; */
   /* grid-column-end: 2; */
-  padding: 1rem 0;
+  /* padding: 1rem 0; */
   position: relative;
   /* object-fit: fill; */
 }
@@ -80,4 +81,14 @@
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
+}
+
+@media (max-width: 1200px) {
+  .content {
+    padding: 1rem;
+  }
+
+  .menu {
+    gap: 1rem;
+  }
 }

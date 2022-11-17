@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import styles from './layout.module.css';
-import Header from './header/header';
+import Header from '@/header/header';
 // import useMatchMedia from '../hooks/useMatchmedia';
 // import HeaderMobile from './header/header-mobile';
 // import HeaderDesktop from './header/header-desktop';

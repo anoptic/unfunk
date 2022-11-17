@@ -1,25 +1,26 @@
-// import { contentfulClient } from '../contentful/client';
-import BlogCard from '../components/home/blog-card';
-import CollectionCard from '../components/home/collection-card';
-import CoverImage from '../components/home/cover-image';
-import Section from '../components/home/section';
-import styles from './home.module.css';
-import Cover from '../components/home/cover';
-import useMatchMedia from '../hooks/useMatchmedia';
+import { contentfulClient } from 'contentful/client';
 import type { GetStaticProps, InferGetStaticPropsType } from 'next';
-import { homepageModel, blogpostModel } from '../contentful/content-models';
-import { createClient } from 'contentful';
+
+import BlogCard from '@/home/blog-card';
+import CollectionCard from '@/home/collection-card';
+import CoverImage from '@/home/cover-image';
+import Section from '@/home/section';
+import styles from './home.module.css';
+import Cover from '@/home/cover';
+import useMatchMedia from 'hooks/useMatchmedia';
+import { homepageModel, blogpostModel } from 'contentful/content-models';
+// import { createClient } from 'contentful';
 
 interface HomeProps {
   page: any;
 }
 export const getStaticProps = async () => {
-  const client = createClient({
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN as string,
-    space: process.env.CONTENTFUL_SPACE_ID as string,
-  });
+  // const client = createClient({
+  //   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN as string,
+  //   space: process.env.CONTENTFUL_SPACE_ID as string,
+  // });
 
-  const response = await client.getEntry('CaPxFldqNC38EM4QU7Ju5');
+  const response = await contentfulClient.getEntry('CaPxFldqNC38EM4QU7Ju5');
 
   return {
     props: {
