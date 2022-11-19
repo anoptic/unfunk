@@ -7,7 +7,7 @@
 } */
 
 .header {
-  background-color: lightyellow;
+  background-color: var(--yellow);
   display: flex;
   height: 56px;
   justify-content: space-between;

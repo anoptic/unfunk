@@ -1,28 +1,17 @@
 import styles from './header-mobile.module.css';
-// import { MenuProps } from '../bag';
 import Hamburger from './hamburger';
 import Logo from '../logo';
-import { ModalContents } from '../header';
 
 export interface MenuProps {
   modalOpen: boolean;
   showModal: () => void;
-  setModalContents: (v: ModalContents) => void;
 }
 
-const HeaderMobile = ({
-  modalOpen,
-  showModal,
-  setModalContents,
-}: MenuProps) => {
+const HeaderMobile = ({ modalOpen, showModal }: MenuProps) => {
   return (
     <>
       <div className={styles.header}>
-        <Hamburger
-          modalOpen={modalOpen}
-          showModal={showModal}
-          setModalContents={setModalContents}
-        />
+        <Hamburger modalOpen={modalOpen} showModal={showModal} />
         <div className={styles.logo}>
           <Logo />
         </div>

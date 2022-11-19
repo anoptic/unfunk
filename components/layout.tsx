@@ -1,40 +1,34 @@
-import { useEffect } from 'react';
 import styles from './layout.module.css';
 import Header from '@/header/header';
-// import useMatchMedia from '../hooks/useMatchmedia';
-// import HeaderMobile from './header/header-mobile';
-// import HeaderDesktop from './header/header-desktop';
-// import { contentfulClient } from '../contentful/client';
+import { ReactNode } from 'react';
+import Footer from '@/footer/footer';
+import Head from 'next/head';
 
-// const getImages = async () => {
-//   const response = await contentfulClient.getEntry('3yBox6imcKVyYsVAGYFWAx');
+interface LayoutProps {
+  children: ReactNode;
+}
 
-//   return {
-//     response,
-//   };
-// };
-
-const Layout = ({ children }: any) => {
-  // const mobileMatches = useMatchMedia();
-
-  // useEffect(() => {
-  //   const menuImages = getImages();
-  // }, []);
-
+const Layout = ({ children }: LayoutProps) => {
   return (
-    <div>
+    <>
+      <Head>
+        <title>Unfunk—shoes you need</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <header className={styles.header}>
         <Header />
-        <hr />
+        {/* <hr /> */}
       </header>
 
       <main>{children}</main>
 
       <footer>
         <hr />
-        <p>shoes you need</p>
+        <Footer />
       </footer>
-    </div>
+    </>
   );
 };
 

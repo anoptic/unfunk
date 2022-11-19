@@ -34,7 +34,7 @@
 
 .title {
   background-color: rgba(0, 0, 0, 0.35);
-  color: white;
+  color: var(--white);
   font-size: 3rem;
   text-align: center;
 }
@@ -49,6 +49,8 @@
 }
 
 .caption {
+  font-style: italic;
+  font-weight: 400;
   margin: 0;
   padding-top: 0.2rem;
 }

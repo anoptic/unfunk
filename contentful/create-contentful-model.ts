@@ -52,6 +52,36 @@ export function createContentfulModel<TDataIn extends {}, TDataOut>(
     return parsed.data;
   };
 
+  const getPaths = async () => {
+    const res = await contentfulClient.getEntries({
+      content_type: contentType,
+    });
+
+    const paths = res.items.map((item: any) => {
+      return {
+        params: { slug: item.fields.slug },
+      };
+    });
+
+    return {
+      paths,
+      fallback: false,
+    };
+  };
+
+  const getProps = async ({ params }: any) => {
+    const { items } = await contentfulClient.getEntries({
+      content_type: contentType,
+      'fields.slug': params.slug,
+    });
+
+    return {
+      props: {
+        blogPost: items[0],
+      },
+    };
+  };
+
   const getId = async () => {
     const response = await contentfulClient.getEntry(id);
 
@@ -64,6 +94,8 @@ export function createContentfulModel<TDataIn extends {}, TDataOut>(
     fieldsSchema,
     entrySchema,
     getAll,
+    getPaths,
+    getProps,
     getId,
   };
 }

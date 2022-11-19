@@ -46,17 +46,14 @@ export const homepageModel = createContentfulModel(
     })
 );
 
-export const blogpostModel = createContentfulModel(
-  'blogPost',
-  '1cYqcObX5zY3LDNokbA9oD',
-  (ctx) =>
-    z.object({
-      title: z.string(),
-      slug: z.string(),
-      heading: z.string(),
-      caption: z.string(),
-      cover: asset,
-      rtext: ctx.contentfulFields.richText(),
-      blogImages: z.array(asset),
-    })
+export const blogpostModel = createContentfulModel('blogPost', '', (ctx) =>
+  z.object({
+    title: z.string(),
+    slug: z.string(),
+    heading: z.string(),
+    caption: z.string(),
+    cover: asset,
+    rtext: ctx.contentfulFields.richText(),
+    blogImages: z.array(asset),
+  })
 );

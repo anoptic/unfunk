@@ -1,5 +1,5 @@
-import { contentfulClient } from 'contentful/client';
 import type { GetStaticProps, InferGetStaticPropsType } from 'next';
+import { contentfulClient } from 'contentful/client';
 
 import BlogCard from '@/home/blog-card';
 import CollectionCard from '@/home/collection-card';
@@ -9,62 +9,56 @@ import styles from './home.module.css';
 import Cover from '@/home/cover';
 import useMatchMedia from 'hooks/useMatchmedia';
 import { homepageModel, blogpostModel } from 'contentful/content-models';
-// import { createClient } from 'contentful';
 
-interface HomeProps {
-  page: any;
-}
-export const getStaticProps = async () => {
-  // const client = createClient({
-  //   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN as string,
-  //   space: process.env.CONTENTFUL_SPACE_ID as string,
-  // });
+// interface HomepageProps {
+//   homePage: InferGetStaticPropsType<typeof getStaticProps>;
+// }
+// export const getStaticProps: GetStaticProps = async () => {
+//   const response = await contentfulClient.getEntry('CaPxFldqNC38EM4QU7Ju5');
 
-  const response = await contentfulClient.getEntry('CaPxFldqNC38EM4QU7Ju5');
+//   return {
+//     props: {
+//       homePage: response,
+//     },
+//   };
+// };
+//* homePage EntryID: CaPxFldqNC38EM4QU7Ju5
+//* streetStyle EntryID: 1cYqcObX5zY3LDNokbA9oD
+//* getAll
+// export const getStaticProps: GetStaticProps<{
+//   homePage: HomepageModelEntry[];
+// }> = async () => {
+//   return {
+//     props: {
+//       homePage: await homepageModel.getAll(),
+//     },
+//   };
+// };
 
+//* getId - homePage
+export const getStaticProps: GetStaticProps<{
+  homePage: HomepageModelEntry;
+}> = async () => {
   return {
     props: {
-      page: response,
+      homePage: await homepageModel.getId(),
     },
   };
-
-  //* homePage EntryID: CaPxFldqNC38EM4QU7Ju5
-  //* streetStyle EntryID: 1cYqcObX5zY3LDNokbA9oD
-  //* getAll
-  // export const getStaticProps: GetStaticProps<{
-  //   homePage: HomepageModelEntry[];
-  // }> = async () => {
-  //   return {
-  //     props: {
-  //       homePage: await homepageModel.getAll(),
-  //     },
-  //   };
-  // };
-
-  //* getId - homePage
-  // export const getStaticProps: GetStaticProps<{
-  // homePage: HomepageModelEntry;
-  // }> = async () => {
-  // return {
-  //   props: {
-  //     homePage: await homepageModel.getId(),
-  //   },
-  // };
 };
 
 const coverOverlay = {
   filter: 'brightness(0.9)',
 };
 
-// const Home = ({ homePage }: InferGetStaticPropsType<typeof getStaticProps>) => {
-const Home = ({ page }: HomeProps) => {
-  // console.log('**Home Page**', page);
+const Home = ({ homePage }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  // const Home = ({ homePage }: HomeProps) => {
+  // console.log('**Home Page**', homePage);
   const mobileMatches = useMatchMedia();
 
-  const sections = page.fields.sections;
+  const sections = homePage.fields.sections;
   const covers = {
-    coverMobile: page.fields.coverMobile.fields.file.url,
-    coverDesktop: page.fields.coverDesktop.fields.file.url,
+    coverMobile: homePage.fields.coverMobile.fields.file.url,
+    coverDesktop: homePage.fields.coverDesktop.fields.file.url,
   };
 
   return (

@@ -68,7 +68,7 @@ const DesktopNav = () => {
           <NavMenu.Trigger className={styles.trigger}>Blog</NavMenu.Trigger>
           <NavMenu.Content className={styles.content}>
             <ul className={styles.menu}>
-              <ListItem href="/blog/unfunktion">
+              <ListItem href="/blog/event">
                 <div className={styles.image}>
                   <CoverImage source={unfunktion} />
                   <div className={styles.title}>Unfunktion</div>
@@ -80,7 +80,7 @@ const DesktopNav = () => {
                   <div className={styles.title}>Moodboard: Autumn</div>
                 </div>
               </ListItem>
-              <ListItem href="/blog/street-style">
+              <ListItem href="/blog/street">
                 <div className={styles.image}>
                   <CoverImage source={streetStyle} />
                   <div className={styles.title}>Street Style</div>

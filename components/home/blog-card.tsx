@@ -1,4 +1,3 @@
-// import Image from 'next/image';
 import Link from 'next/link';
 import sectionStyles from './section-card.module.css';
 import blogStyles from './blog-card.module.css';
@@ -24,17 +23,7 @@ const BlogCard = ({ section, children }: CardProps) => {
               {title}
             </h3>
           </div>
-          <div className={blogStyles.image}>
-            {children}
-            {/* <Image
-              src={`https:${section.fields.cover.fields.file.url}`}
-              alt="section cover"
-              layout="fill"
-              objectFit="cover"
-              placeholder="blur"
-              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkKAcAAH0AecUT9IwAAAAASUVORK5CYII="
-            /> */}
-          </div>
+          <div className={blogStyles.image}>{children}</div>
         </div>
         <p className={blogStyles.caption}>{caption}</p>
       </div>

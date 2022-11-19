@@ -14,8 +14,8 @@
 }
 
 .modal {
-  background-color: azure;
-  color: black;
+  background-color: var(--white);
+  color: var(--black);
   height: 100%;
   padding: 1rem;
   position: fixed;

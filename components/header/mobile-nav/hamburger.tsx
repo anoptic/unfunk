@@ -1,8 +1,7 @@
-// import { Modal } from '../../hooks/useModal';
 import styles from './hamburger.module.css';
 import { MenuProps } from './header-mobile';
 
-const Hamburger = ({ modalOpen, showModal, setModalContents }: MenuProps) => {
+const Hamburger = ({ modalOpen, showModal }: MenuProps) => {
   return (
     <>
       <button
@@ -12,7 +11,6 @@ const Hamburger = ({ modalOpen, showModal, setModalContents }: MenuProps) => {
         type="button"
         onClick={() => {
           showModal();
-          setModalContents('menu');
         }}
       >
         <span className={styles.hamburgerBox}>

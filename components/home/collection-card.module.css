@@ -21,7 +21,7 @@
 
 .id {
   background-color: rgba(0, 0, 0, 0.35);
-  color: white;
+  color: var(--white);
   grid-column-start: 1;
   grid-row-start: 1;
   margin: auto auto;
@@ -38,17 +38,21 @@
 }
 
 .title {
-  font-size: 5rem;
-  line-height: 4rem;
+  font-size: 6rem;
+  font-weight: 900;
+  line-height: 4.5rem;
 }
 
 .subtitle {
-  font-size: 1.4rem;
+  font-size: 2rem;
+  font-weight: 300;
   margin: 0;
   padding: 0;
 }
 
 .caption {
+  font-style: italic;
+  font-weight: 400;
   margin: 0;
   padding-left: 1rem;
   padding-top: 0.2rem;

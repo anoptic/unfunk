@@ -1,0 +1,14 @@
+.cover {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  position: relative;
+  width: 80vw;
+}
+
+.coverImage {
+  height: 80vw;
+  position: relative;
+  width: 100%;
+}
