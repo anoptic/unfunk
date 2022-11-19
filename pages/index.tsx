@@ -22,8 +22,8 @@ import { homepageModel, blogpostModel } from 'contentful/content-models';
 //     },
 //   };
 // };
+
 //* homePage EntryID: CaPxFldqNC38EM4QU7Ju5
-//* streetStyle EntryID: 1cYqcObX5zY3LDNokbA9oD
 //* getAll
 // export const getStaticProps: GetStaticProps<{
 //   homePage: HomepageModelEntry[];

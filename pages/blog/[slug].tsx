@@ -1,5 +1,4 @@
 import CoverImage from '@/home/cover-image';
-import { contentfulClient } from 'contentful/client';
 import { blogpostModel } from 'contentful/content-models';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import styles from './blogPost.module.css';
@@ -7,7 +6,7 @@ import styles from './blogPost.module.css';
 export const getStaticPaths = async () => {
   const items = await blogpostModel.getAll();
 
-  const paths = items.map((item: any) => {
+  const paths = items.map((item) => {
     return {
       params: { slug: item.fields.slug },
     };
@@ -19,7 +18,11 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({ params }: any) => {
+export const getStaticProps = async ({
+  params,
+}: {
+  params: { slug: string };
+}) => {
   const items = await blogpostModel.getAll();
 
   const item = items.filter((i) => i.fields.slug === params.slug);

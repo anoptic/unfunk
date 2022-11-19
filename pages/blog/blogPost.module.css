@@ -12,3 +12,13 @@
   position: relative;
   width: 100%;
 }
+
+@media (min-width: 900) {
+  .cover {
+    width: 60vw;
+  }
+
+  .coverImage {
+    height: 60vw;
+  }
+}

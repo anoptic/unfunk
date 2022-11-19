@@ -1,61 +1,36 @@
-import { createClient } from 'contentful';
-import Image from 'next/image';
-import styles from './blogs.module.css';
+import BlogCard from '@/home/blog-card';
+import CoverImage from '@/home/cover-image';
+import Section from '@/home/section';
+import { blogpostModel } from 'contentful/content-models';
+import { GetStaticProps, InferGetStaticPropsType } from 'next';
+import styles from './all-blogs.module.css';
 
-type LoaderProps = {
-  src: string;
-  // width: number;
-  // quality: number;
-};
-
-const loader = ({ src }: LoaderProps) => {
-  return `https:${src}`;
-};
-
-export const getStaticProps = async () => {
-  const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID as string,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN as string,
-  });
-
-  const response = await client.getEntries({
-    content_type: 'allBlogPosts',
-  });
-
+export const getStaticProps: GetStaticProps<{
+  blogPost: BlogpostModelEntry[];
+}> = async () => {
   return {
     props: {
-      stuff: response.items,
+      blogPost: await blogpostModel.getAll(),
     },
   };
 };
 
-const Home = ({ stuff }: any) => {
-  console.log(stuff[0].fields.post);
-  const posts = stuff[0].fields.post;
+const AllBlogs = ({
+  blogPost,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
+  // console.log(blogPost);
 
   return (
-    <section className={styles.blogList}>
-      {posts.map((post: any) => (
-        <article className={styles.blogCard} key={post.fields.slug}>
-          <h2 className={styles.blogTitle}>{post.fields.title}</h2>
-          <div className={styles.cardImage}>
-            <Image
-              // loader={loader}
-              // src={post.fields.heroImg.fields.file.url}
-              src={`https:${post.fields.heroImg.fields.file.url}`}
-              alt="section hero"
-              layout="fill"
-              objectFit="cover"
-              placeholder="blur"
-              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkKAcAAH0AecUT9IwAAAAASUVORK5CYII="
-              // sizes="(max-width: 600px) 100vw, 90vw"
-            />
-          </div>
-          <p>{post.fields.caption}</p>
-        </article>
+    <div className={styles.sectionList}>
+      {blogPost.map((post) => (
+        <Section key={post.sys.id}>
+          <BlogCard section={post}>
+            <CoverImage source={post.fields.cover.fields.file.url} />
+          </BlogCard>
+        </Section>
       ))}
-    </section>
+    </div>
   );
 };
 
-export default Home;
+export default AllBlogs;

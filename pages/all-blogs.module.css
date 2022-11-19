@@ -1,0 +1,53 @@
+.sectionList {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+/* .sectionCard {
+  --wide: clamp(300px, 90vw, 720px);
+  display: flex;
+  flex-direction: column;
+  margin-block: 3rem;
+  width: var(--wide);
+} */
+
+/* .sectionCard .sectionImage {
+  height: var(--wide);
+  position: relative;
+  width: 100%;
+} */
+
+/* .sectionCard .sectionId {
+  background-color: rgba(0, 0, 0, 0.35);
+  color: white;
+  padding: 1rem;
+  position: absolute;
+  text-align: center;
+  top: 30%;
+  width: 100%;
+  z-index: 2;
+} */
+/* .sectionCard .sectionTitle {
+  font-size: 3rem;
+  margin: 0;
+  padding: 0;
+}
+.sectionCard .collectionTitle {
+  font-size: 5rem;
+  line-height: 4rem;
+}
+.sectionCard .sectionSubtitle {
+  font-size: 1.4rem;
+  margin: 0;
+  padding: 0;
+}
+.sectionCard .blogTitle {
+  font-size: 1.5rem;
+  text-align: left;
+} */
+
+/* .sectionCard .sectionCaption {
+  margin: 0;
+  padding-top: 0.2rem;
+} */

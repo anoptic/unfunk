@@ -9,9 +9,7 @@ const Hamburger = ({ modalOpen, showModal }: MenuProps) => {
           modalOpen ? styles.isActive : ''
         }`}
         type="button"
-        onClick={() => {
-          showModal();
-        }}
+        onClick={() => showModal()}
       >
         <span className={styles.hamburgerBox}>
           <span className={styles.hamburgerInner}></span>
