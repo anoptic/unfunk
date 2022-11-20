@@ -57,3 +57,5 @@ export const blogpostModel = createContentfulModel('blogPost', '', (ctx) =>
     blogImages: z.array(asset),
   })
 );
+
+export type AssetType = z.infer<typeof asset>;

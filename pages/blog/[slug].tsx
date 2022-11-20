@@ -1,10 +1,11 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import CoverImage from '@/home/cover-image';
 import { blogpostModel } from 'contentful/content-models';
-import { BLOCKS } from '@contentful/rich-text-types';
-// import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
-// import { BlogPost } from 'types/blogPost';
 import styles from './blogPost.module.css';
+import StreetGallery from 'pages/blog/street-gallery';
+import EventGallery from 'pages/blog/event-gallery';
+import MoodboardGallery from 'pages/blog/moodboard-gallery';
+import HangingGallery from 'pages/blog/hanging-gallery';
 
 export const getStaticPaths = async () => {
   const items = await blogpostModel.getAll();
@@ -37,19 +38,8 @@ export const getStaticProps = async ({
   };
 };
 
-const Text = ({ children }: any) => (
-  <p className={styles.paragraph}>{children}</p>
-);
-
-const options = {
-  renderNode: {
-    [BLOCKS.PARAGRAPH]: (node: any, children: any) => <Text>{children}</Text>,
-  },
-};
-
 const BlogPost = ({ blogPost }: { blogPost: BlogpostModelEntry }) => {
-  // console.log(blogPost);
-  const { title, heading, cover, rtext, blogImages } = blogPost.fields;
+  const { title, slug, heading, cover, rtext, blogImages } = blogPost.fields;
 
   return (
     <>
@@ -61,9 +51,14 @@ const BlogPost = ({ blogPost }: { blogPost: BlogpostModelEntry }) => {
 
         <div className={styles.heading}>{heading}</div>
         <div className={styles.text}>
-          {documentToReactComponents(rtext as any, options)}
+          {documentToReactComponents(rtext as any)}
         </div>
       </div>
+
+      {slug === 'street' && <StreetGallery blogImages={blogImages} />}
+      {slug === 'event' && <EventGallery blogImages={blogImages} />}
+      {slug === 'moodboard' && <MoodboardGallery blogImages={blogImages} />}
+      {slug === 'hanging' && <HangingGallery blogImages={blogImages} />}
     </>
   );
 };

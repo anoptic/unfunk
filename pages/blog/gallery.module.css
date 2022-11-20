@@ -1,0 +1,68 @@
+.gallery {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.img {
+  height: auto;
+  position: relative;
+}
+
+.flyer {
+  aspect-ratio: 1 / 1.4;
+  margin-block-end: 3rem;
+  width: 80%;
+}
+
+.horz {
+  aspect-ratio: 1 / 0.667;
+  margin-block-end: 3rem;
+  width: 100%;
+}
+
+.horzSm {
+  aspect-ratio: 1 / 0.667;
+  margin-block-end: 3rem;
+  width: 90%;
+}
+
+.vertSlim {
+  aspect-ratio: 1 / 1.777;
+  margin-block-end: 3rem;
+  width: 75%;
+}
+
+.vert {
+  aspect-ratio: 2 / 3;
+  margin-block-end: 3rem;
+  width: 90%;
+}
+
+.groupContainer {
+  display: flex;
+  width: 100%;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.group1 {
+  margin-block-end: 0;
+}
+
+.group2 {
+  margin-block-end: 3rem;
+}
+
+.grp14 {
+  aspect-ratio: 3 / 4;
+}
+
+.grp23 {
+  aspect-ratio: 2 / 3;
+}

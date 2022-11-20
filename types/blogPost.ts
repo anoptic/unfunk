@@ -1,4 +1,5 @@
 import { asset } from 'contentful/content-models';
+import { AssetType } from 'contentful/content-models';
 import { richTextField } from 'contentful/rich-text-field';
 import { z } from 'zod';
 
@@ -30,3 +31,7 @@ export const blogPostData = z.object({
 });
 
 export type BlogPost = z.infer<typeof blogPostData>;
+
+export interface GalleryProps {
+  blogImages: AssetType[];
+}
