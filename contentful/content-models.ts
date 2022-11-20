@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import { createContentfulModel } from './create-contentful-model';
 
-const asset = z.object({
+export const asset = z.object({
   fields: z.object({
     file: z.object({
       contentType: z.string(),
