@@ -49,14 +49,16 @@ const BlogPost = ({ blogPost }: { blogPost: BlogpostModelEntry }) => {
           <div className={styles.title}>{title}</div>
         </div>
 
-        <div className={styles.heading}>{heading}</div>
-        <div className={styles.text}>
-          {documentToReactComponents(rtext as any)}
+        <div className={styles.info}>
+          <div className={styles.heading}>{heading}</div>
+          <div className={styles.text}>
+            {documentToReactComponents(rtext as any)}
+          </div>
         </div>
       </div>
 
-      {slug === 'street' && <StreetGallery blogImages={blogImages} />}
       {slug === 'event' && <EventGallery blogImages={blogImages} />}
+      {slug === 'street' && <StreetGallery blogImages={blogImages} />}
       {slug === 'moodboard' && <MoodboardGallery blogImages={blogImages} />}
       {slug === 'hanging' && <HangingGallery blogImages={blogImages} />}
     </>

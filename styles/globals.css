@@ -10,6 +10,7 @@
 
 html,
 body {
+  background-color: var(--white);
   color: var(--black);
   font-family: 'Lato', sans-serif;
   margin: 0;
