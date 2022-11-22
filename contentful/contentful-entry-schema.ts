@@ -14,9 +14,9 @@ export const contentfulEntrySchema = z.object({
     //   }),
     // }),
     id: z.string(),
-    type: z.string(),
-    createdAt: z.string(),
-    updatedAt: z.string(),
+    // type: z.string(),
+    // createdAt: z.string(),
+    // updatedAt: z.string(),
     // environment: z.object({
     //   sys: z.object({
     //     id: z.string(),

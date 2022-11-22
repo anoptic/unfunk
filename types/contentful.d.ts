@@ -15,11 +15,14 @@ type ExtractModelType<
 type HomepageModelEntry = ExtractModelType<
   typeof import('../contentful/content-models')['homepageModel']
 >;
-
 type HomepageModelFields = HomepageModelEntry['fields'];
 
 type BlogpostModelEntry = ExtractModelType<
   typeof import('../contentful/content-models')['blogpostModel']
 >;
-
 type BlogpostModelFields = BlogpostModelEntry['fields'];
+
+type CollectionModelEntry = ExtractModelType<
+  typeof import('../contentful/content-models')['collectionModel']
+>;
+type CollectionModelFields = CollectionModelEntry['fields'];

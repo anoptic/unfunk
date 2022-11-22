@@ -33,6 +33,21 @@ const section = z.object({
   }),
 });
 
+const product = z.object({
+  fields: z.object({
+    name: z.string(),
+    slug: z.string(),
+    collection: z.string(),
+    description: z.string(),
+    sku: z.string(),
+    price: z.number().int().positive(),
+    image: asset,
+  }),
+  sys: z.object({
+    id: z.string(),
+  }),
+});
+
 export const homepageModel = createContentfulModel(
   'homePage',
   'CaPxFldqNC38EM4QU7Ju5',
@@ -58,4 +73,14 @@ export const blogpostModel = createContentfulModel('blogPost', '', (ctx) =>
   })
 );
 
+export const collectionModel = createContentfulModel('collection', '', (ctx) =>
+  z.object({
+    title: z.string(),
+    slug: z.string(),
+    description: z.string(),
+    product: z.array(product),
+  })
+);
+
 export type AssetType = z.infer<typeof asset>;
+export type ProductType = z.infer<typeof product>;
