@@ -20,8 +20,8 @@ const Header = () => {
           <HeaderDesktop />
         )}
         <Bag />
-        <hr />
       </div>
+      <hr />
 
       {modalOpen && (
         <Modal>

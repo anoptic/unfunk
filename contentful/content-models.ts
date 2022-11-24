@@ -79,6 +79,31 @@ export const collectionModel = createContentfulModel('collection', '', (ctx) =>
     slug: z.string(),
     description: z.string(),
     product: z.array(product),
+    cover: asset,
+  })
+);
+
+export const allShoesModel = createContentfulModel(
+  'allShoes',
+  '5dD1hqu4qFzGqhRQbPolcT',
+  (ctx) =>
+    z.object({
+      title: z.string(),
+      slug: z.string(),
+      cover: asset,
+      shoes: z.array(product),
+    })
+);
+
+export const shoeModel = createContentfulModel('shoes', '', (ctx) =>
+  z.object({
+    name: z.string(),
+    slug: z.string(),
+    collection: z.string(),
+    description: z.string(),
+    sku: z.string(),
+    price: z.number().int().positive(),
+    image: asset,
   })
 );
 

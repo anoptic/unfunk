@@ -26,3 +26,13 @@ type CollectionModelEntry = ExtractModelType<
   typeof import('../contentful/content-models')['collectionModel']
 >;
 type CollectionModelFields = CollectionModelEntry['fields'];
+
+type AllShoesModelEntry = ExtractModelType<
+  typeof import('../contentful/content-models')['allShoesModel']
+>;
+type AllShoesModelFields = AllShoesModelEntry['fields'];
+
+type ShoeModelEntry = ExtractModelType<
+  typeof import('../contentful/content-models')['shoeModel']
+>;
+type ShoeModelFields = ShoeModelEntry['fields'];
