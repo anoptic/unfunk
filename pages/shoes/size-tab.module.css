@@ -1,0 +1,12 @@
+.selected {
+  background-color: var(--orange);
+}
+
+.item:not(.selected):hover {
+  background-color: var(--orange-lt);
+}
+
+.item {
+  /* margin: 0 auto; */
+  /* padding: 0 auto; */
+}

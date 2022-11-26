@@ -1,6 +1,7 @@
 import ImageDisplay from '@/image-display';
 import ProductChip from '@/product-chip';
 import { shoeModel } from 'contentful/content-models';
+import SizeWidget from 'pages/shoes/size-widget';
 import { shuffle } from 'utils';
 import styles from './shoes.module.css';
 
@@ -61,24 +62,38 @@ const ShoeDisplay = ({
           />
         </div>
         <div className={styles.info}>
-          <div className={styles.name}>{name}</div>
-          <div className={styles.price}>{price}</div>
-          <div className={styles.description}>{description}</div>
-          {/* <SizeWidget /> */}
-          <div className={styles.cta}>
-            <button className={styles.butBtn}>Add to Cart</button>
-            <div className={styles.sku}>{sku}</div>
+          <div>
+            <div className={styles.header}>
+              <div className={styles.name}>{name}</div>
+              <div className={styles.price}>{price}€</div>
+            </div>
+            <div className={styles.description}>{description}</div>
           </div>
-          <div>Part of the {collection} Collection</div>
+
+          <div className={styles.footer}>
+            <div className={styles.size}>
+              <SizeWidget />
+            </div>
+            <div className={styles.cta}>
+              <button className={styles.buyBtn}>Add to Cart</button>
+              <div className={styles.sku}>SKU: {sku}</div>
+            </div>
+            {/* <div className={styles.collection}>
+              Part of the {collection} Collection
+            </div> */}
+          </div>
         </div>
       </div>
-      <h3>Recommended for you:</h3>
-      <div className={styles.productList}>
-        {recommend.map((rec) => (
-          <div className={styles.productChip} key={rec.fields.slug}>
-            <ProductChip product={rec} />
-          </div>
-        ))}
+
+      <div className={styles.recommend}>
+        <div className={styles.recTitle}>Recommended for you</div>
+        <div className={styles.productList}>
+          {recommend.map((rec) => (
+            <div className={styles.productChip} key={rec.fields.slug}>
+              <ProductChip product={rec} />
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );

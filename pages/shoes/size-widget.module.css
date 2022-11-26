@@ -1,0 +1,23 @@
+.sizeList {
+  all: unset;
+  display: flex;
+  /* gap: 1rem; */
+  justify-content: space-between;
+  list-style: none;
+}
+
+.sizeList li {
+  align-items: center;
+  border: 1px solid var(--black);
+  cursor: pointer;
+  display: flex;
+  font-size: 2rem;
+  font-weight: 300;
+  justify-content: center;
+  height: 48px;
+  width: 48px;
+}
+
+/* .sizeList:not(.selected) li:hover {
+  background-color: var(--orange-lt);
+} */
