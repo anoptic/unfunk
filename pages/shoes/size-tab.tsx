@@ -1,5 +1,6 @@
 import { Sizes } from 'pages/shoes/size-widget';
 import { Dispatch, ReactNode, SetStateAction } from 'react';
+import { useState } from 'react';
 import styles from './size-tab.module.css';
 
 interface SizeTabProps {
@@ -10,8 +11,6 @@ interface SizeTabProps {
 }
 
 const SizeTab = ({ size, selected, setSelected, children }: SizeTabProps) => {
-  // console.log(children);
-
   return (
     <>
       <li

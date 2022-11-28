@@ -1,7 +1,11 @@
+import { useState } from 'react';
 import ImageDisplay from '@/image-display';
 import ProductChip from '@/product-chip';
 import { shoeModel } from 'contentful/content-models';
-import SizeWidget from 'pages/shoes/size-widget';
+// import { useAtom } from 'jotai';
+// import { Product, productAtom } from 'pages/cart';
+import useCart, { Product } from 'hooks/useCart';
+import SizeWidget, { Sizes } from 'pages/shoes/size-widget';
 import { shuffle } from 'utils';
 import styles from './shoes.module.css';
 
@@ -47,8 +51,19 @@ const ShoeDisplay = ({
   recommend: ShoeModelEntry[];
 }) => {
   // console.log(recommend);
+  const { addToCart } = useCart();
+  const [size, setSize] = useState<Sizes>(null);
+  // const [product, setProduct] = useAtom(productAtom);
   const { name, slug, description, collection, price, sku, image } =
     shoe.fields;
+
+  const selectedProduct: Product = {
+    name,
+    slug,
+    size,
+    price,
+    sku,
+  };
 
   return (
     <>
@@ -75,7 +90,12 @@ const ShoeDisplay = ({
               <SizeWidget />
             </div>
             <div className={styles.cta}>
-              <button className={styles.buyBtn}>Add to Cart</button>
+              <button
+                className={styles.buyBtn}
+                onClick={() => addToCart(selectedProduct)}
+              >
+                Add to Cart
+              </button>
               <div className={styles.sku}>SKU: {sku}</div>
             </div>
             {/* <div className={styles.collection}>
