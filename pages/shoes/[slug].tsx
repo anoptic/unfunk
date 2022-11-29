@@ -2,12 +2,11 @@ import { useState } from 'react';
 import ImageDisplay from '@/image-display';
 import ProductChip from '@/product-chip';
 import { shoeModel } from 'contentful/content-models';
-// import { useAtom } from 'jotai';
-// import { Product, productAtom } from 'pages/cart';
 import useCart, { Product } from 'hooks/useCart';
 import SizeWidget, { Sizes } from 'pages/shoes/size-widget';
 import { shuffle } from 'utils';
 import styles from './shoes.module.css';
+import { Asset } from 'contentful';
 
 export const getStaticPaths = async () => {
   const items = await shoeModel.getAll();
@@ -52,17 +51,16 @@ const ShoeDisplay = ({
 }) => {
   // console.log(recommend);
   const { addToCart } = useCart();
-  const [size, setSize] = useState<Sizes>(null);
-  // const [product, setProduct] = useAtom(productAtom);
+  const [selectedSize, setSelectedSize] = useState<Sizes>(null);
   const { name, slug, description, collection, price, sku, image } =
     shoe.fields;
 
   const selectedProduct: Product = {
     name,
     slug,
-    size,
+    size: selectedSize,
     price,
-    sku,
+    image: image as Asset,
   };
 
   return (
@@ -87,7 +85,10 @@ const ShoeDisplay = ({
 
           <div className={styles.footer}>
             <div className={styles.size}>
-              <SizeWidget />
+              <SizeWidget
+                selectedSize={selectedSize}
+                setSelectedSize={setSelectedSize}
+              />
             </div>
             <div className={styles.cta}>
               <button

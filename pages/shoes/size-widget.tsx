@@ -1,25 +1,27 @@
-import SizeTab from 'pages/shoes/size-tab';
-import { useState } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import styles from './size-widget.module.css';
 
 const sizes = ['XS', 'S', 'M', 'L', 'XL'] as const;
 export type Sizes = typeof sizes[number] | null;
+interface SizeWidgetProps {
+  selectedSize: Sizes;
+  setSelectedSize: Dispatch<SetStateAction<Sizes>>;
+}
 
-const SizeWidget = () => {
-  const [selected, setSelected] = useState<Sizes>(null);
-
+const SizeWidget = ({ selectedSize, setSelectedSize }: SizeWidgetProps) => {
   return (
     <div className={styles.widget}>
       <ul className={styles.sizeList}>
         {sizes.map((size) => (
-          <SizeTab
+          <li
             key={size}
-            size={size}
-            selected={selected}
-            setSelected={setSelected}
+            className={`${styles.item} ${
+              size === selectedSize ? styles.selected : ''
+            }`}
+            onClick={() => setSelectedSize((s) => (s = size))}
           >
             {size}
-          </SizeTab>
+          </li>
         ))}
       </ul>
     </div>

@@ -1,6 +1,11 @@
+.cartDisplay {
+  padding: 1rem;
+}
+
 .item {
+  cursor: pointer;
   display: flex;
-  gap: 3rem;
+  gap: 1rem;
 }
 
 .continue {

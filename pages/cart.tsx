@@ -2,11 +2,13 @@ import { useAtom } from 'jotai';
 import { contentsAtom } from 'hooks/useCart';
 import useCart from 'hooks/useCart';
 import Link from 'next/link';
-import { Sizes } from 'pages/shoes/size-widget';
+// import { Sizes } from 'pages/shoes/size-widget';
 import styles from './cart.module.css';
+// import CartChip from '@/cart-chip';
+import ImageDisplay from '@/image-display';
 
 const Cart = () => {
-  const { clearCart } = useCart();
+  const { clearCart, removeFromCart } = useCart();
   const [cartContents] = useAtom(contentsAtom);
   console.log('cart', cartContents);
 
@@ -14,15 +16,30 @@ const Cart = () => {
     <>
       {cartContents.length === 0 ? <p>You cart is empty</p> : null}
 
-      <div>
-        {cartContents.length > 0
-          ? cartContents.map((c) => (
-              <div key={c.sku} className={styles.item}>
-                <div>{c.name}</div>
-                <div>{c.price}</div>
+      <h2>Your Cart</h2>
+      <div className={styles.cartDisplay}>
+        {cartContents.map((c) => (
+          <div key={c.key} className={styles.item}>
+            <Link href={`/shoes/${c.slug}`}>
+              <div className={styles.image}>
+                <ImageDisplay
+                  source={c.image.fields.file.url}
+                  layout="intrinsic"
+                  height={150}
+                  width={150}
+                />
               </div>
-            ))
-          : null}
+            </Link>
+            <div>
+              <Link href={`/shoes/${c.slug}`}>
+                <div>{c.name}</div>
+              </Link>
+              <div>{c.size}</div>
+              <div>{c.price}</div>
+              <button onClick={() => removeFromCart(c.key!)}>X</button>
+            </div>
+          </div>
+        ))}
       </div>
 
       <Link href="/">

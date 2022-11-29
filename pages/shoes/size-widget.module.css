@@ -18,6 +18,10 @@
   width: 48px;
 }
 
-/* .sizeList:not(.selected) li:hover {
+.selected {
+  background-color: var(--orange);
+}
+
+.item:not(.selected):hover {
   background-color: var(--orange-lt);
-} */
+}

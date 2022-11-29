@@ -1,4 +1,6 @@
+import { Asset } from 'contentful';
 import { atom, useAtom } from 'jotai';
+import { nanoid } from 'nanoid/non-secure';
 import { Sizes } from 'pages/shoes/size-widget';
 
 export interface Product {
@@ -6,7 +8,8 @@ export interface Product {
   slug: string;
   size: Sizes;
   price: number;
-  sku: string;
+  image: Asset;
+  key?: string;
 }
 type Contents = Product[];
 
@@ -14,10 +17,11 @@ export const contentsAtom = atom([] as Contents);
 
 const useCart = () => {
   const [cartContents, setCartContents] = useAtom(contentsAtom);
-  console.log('hook', cartContents);
+  // console.log('hook', cartContents);
 
   const addToCart = (product: Product) => {
-    console.log('add', product);
+    // console.log('add', product);
+    product.key = nanoid(8);
     setCartContents([...cartContents, product]);
   };
 
@@ -25,12 +29,16 @@ const useCart = () => {
     setCartContents([]);
   };
 
-  const removeFromCart = () => {};
+  const removeFromCart = (key: string) => {
+    const newContents = cartContents.filter((c) => c.key !== key);
+    setCartContents(newContents);
+  };
 
   return {
     cartContents,
     addToCart,
     clearCart,
+    removeFromCart,
   };
 };
 

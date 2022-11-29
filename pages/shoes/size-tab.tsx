@@ -5,17 +5,24 @@ import styles from './size-tab.module.css';
 
 interface SizeTabProps {
   size: Sizes;
-  selected: Sizes;
-  setSelected: Dispatch<SetStateAction<Sizes>>;
+  selectedSize: Sizes;
+  selectSize: (asd: Sizes) => void;
   children: ReactNode;
 }
 
-const SizeTab = ({ size, selected, setSelected, children }: SizeTabProps) => {
+const SizeTab = ({
+  size,
+  selectedSize,
+  selectSize,
+  children,
+}: SizeTabProps) => {
   return (
     <>
       <li
-        className={`${styles.item} ${size === selected ? styles.selected : ''}`}
-        onClick={() => setSelected((s) => (s = size))}
+        className={`${styles.item} ${
+          size === selectedSize ? styles.selected : ''
+        }`}
+        onClick={() => selectSize(size)}
       >
         {children}
       </li>
