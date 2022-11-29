@@ -1,15 +1,193 @@
+.cartPage {
+  margin-inline: auto;
+  padding-block: 1rem;
+  width: 90vw;
+}
+
+.header {
+  margin-bottom: 1rem;
+}
+
+.pageTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.rule {
+  border: 1px solid var(--grey);
+}
+
 .cartDisplay {
-  padding: 1rem;
+  /* height: 108px; */
+  margin-bottom: 2rem;
+  /* padding: 1rem; */
+}
+
+.itemContainer {
+  height: 15vh;
+  margin-bottom: 1rem;
 }
 
 .item {
+  /* align-items: center; */
+  border: 1px solid var(--grey);
   cursor: pointer;
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
+  height: 100%;
+  margin-left: 1rem;
+  padding: 0.5rem;
 }
 
-.continue {
+.image {
+  aspect-ratio: 1 / 1;
+  display: block;
+  flex: 1 0 auto;
+}
+
+.rightSide {
+  align-items: center;
+  display: flex;
+  flex: 1 1 1;
+  gap: 1rem;
+  /* height: 100%; */
+  justify-content: space-between;
+  width: 100%;
+}
+
+.info {
+  align-content: space-between;
+  display: flex;
+  /* flex: 1 0 0; */
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  line-height: 1;
+}
+
+.nameSize {
+  /* flex: 1; */
+}
+
+.name {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.size {
+  line-height: 0.9;
+  opacity: 0.5;
+}
+
+.price {
+  /* flex: 2; */
+  font-size: 1.4rem;
+  font-weight: 300;
+  /* line-height: 1; */
+  /* padding-top: 1rem; */
+}
+
+.empty {
+  margin-bottom: 1rem;
+}
+
+/* .continue {
   color: red;
   margin: 1rem;
   padding: 0.5rem;
+} */
+
+.remove {
+  background: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.remove:hover {
+  background-color: var(--orange-lt);
+}
+
+.remove:active {
+  background-color: var(--grey);
+}
+
+.removeBox {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  position: relative;
+}
+
+.removeInner {
+  display: block;
+  top: 50%;
+  /* margin-top: -2px; */
+  transform: rotate(45deg);
+}
+
+.removeInner,
+.removeInner::after {
+  width: 40px;
+  height: 4px;
+  background-color: var(--black);
+  border-radius: 2px;
+  position: absolute;
+}
+
+.removeInner::after {
+  content: '';
+  display: block;
+  transform: rotate(90deg);
+}
+
+.total {
+  align-items: baseline;
+  display: flex;
+  /* gap: 4rem; */
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  /* margin-inline: 15vw; */
+}
+
+@media (min-width: 600px) {
+  .itemContainer {
+    height: 20vh;
+  }
+
+  .name {
+    font-size: 1.3rem;
+  }
+
+  .size {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .itemContainer {
+    height: 25vh;
+  }
+
+  /* .item {
+    margin-right: 15vh;
+  } */
+
+  .name {
+    font-size: 1.4rem;
+  }
+
+  .price {
+    font-size: 1.6rem;
+  }
+
+  /* .total {
+    gap: 33vw;
+  } */
 }
