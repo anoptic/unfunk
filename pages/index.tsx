@@ -72,7 +72,7 @@ const Home = ({ homePage }: InferGetStaticPropsType<typeof getStaticProps>) => {
           )}
         </Cover>
         <div className={styles.sectionList}>
-          {sections.map((section: any) => (
+          {sections.map((section) => (
             <Section key={section.sys.id}>
               {section.fields.type === 'Collection' && (
                 <CollectionCard section={section}>
