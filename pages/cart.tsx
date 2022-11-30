@@ -73,8 +73,10 @@ const Cart = () => {
               <div className={styles.price}>{cartTotal}€</div>
             </div>
             <div className={styles.actions}>
-              <Link href="/">
-                <button className="button">Checkout</button>
+              <Link href="/checkout">
+                <button className="button" type="button">
+                  Checkout
+                </button>
               </Link>
               <button className="button" onClick={clearCart}>
                 Clear Cart
