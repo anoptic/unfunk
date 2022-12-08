@@ -1,75 +1,53 @@
-import { useState } from 'react';
-import { Asset } from 'contentful';
 import Image from 'next/image';
 import styles from './product-carousel.module.css';
-import arrow from './arrow';
-import Arrow from './arrow';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, A11y } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/a11y';
+import { AssetType, ProductType } from 'contentful/content-models';
+import Link from 'next/link';
 
 interface CarouselProps {
-  images: Asset[];
+  images: AssetType[];
 }
 
 const ProductCarousel = ({ images }: CarouselProps) => {
-  // const [imgArray, updateImageArray] = useState(images);
-  // // console.log('carousel', images);
-
-  // const scrollRight = () => {
-  //   const newImgArray = imgArray.slice(-1).concat(imgArray.slice(0, -1));
-  //   updateImageArray(() => newImgArray);
-  // };
-
-  // const scrollLeft = () => {
-  //   const newImgArray = imgArray.slice(1).concat(imgArray.slice(0, 1));
-  //   updateImageArray(() => newImgArray);
-  // };
-
   return (
     <>
-      {/* <div> */}
-      {/* <div className={styles.carouselContainer}>
-        <div className={styles.arrowContainer}>
-          <button className={styles.arrowBtn} onClick={scrollLeft}>
-            <div className={styles.arrow}>
-              <Arrow />
-            </div>
-          </button>
-          <button className={styles.arrowBtn} onClick={scrollRight}>
-            <div className={`${styles.arrowR} ${styles.arrow}`}>
-              <Arrow />
-            </div>
-          </button>
-        </div>
-        <div className={styles.carousel}>
-          {imgArray.map((image) => (
-            <div key={image.fields.file.fileName} className={styles.image}>
-              <Image
-                src={`https:${image.fields.file.url}`}
-                alt="shoe"
-                layout="fixed"
-                height={180}
-                width={180}
-              />
-            </div>
-          ))}
-        </div>
-      </div> */}
-      {/* </div> */}
       <Swiper
-        modules={[Navigation, A11y]}
-        spaceBetween={10}
+        modules={[Navigation]}
         navigation
+        spaceBetween={10}
+        grabCursor
         loop
         // loopedSlides={8}
         slidesPerView={2}
         centeredSlides
+        // breakpoints={{
+        //   540: {
+        //     slidesPerView: 3,
+        //   },
+        //   720: {
+        //     slidesPerView: 4,
+        //   },
+        //   900: {
+        //     slidesPerView: 5,
+        //   },
+        //   1080: {
+        //     slidesPerView: 6,
+        //   },
+        //   1260: {
+        //     slidesPerView: 7,
+        //   },
+        //   1440: {
+        //     slidesPerView: 8,
+        //   },
+        // }}
       >
         {images.map((image) => (
           <SwiperSlide key={image.fields.file.fileName}>
+            {/* <Link href={`/shoes/${image.fields.description}`}> */}
             <Image
               src={`https:${image.fields.file.url}`}
               alt="shoe"
@@ -77,6 +55,7 @@ const ProductCarousel = ({ images }: CarouselProps) => {
               height={180}
               width={180}
             />
+            {/* </Link> */}
           </SwiperSlide>
         ))}
       </Swiper>

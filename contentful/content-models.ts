@@ -16,20 +16,7 @@ export const asset = z.object({
       url: z.string(),
     }),
     title: z.string(),
-  }),
-});
-
-const section = z.object({
-  fields: z.object({
-    title: z.string(),
-    slug: z.string(),
-    type: z.string(),
-    caption: z.string(),
-    cover: asset,
-    images: z.array(asset).optional(),
-  }),
-  sys: z.object({
-    id: z.string(),
+    description: z.string().optional(),
   }),
 });
 
@@ -42,6 +29,21 @@ const product = z.object({
     sku: z.string(),
     price: z.number().int().positive(),
     image: asset,
+  }),
+  sys: z.object({
+    id: z.string(),
+  }),
+});
+
+const section = z.object({
+  fields: z.object({
+    title: z.string(),
+    slug: z.string(),
+    type: z.string(),
+    caption: z.string(),
+    cover: asset,
+    images: z.array(asset).optional(),
+    // catalogItems: z.array(product).optional(),
   }),
   sys: z.object({
     id: z.string(),
@@ -109,3 +111,4 @@ export const shoeModel = createContentfulModel('shoes', '', (ctx) =>
 
 export type AssetType = z.infer<typeof asset>;
 export type ProductType = z.infer<typeof product>;
+export type SectionType = z.infer<typeof section>;
