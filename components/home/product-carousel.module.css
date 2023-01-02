@@ -1,7 +1,17 @@
 .carouselContainer {
-  /* display: flex; */
-  /* justify-content: center; */
+  /* display: grid; */
+  /* grid-template-columns: 1fr; */
   position: relative;
+  width: 100%;
+}
+
+.swiper {
+  /* position: relative; */
+  /* width: 100%; */
+}
+
+.slide {
+  flex: 1;
 }
 
 .carousel {
