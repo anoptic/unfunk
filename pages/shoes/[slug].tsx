@@ -61,6 +61,7 @@ const ShoeDisplay = ({
     size: selectedSize,
     price,
     image: image as Asset,
+    sku,
   };
 
   return (

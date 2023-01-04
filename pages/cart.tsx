@@ -10,7 +10,7 @@ const Cart = () => {
   const { clearCart, removeFromCart } = useCart();
   const [cartContents] = useAtom(contentsAtom);
   const [cartTotal] = useAtom(totalAtom);
-  console.log('cart', cartContents);
+  // console.log('cart', cartContents);
 
   return (
     <div className={styles.cartPage}>
@@ -51,6 +51,19 @@ const Cart = () => {
                       <div className={styles.size}>Size: {c.size}</div>
                     </div>
                     <div className={styles.price}>{c.price}€</div>
+                  </div>
+                  <div className={styles.qty}>
+                    <label className={styles.qtyLabel}>
+                      <span className={styles.qtyLabelText}>Qty</span>
+                      <input
+                        className={styles.qtyInput}
+                        type="number"
+                        name="quantity"
+                        id="quantity"
+                        min="1"
+                        defaultValue="1"
+                      />
+                    </label>
                   </div>
                   <div>
                     <button

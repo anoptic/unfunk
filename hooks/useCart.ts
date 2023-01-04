@@ -10,6 +10,7 @@ export interface Product {
   price: number;
   image: Asset;
   key?: string;
+  sku: string;
 }
 type Contents = Product[];
 

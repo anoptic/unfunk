@@ -155,6 +155,21 @@
   /* margin-inline: 15vw; */
 }
 
+.qtyLabel {
+  display: flex;
+  flex-direction: column;
+}
+
+.qtyLabelText {
+  margin-right: 0.5em;
+}
+
+.qtyInput {
+  background-color: var(--white);
+  border: 0;
+  width: 3rem;
+}
+
 @media (min-width: 600px) {
   .itemContainer {
     height: 20vh;
