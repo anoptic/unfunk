@@ -5,12 +5,16 @@ import Link from 'next/link';
 import styles from './cart.module.css';
 // import ImageDisplay from '@/image-display';
 import Image from 'next/image';
+import ChangeQty from 'pages/change-qty';
 
 const Cart = () => {
   const { clearCart, removeFromCart } = useCart();
   const [cartContents] = useAtom(contentsAtom);
-  const [cartTotal] = useAtom(totalAtom);
+  // const [cartTotal] = useAtom(totalAtom);
   // console.log('cart', cartContents);
+  const cartTotal = cartContents.reduce((a, b) => {
+    return (a = a + b.price * b.qty!);
+  }, 0);
 
   return (
     <div className={styles.cartPage}>
@@ -28,7 +32,7 @@ const Cart = () => {
       ) : (
         <div className={styles.cartDisplay}>
           {cartContents.map((c) => (
-            <div key={c.key} className={styles.itemContainer}>
+            <div key={c.sku} className={styles.itemContainer}>
               <div className={styles.item}>
                 <Link href={`/shoes/${c.slug}`}>
                   <div className={styles.image}>
@@ -50,29 +54,26 @@ const Cart = () => {
                       </Link>
                       <div className={styles.size}>Size: {c.size}</div>
                     </div>
-                    <div className={styles.price}>{c.price}€</div>
+
+                    <div>
+                      <div className={styles.qty}>Quantity: {c.qty}</div>
+                      <div className={styles.price}>{c.price}€</div>
+                    </div>
                   </div>
-                  <div className={styles.qty}>
-                    <label className={styles.qtyLabel}>
-                      <span className={styles.qtyLabelText}>Qty</span>
-                      <input
-                        className={styles.qtyInput}
-                        type="number"
-                        name="quantity"
-                        id="quantity"
-                        min="1"
-                        defaultValue="1"
-                      />
-                    </label>
-                  </div>
-                  <div>
+
+                  <div className={styles.buttons}>
                     <button
+                      aria-label="delete item"
                       className={styles.remove}
-                      onClick={() => removeFromCart(c.key!)}
+                      onClick={() => removeFromCart(c.sku)}
+                      type="button"
                     >
                       <span className={styles.removeBox}>
                         <span className={styles.removeInner}></span>
                       </span>
+                    </button>
+                    <button className={styles.changeQty} type="button">
+                      <ChangeQty />
                     </button>
                   </div>
                 </div>
