@@ -8,10 +8,9 @@ import Image from 'next/image';
 import ChangeQty from 'pages/change-qty';
 
 const Cart = () => {
-  const { clearCart, removeFromCart } = useCart();
+  const { clearCart, removeFromCart, updateQuantity } = useCart();
   const [cartContents] = useAtom(contentsAtom);
-  // const [cartTotal] = useAtom(totalAtom);
-  // console.log('cart', cartContents);
+
   const cartTotal = cartContents.reduce((a, b) => {
     return (a = a + b.price * b.qty!);
   }, 0);
@@ -56,15 +55,15 @@ const Cart = () => {
                     </div>
 
                     <div>
-                      <div className={styles.qty}>Quantity: {c.qty}</div>
+                      <div className={styles.qty}>Qty: {c.qty}</div>
                       <div className={styles.price}>{c.price}€</div>
                     </div>
                   </div>
 
-                  <div className={styles.buttons}>
+                  <div className={styles.itemActions}>
                     <button
                       aria-label="delete item"
-                      className={styles.remove}
+                      className={styles.itemActionBtn}
                       onClick={() => removeFromCart(c.sku)}
                       type="button"
                     >
@@ -72,8 +71,15 @@ const Cart = () => {
                         <span className={styles.removeInner}></span>
                       </span>
                     </button>
-                    <button className={styles.changeQty} type="button">
-                      <ChangeQty />
+                    <button
+                      aria-label="change quantity"
+                      className={styles.itemActionBtn}
+                      onClick={() => updateQuantity(c.sku)}
+                      type="button"
+                    >
+                      <span className={styles.buttonIcon}>
+                        <ChangeQty />
+                      </span>
                     </button>
                   </div>
                 </div>
@@ -86,7 +92,7 @@ const Cart = () => {
               <div className={styles.pageTitle}>Cart Total</div>
               <div className={styles.price}>{cartTotal}€</div>
             </div>
-            <div className={styles.actions}>
+            <div className={styles.cartActions}>
               <Link href="/checkout">
                 <button className="button" type="button">
                   Checkout
@@ -99,15 +105,6 @@ const Cart = () => {
           </div>
         </div>
       )}
-
-      {/* <div className={styles.actions}>
-        <Link href="/">
-          <button className={styles.continue}>Continue</button>
-        </Link>
-        <button className={styles.continue} onClick={clearCart}>
-          Clear Cart
-        </button>
-      </div> */}
     </div>
   );
 };
