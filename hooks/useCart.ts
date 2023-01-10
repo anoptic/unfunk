@@ -14,7 +14,6 @@ export interface Product {
 type Contents = Product[];
 
 export const contentsAtom = atom([] as Contents);
-export const totalAtom = atom(0);
 
 const useCart = () => {
   const [cartContents, setCartContents] = useAtom(contentsAtom);
@@ -26,24 +25,24 @@ const useCart = () => {
 
     if (existingItem < 0) {
       product.qty = 1;
-      setCartContents([...cartContents, product]);
+      setCartContents(() => [...cartContents, product]);
     } else {
       cartContents[existingItem].qty! += 1;
     }
   };
 
   const clearCart = () => {
-    setCartContents([]);
+    setCartContents(() => []);
   };
 
   const removeFromCart = (sku: string) => {
     const newContents = cartContents.filter((items) => items.sku !== sku);
-    setCartContents(newContents);
+    setCartContents(() => newContents);
   };
 
   const updateQuantity = (sku: string, op: string) => {
     const currentCart = [...cartContents];
-    const updateItem = cartContents.findIndex((i) => i.sku === sku);
+    const updateItem = currentCart.findIndex((i) => i.sku === sku);
     op === 'add'
       ? (currentCart[updateItem].qty! += 1)
       : (currentCart[updateItem].qty! -= 1);
