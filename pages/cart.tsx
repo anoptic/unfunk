@@ -6,6 +6,7 @@ import styles from './cart.module.css';
 // import ImageDisplay from '@/image-display';
 import Image from 'next/image';
 import ChangeQty from 'pages/change-qty';
+import * as Popover from '@radix-ui/react-popover';
 
 const Cart = () => {
   const { clearCart, removeFromCart, updateQuantity } = useCart();
@@ -14,6 +15,7 @@ const Cart = () => {
   const cartTotal = cartContents.reduce((a, b) => {
     return (a = a + b.price * b.qty!);
   }, 0);
+  // console.log(cartContents);
 
   return (
     <div className={styles.cartPage}>
@@ -71,16 +73,54 @@ const Cart = () => {
                         <span className={styles.removeInner}></span>
                       </span>
                     </button>
-                    <button
-                      aria-label="change quantity"
-                      className={styles.itemActionBtn}
-                      onClick={() => updateQuantity(c.sku)}
-                      type="button"
-                    >
-                      <span className={styles.buttonIcon}>
-                        <ChangeQty />
-                      </span>
-                    </button>
+                    <div>
+                      <Popover.Root>
+                        <Popover.Trigger asChild>
+                          <button
+                            aria-label="change quantity"
+                            className={styles.itemActionBtn}
+                            // onClick={() => updateQuantity(c.sku)}
+                            type="button"
+                          >
+                            <span className={styles.buttonIcon}>
+                              <ChangeQty />
+                            </span>
+                          </button>
+                        </Popover.Trigger>
+                        <Popover.Portal>
+                          <Popover.Content
+                            className={styles.popoverContent}
+                            align="end"
+                            side="left"
+                            sideOffset={8}
+                          >
+                            <div className={styles.changeQtyForm}>
+                              <button
+                                aria-label="subtract quantity"
+                                className={styles.itemActionBtn}
+                                onClick={() => updateQuantity(c.sku, 'add')}
+                                type="button"
+                              >
+                                <span className={styles.removeBox}>
+                                  <span className={styles.addInner}></span>
+                                </span>
+                              </button>
+                              <p className={styles.popoverQty}>{c.qty}</p>
+                              <button
+                                aria-label="subtract quantity"
+                                className={styles.itemActionBtn}
+                                onClick={() => updateQuantity(c.sku, 'sub')}
+                                type="button"
+                              >
+                                <span className={styles.removeBox}>
+                                  <span className={styles.subtractInner}></span>
+                                </span>
+                              </button>
+                            </div>
+                          </Popover.Content>
+                        </Popover.Portal>
+                      </Popover.Root>
+                    </div>
                   </div>
                 </div>
               </div>

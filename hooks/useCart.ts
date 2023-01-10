@@ -41,9 +41,15 @@ const useCart = () => {
     setCartContents(newContents);
   };
 
-  const updateQuantity = (x: any) => {
-    console.log(x);
-    // return (product.qty! += 1);
+  const updateQuantity = (sku: string, op: string) => {
+    const currentCart = [...cartContents];
+    const updateItem = cartContents.findIndex((i) => i.sku === sku);
+    op === 'add'
+      ? (currentCart[updateItem].qty! += 1)
+      : (currentCart[updateItem].qty! -= 1);
+    currentCart[updateItem].qty! > 0
+      ? setCartContents(() => currentCart)
+      : setCartContents(() => currentCart.filter((j) => j.sku !== sku));
   };
 
   return {
