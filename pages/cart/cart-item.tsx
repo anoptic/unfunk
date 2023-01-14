@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import * as Popover from '@radix-ui/react-popover';
 import useCart, { Product } from 'hooks/useCart';
-import styles from './cart.module.css';
+import styles from './cart-item.module.css';
 import ChangeQty from 'pages/cart/change-qty';
 
 interface CartItemProps {
@@ -70,13 +70,15 @@ const CartItem = ({ item }: CartItemProps) => {
                 <Popover.Portal>
                   <Popover.Content
                     className={styles.popoverContent}
-                    align="end"
                     side="left"
-                    sideOffset={8}
+                    sideOffset={16}
+                    align="end"
+                    alignOffset={-4}
                   >
+                    <h4 className={styles.popoverTitle}>Change Quantity</h4>
                     <div className={styles.changeQtyForm}>
                       <button
-                        aria-label="subtract quantity"
+                        aria-label="add quantity"
                         className={styles.itemActionBtn}
                         onClick={() => updateQuantity(item.sku, 'add')}
                         type="button"

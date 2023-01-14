@@ -1,0 +1,24 @@
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  inset: 0;
+  position: fixed;
+}
+
+.content {
+  background-color: var(--white);
+  border: 3px solid var(--orange);
+  border-radius: 8px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.75);
+  color: var(--black);
+  padding: 1rem;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+}
+
+.cancel {
+  margin: 1em auto 0;
+}

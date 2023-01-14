@@ -7,6 +7,7 @@ import SizeWidget, { Sizes } from 'pages/shoes/size-widget';
 import { shuffle } from 'utils';
 import styles from './shoes.module.css';
 import { Asset } from 'contentful';
+import SizeAlert from 'pages/shoes/size-alert';
 
 export const getStaticPaths = async () => {
   const items = await shoeModel.getAll();
@@ -52,6 +53,7 @@ const ShoeDisplay = ({
   // console.log(recommend);
   const { addToCart } = useCart();
   const [selectedSize, setSelectedSize] = useState<Sizes>(null);
+  const [alertOpen, setAlertOpen] = useState(false);
   const { name, slug, description, collection, price, sku, image } =
     shoe.fields;
 
@@ -64,8 +66,24 @@ const ShoeDisplay = ({
     sku,
   };
 
+  const checkSize = () => {
+    if (!selectedSize) {
+      setAlertOpen(true);
+
+      // console.log('Please select a size to add item to cart');
+      return;
+    }
+    addToCart(selectedProduct);
+  };
+
+  const closeAlert = () => {
+    setAlertOpen(false);
+  };
+
   return (
     <>
+      <SizeAlert open={alertOpen} closeAlert={closeAlert} />
+
       <div className={styles.card}>
         <div className={styles.image}>
           <ImageDisplay
@@ -93,8 +111,10 @@ const ShoeDisplay = ({
             </div>
             <div className={styles.cta}>
               <button
-                className={styles.buyBtn}
-                onClick={() => addToCart(selectedProduct)}
+                className="button"
+                type="button"
+                // onClick={() => addToCart(selectedProduct)}
+                onClick={() => checkSize()}
               >
                 Add to Cart
               </button>

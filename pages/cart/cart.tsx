@@ -1,6 +1,5 @@
 import { useAtom } from 'jotai';
-import { contentsAtom } from 'hooks/useCart';
-import useCart from 'hooks/useCart';
+import useCart, { contentsAtom } from 'hooks/useCart';
 import Link from 'next/link';
 import styles from './cart.module.css';
 import CartItem from 'pages/cart/cart-item';
