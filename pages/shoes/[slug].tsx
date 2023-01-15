@@ -8,6 +8,7 @@ import { shuffle } from 'utils';
 import styles from './shoes.module.css';
 import { Asset } from 'contentful';
 import SizeAlert from 'pages/shoes/size-alert';
+import AddedToast from 'pages/shoes/added-toast';
 
 export const getStaticPaths = async () => {
   const items = await shoeModel.getAll();
@@ -50,10 +51,10 @@ const ShoeDisplay = ({
   shoe: ShoeModelEntry;
   recommend: ShoeModelEntry[];
 }) => {
-  // console.log(recommend);
   const { addToCart } = useCart();
   const [selectedSize, setSelectedSize] = useState<Sizes>(null);
   const [alertOpen, setAlertOpen] = useState(false);
+  const [toastOpen, setToastOpen] = useState(false);
   const { name, slug, description, collection, price, sku, image } =
     shoe.fields;
 
@@ -69,20 +70,24 @@ const ShoeDisplay = ({
   const checkSize = () => {
     if (!selectedSize) {
       setAlertOpen(true);
-
-      // console.log('Please select a size to add item to cart');
       return;
     }
     addToCart(selectedProduct);
+    setToastOpen(true);
   };
 
   const closeAlert = () => {
     setAlertOpen(false);
   };
 
+  const closeToast = () => {
+    setToastOpen(false);
+  };
+
   return (
     <>
       <SizeAlert open={alertOpen} closeAlert={closeAlert} />
+      <AddedToast open={toastOpen} closeToast={closeToast} />
 
       <div className={styles.card}>
         <div className={styles.image}>
@@ -113,7 +118,6 @@ const ShoeDisplay = ({
               <button
                 className="button"
                 type="button"
-                // onClick={() => addToCart(selectedProduct)}
                 onClick={() => checkSize()}
               >
                 Add to Cart

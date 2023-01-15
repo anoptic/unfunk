@@ -7,8 +7,6 @@ interface SizeAlertProps {
 }
 
 const SizeAlert = ({ open, closeAlert }: SizeAlertProps) => {
-  // console.log(props);
-
   return (
     <AlertDialog.Root open={open} onOpenChange={closeAlert}>
       {/* <AlertDialog.Trigger /> */}
