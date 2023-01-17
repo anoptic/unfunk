@@ -8,7 +8,9 @@ import { shuffle } from 'utils';
 import styles from './shoes.module.css';
 import { Asset } from 'contentful';
 import SizeAlert from 'pages/shoes/size-alert';
-import AddedToast from 'pages/shoes/added-toast';
+// import AddedToast from 'pages/shoes/added-toast';
+import MessageToast from '@/message-toast';
+import useToast from 'hooks/useToast';
 
 export const getStaticPaths = async () => {
   const items = await shoeModel.getAll();
@@ -54,7 +56,8 @@ const ShoeDisplay = ({
   const { addToCart } = useCart();
   const [selectedSize, setSelectedSize] = useState<Sizes>(null);
   const [alertOpen, setAlertOpen] = useState(false);
-  const [toastOpen, setToastOpen] = useState(false);
+  // const [toastOpen, setToastOpen] = useState(false);
+  const { toastOpen, openToast, closeToast } = useToast();
   const { name, slug, description, collection, price, sku, image } =
     shoe.fields;
 
@@ -73,21 +76,25 @@ const ShoeDisplay = ({
       return;
     }
     addToCart(selectedProduct);
-    setToastOpen(true);
+    // setToastOpen(true);
+    openToast();
   };
 
   const closeAlert = () => {
     setAlertOpen(false);
   };
 
-  const closeToast = () => {
-    setToastOpen(false);
-  };
+  // const closeToast = () => {
+  //   setToastOpen(false);
+  // };
 
   return (
     <>
       <SizeAlert open={alertOpen} closeAlert={closeAlert} />
-      <AddedToast open={toastOpen} closeToast={closeToast} />
+      {/* <AddedToast open={toastOpen} closeToast={closeToast} /> */}
+      <MessageToast open={toastOpen} closeToast={closeToast}>
+        <p>Item has been added to your shopping cart!</p>
+      </MessageToast>
 
       <div className={styles.card}>
         <div className={styles.image}>
