@@ -17,8 +17,10 @@ body {
   background-color: var(--white);
   color: var(--black);
   font-family: 'Lato', sans-serif;
+  height: 100%;
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 
 a {
@@ -38,6 +40,7 @@ a {
   font-weight: 700;
   height: 40px;
   padding-inline: 1.5rem;
+  text-align: center;
 }
 
 .button:hover {
@@ -49,7 +52,3 @@ a {
   background-color: var(--blue-dk);
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
-
-/* .swiper {
-  width: 100%;
-} */

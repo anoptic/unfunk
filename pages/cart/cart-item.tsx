@@ -50,7 +50,7 @@ const CartItem = ({ item }: CartItemProps) => {
                 onClick={() => removeFromCart(item.sku)}
                 type="button"
               >
-                <span className={styles.removeBox}>
+                <span className={styles.iconBox}>
                   <span className={styles.removeInner}></span>
                 </span>
               </button>
@@ -83,8 +83,10 @@ const CartItem = ({ item }: CartItemProps) => {
                           onClick={() => updateQuantity(item.sku, 'add')}
                           type="button"
                         >
-                          <span className={styles.removeBox}>
-                            <span className={styles.addInner}></span>
+                          <span className={styles.iconBox}>
+                            <span
+                              className={`${styles.addInner} ${styles.inner}`}
+                            ></span>
                           </span>
                         </button>
                         <p className={styles.popoverQty}>{item.qty}</p>
@@ -94,8 +96,8 @@ const CartItem = ({ item }: CartItemProps) => {
                           onClick={() => updateQuantity(item.sku, 'subtract')}
                           type="button"
                         >
-                          <span className={styles.removeBox}>
-                            <span className={styles.subtractInner}></span>
+                          <span className={styles.iconBox}>
+                            <span className={styles.inner}></span>
                           </span>
                         </button>
                       </div>

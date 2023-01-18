@@ -1,17 +1,23 @@
-.layout {
-  /* overflow-y: scroll; */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .header {
-  /* background-color: var(--red); */
-  /* left: 0; */
+  flex-grow: 0;
+  flex-shrink: 0;
   position: sticky;
-  /* right: 0; */
   top: 0;
   width: 100%;
   z-index: 9;
 }
 
 .main {
-  /* width: 100vw; */
+  flex-grow: 1;
+}
+
+.footer {
+  flex-grow: 0;
+  flex-shrink: 0;
 }

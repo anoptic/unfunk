@@ -1,25 +1,30 @@
 .viewport {
-  bottom: 0;
-  right: 0;
+  all: unset;
+  left: 50%;
   list-style: none;
   margin-right: 1rem;
   position: fixed;
-  /* transform: translate(-50%, -50%); */
+  top: 25%;
+  transform: translateX(-50%);
   width: max-content;
   z-index: 9;
 }
 
 .root {
+  align-items: center;
   background-color: var(--white);
   border: 1px solid var(--blue);
-  /* border-radius: 8px; */
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.75);
   color: var(--black);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 1rem;
 }
 
-@media (max-width: 599px) {
-  .viewport {
-    top: 25%;
-  }
+.close {
+  font-size: 1rem;
+  margin-top: 0.25em;
+  padding-inline: 1em;
+  width: 40px;
 }

@@ -17,17 +17,19 @@ const Layout = ({ children }: LayoutProps) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header className={styles.header}>
-        <Header />
-        {/* <hr /> */}
-      </header>
+      <div className={styles.wrapper}>
+        <header className={styles.header}>
+          <Header />
+          {/* <hr /> */}
+        </header>
 
-      <main>{children}</main>
+        <main className={styles.main}>{children}</main>
 
-      <footer>
-        <hr />
-        <Footer />
-      </footer>
+        <footer className={styles.footer}>
+          <hr />
+          <Footer />
+        </footer>
+      </div>
     </>
   );
 };

@@ -15,10 +15,9 @@ const MessageToast = ({ open, closeToast, children }: ToastProps) => {
         open={open}
         onOpenChange={closeToast}
         className={styles.root}
-        duration={2000}
+        duration={3000}
       >
         <Toast.Description className={styles.desc}>
-          {/* Item has been added to your shopping cart! */}
           {children}
         </Toast.Description>
         {/* <Toast.Close asChild className={styles.close}>
