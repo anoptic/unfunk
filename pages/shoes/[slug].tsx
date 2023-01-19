@@ -7,9 +7,10 @@ import SizeWidget, { Sizes } from 'pages/shoes/size-widget';
 import { shuffle } from 'utils';
 import styles from './shoes.module.css';
 import { Asset } from 'contentful';
-import SizeAlert from 'pages/shoes/size-alert';
-import MessageToast from '@/message-toast';
 import useToast from 'hooks/useToast';
+import MessageToast from '@/toast';
+import useAlert from 'hooks/useAlert';
+import Alert from '@/alert';
 
 export const getStaticPaths = async () => {
   const items = await shoeModel.getAll();
@@ -54,8 +55,8 @@ const ShoeDisplay = ({
 }) => {
   const { addToCart } = useCart();
   const { toastOpen, openToast, closeToast } = useToast();
+  const { alertOpen, openAlert, closeAlert } = useAlert();
   const [selectedSize, setSelectedSize] = useState<Sizes>(null);
-  const [alertOpen, setAlertOpen] = useState(false);
   const { name, slug, description, collection, price, sku, image } =
     shoe.fields;
 
@@ -70,22 +71,20 @@ const ShoeDisplay = ({
 
   const checkSize = () => {
     if (!selectedSize) {
-      setAlertOpen(true);
+      openAlert();
       return;
     }
     addToCart(selectedProduct);
     openToast();
   };
 
-  const closeAlert = () => {
-    setAlertOpen(false);
-  };
-
   return (
     <>
-      <SizeAlert open={alertOpen} closeAlert={closeAlert} />
+      <Alert open={alertOpen} closeAlert={closeAlert}>
+        Please select a size before adding item to cart
+      </Alert>
       <MessageToast open={toastOpen} closeToast={closeToast}>
-        <p>Item has been added to your shopping cart!</p>
+        Item has been added to your shopping cart!
       </MessageToast>
 
       <div className={styles.card}>

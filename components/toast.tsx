@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import * as Toast from '@radix-ui/react-toast';
-import styles from './message-toast.module.css';
+import styles from './toast.module.css';
 
 interface ToastProps {
   open: boolean;

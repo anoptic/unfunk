@@ -1,12 +1,14 @@
+import { ReactNode } from 'react';
 import * as AlertDialog from '@radix-ui/react-alert-dialog';
-import styles from './size-alert.module.css';
+import styles from './alert.module.css';
 
-interface SizeAlertProps {
+interface AlertProps {
   open: boolean;
   closeAlert: () => void;
+  children: ReactNode;
 }
 
-const SizeAlert = ({ open, closeAlert }: SizeAlertProps) => {
+const Alert = ({ open, closeAlert, children }: AlertProps) => {
   return (
     <AlertDialog.Root open={open} onOpenChange={closeAlert}>
       {/* <AlertDialog.Trigger /> */}
@@ -14,9 +16,7 @@ const SizeAlert = ({ open, closeAlert }: SizeAlertProps) => {
         <AlertDialog.Overlay className={styles.overlay} />
         <AlertDialog.Content className={styles.content}>
           {/* <AlertDialog.Title /> */}
-          <AlertDialog.Description>
-            Please select a size before adding item to cart
-          </AlertDialog.Description>
+          <AlertDialog.Description>{children}</AlertDialog.Description>
           <AlertDialog.Cancel asChild className={styles.cancel}>
             <button className="button" type="button">
               OK
@@ -29,4 +29,4 @@ const SizeAlert = ({ open, closeAlert }: SizeAlertProps) => {
   );
 };
 
-export default SizeAlert;
+export default Alert;
