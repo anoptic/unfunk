@@ -7,19 +7,40 @@
 }
 
 .list {
-  align-items: flex-end;
+  /* align-items: flex-end; */
   display: flex;
   list-style: none;
 
   margin: 0;
   padding: 0;
+  padding-bottom: 0.2rem;
 }
 
 .trigger {
   background-color: transparent;
   border: 0;
+  display: block;
   font-size: 1.2rem;
-  width: 10vw;
+  margin-inline: 2rem;
+  padding: 0;
+  width: 64px;
+}
+
+.trigger::after {
+  background-color: var(--black);
+  content: '';
+  display: block;
+  height: 4px;
+  /* left: 0; */
+  position: absolute;
+  /* transform: translateX(42.5%); */
+  transition: width 150ms ease;
+  width: 0;
+}
+
+.trigger:hover::after,
+.trigger:focus::after {
+  width: 64px;
 }
 
 .viewportContainer {
@@ -28,6 +49,7 @@
   position: fixed;
   top: 58px;
   transform-origin: top center;
+  transition: width 1s;
   width: 100%;
 }
 
@@ -38,6 +60,13 @@
   /* height: 100%; */
   justify-content: center;
   overflow: hidden;
+  transform-origin: top center;
+}
+.viewport[data-state='open'] {
+  animation: slideIn 300ms ease-in-out;
+}
+.viewport[data-state='closed'] {
+  animation: slideOut 300ms ease-in-out;
 }
 
 .content {
@@ -95,5 +124,22 @@
 
   .menu {
     gap: 1rem;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100vw);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100vw);
   }
 }

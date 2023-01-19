@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import ImageDisplay from '@/image-display';
+import Image from 'next/image';
 import ProductChip from '@/product-chip';
 import { shoeModel } from 'contentful/content-models';
 import useCart, { Product } from 'hooks/useCart';
@@ -89,8 +89,9 @@ const ShoeDisplay = ({
 
       <div className={styles.card}>
         <div className={styles.image}>
-          <ImageDisplay
-            source={image.fields.file.url}
+          <Image
+            src={`https:${shoe.fields.image.fields.file.url}`}
+            alt={shoe.fields.name}
             layout="intrinsic"
             height={300}
             width={300}

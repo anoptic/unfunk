@@ -28,6 +28,7 @@ const Footer = () => {
             </div>
           </div>
           <div className={styles.signup}>
+            <div></div>
             <div className={styles.cta}>
               <p className={styles.ctaTitle}>Sign-up for our Newsletter</p>
               <p className={styles.ctaInfo}>
@@ -51,6 +52,7 @@ const Footer = () => {
                 </button>
               </form>
             </div>
+            <div></div>
           </div>
         </div>
       </div>

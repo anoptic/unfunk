@@ -5,6 +5,7 @@ const Hamburger = ({ modalOpen, showModal }: MenuProps) => {
   return (
     <>
       <button
+        aria-label="navigation menu"
         className={`${styles.hamburger} ${styles.hamburgerSqueeze} ${
           modalOpen ? styles.isActive : ''
         }`}

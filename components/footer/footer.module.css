@@ -5,17 +5,13 @@
 
 .logoContainer {
   display: flex;
-  /* height: auto; */
   justify-content: flex-start;
-  /* padding: 0; */
-  /* width: auto; */
 }
 
 .logo {
   align-items: center;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   margin: 0;
   transform-origin: 0 0;
   transform: scale(0.8);
@@ -28,12 +24,17 @@
 }
 
 .signup {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   margin-top: 1rem;
+  width: 100%;
+}
+
+.cta {
+  width: auto;
 }
 
 .email {
-  /* border: 1px solid black; */
-  /* box-sizing: border-box; */
   height: 40px;
   padding: 0;
   width: 320px;
@@ -47,19 +48,17 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  /* grid-template-columns: 2fr 1fr; */
   margin-top: 0.5rem;
 }
 
 @media (min-width: 600px) {
   .signup {
-    max-width: 60%;
+    margin-bottom: 1rem;
   }
 
-  /* .btn {
-    font-size: 1rem;
-    height: auto;
-  } */
+  .cta {
+    border-top: 1px solid black;
+  }
 
   .form {
     align-items: center;
