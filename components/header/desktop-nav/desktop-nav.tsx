@@ -29,6 +29,11 @@ const ListItem = ({ href, children }: ListItemProps) => {
 };
 
 const DesktopNav = () => {
+
+  const handleMouseOver = () => {
+
+  }
+  
   return (
     <NavMenu.Root className={styles.root}>
       <NavMenu.List className={styles.list}>

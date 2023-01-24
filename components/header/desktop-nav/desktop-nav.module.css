@@ -31,15 +31,12 @@
   content: '';
   display: block;
   height: 4px;
-  /* left: 0; */
   position: absolute;
-  /* transform: translateX(42.5%); */
   transition: width 150ms ease;
   width: 0;
 }
 
-.trigger:hover::after,
-.trigger:focus::after {
+.trigger[data-state='open']::after {
   width: 64px;
 }
 
@@ -48,9 +45,10 @@
   left: 0;
   position: fixed;
   top: 58px;
-  transform-origin: top center;
-  transition: width 1s;
+  transform-origin: top;
+  /* transition: width 1s; */
   width: 100%;
+  /* z-index: -999; */
 }
 
 .viewport {
@@ -60,13 +58,17 @@
   /* height: 100%; */
   justify-content: center;
   overflow: hidden;
+  position: absolute;
+  top: 0;
   transform-origin: top center;
+  width: 100%;
+  /* z-index: -1; */
 }
 .viewport[data-state='open'] {
-  animation: slideIn 300ms ease-in-out;
+  animation: viewportIn 200ms ease;
 }
 .viewport[data-state='closed'] {
-  animation: slideOut 300ms ease-in-out;
+  animation: viewportOut 200ms ease;
 }
 
 .content {
@@ -127,19 +129,23 @@
   }
 }
 
-@keyframes slideIn {
+@keyframes viewportIn {
   from {
-    transform: translateX(100vw);
+    opacity: 0;
+    transform: scaleY(0);
   }
   to {
-    transform: translateX(0);
+    opacity: 1;
+    transform: scaleY(1);
   }
 }
-@keyframes slideOut {
+@keyframes viewportOut {
   from {
-    transform: translateX(0);
+    opacity: 1;
+    transform: scaleY(1);
   }
   to {
-    transform: translateX(100vw);
+    opacity: 0;
+    transform: scaleY(0);
   }
 }
