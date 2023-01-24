@@ -2,7 +2,9 @@ import * as NavMenu from '@radix-ui/react-navigation-menu';
 import Link from 'next/link';
 import { ReactNode } from 'react';
 import styles from './desktop-nav.module.css';
-import CoverImage from '@/home/local-image';
+// import CoverImage from '@/home/local-image';
+import Image from 'next/image';
+import Logo from '../logo';
 
 import allShoes from 'public/assets/menu-images/all-shoes.jpg';
 import casualShoes from 'public/assets/menu-images/casual-shoes1.jpg';
@@ -29,11 +31,6 @@ const ListItem = ({ href, children }: ListItemProps) => {
 };
 
 const DesktopNav = () => {
-
-  const handleMouseOver = () => {
-
-  }
-  
   return (
     <NavMenu.Root className={styles.root}>
       <NavMenu.List className={styles.list}>
@@ -42,27 +39,55 @@ const DesktopNav = () => {
           <NavMenu.Content className={styles.content}>
             <ul className={styles.menu}>
               <ListItem href="/all-shoes">
-                <div className={styles.image}>
-                  <CoverImage source={allShoes} />
-                  <div className={styles.title}>All Shoes</div>
+                <div className={styles.card}>
+                  {/* <CoverImage source={allShoes} /> */}
+                  <Image
+                    src={allShoes}
+                    alt="all shoes"
+                    className={styles.image}
+                  />
+                  <div className={styles.title}>
+                    <span className={styles.superTitle}>All</span> <br /> Shoes
+                  </div>
                 </div>
               </ListItem>
               <ListItem href="/collections/casual">
-                <div className={styles.image}>
-                  <CoverImage source={casualShoes} />
-                  <div className={styles.title}>Casual Collection</div>
+                <div className={styles.card}>
+                  {/* <CoverImage source={casualShoes} /> */}
+                  <Image
+                    src={casualShoes}
+                    alt="casual shoes"
+                    className={styles.image}
+                  />
+                  <div className={styles.title}>
+                    <span className={styles.superTitle}>Casual</span> Collection
+                  </div>
                 </div>
               </ListItem>
               <ListItem href="/collections/work">
-                <div className={styles.image}>
-                  <CoverImage source={workShoes} />
-                  <div className={styles.title}>Work Collection</div>
+                <div className={styles.card}>
+                  {/* <CoverImage source={workShoes} /> */}
+                  <Image
+                    src={workShoes}
+                    alt="work shoes"
+                    className={styles.image}
+                  />
+                  <div className={styles.title}>
+                    <span className={styles.superTitle}>Work</span> Collection
+                  </div>
                 </div>
               </ListItem>
               <ListItem href="/collections/dress">
-                <div className={styles.image}>
-                  <CoverImage source={dressShoes} />
-                  <div className={styles.title}>Dress Collection</div>
+                <div className={styles.card}>
+                  {/* <CoverImage source={dressShoes} /> */}
+                  <Image
+                    src={dressShoes}
+                    alt="dress shoes"
+                    className={styles.image}
+                  />
+                  <div className={styles.title}>
+                    <span className={styles.superTitle}>Dress</span> Collection
+                  </div>
                 </div>
               </ListItem>
             </ul>
@@ -74,27 +99,59 @@ const DesktopNav = () => {
           <NavMenu.Content className={styles.content}>
             <ul className={styles.menu}>
               <ListItem href="/blog/event">
-                <div className={styles.image}>
-                  <CoverImage source={unfunktion} />
-                  <div className={styles.title}>Unfunktion</div>
+                <div className={styles.card}>
+                  {/* <CoverImage source={unfunktion} /> */}
+                  <Image
+                    src={unfunktion}
+                    alt="unfunktion event"
+                    className={styles.image}
+                  />
+                  <div className={`${styles.title} ${styles.unfunk}`}>
+                    Unfunktion
+                  </div>
                 </div>
               </ListItem>
               <ListItem href="/blog/moodboard">
-                <div className={styles.image}>
-                  <CoverImage source={moodboard} />
-                  <div className={styles.title}>Moodboard: Autumn</div>
+                <div className={styles.card}>
+                  {/* <CoverImage source={moodboard} /> */}
+                  <Image
+                    src={moodboard}
+                    alt="moodboard autumn"
+                    className={styles.image}
+                  />
+                  <div
+                    className={`${styles.title} ${styles.moodboard} ${styles.blogTitle}`}
+                  >
+                    Moodboard: Autumn
+                  </div>
                 </div>
               </ListItem>
               <ListItem href="/blog/street">
-                <div className={styles.image}>
-                  <CoverImage source={streetStyle} />
-                  <div className={styles.title}>Street Style</div>
+                <div className={styles.card}>
+                  {/* <CoverImage source={streetStyle} /> */}
+                  <Image
+                    src={streetStyle}
+                    alt="street style"
+                    className={styles.image}
+                  />
+                  <div className={`${styles.title} ${styles.blogTitle}`}>
+                    Street Style
+                  </div>
                 </div>
               </ListItem>
               <ListItem href="/blog/hanging">
-                <div className={styles.image}>
-                  <CoverImage source={hanging} />
-                  <div className={styles.title}>Hanging Around</div>
+                <div className={styles.card}>
+                  {/* <CoverImage source={hanging} /> */}
+                  <Image
+                    src={hanging}
+                    alt="hanging around"
+                    className={styles.image}
+                  />
+                  <div
+                    className={`${styles.title} ${styles.hanging} ${styles.blogTitle}`}
+                  >
+                    Hanging Around
+                  </div>
                 </div>
               </ListItem>
             </ul>
@@ -105,10 +162,39 @@ const DesktopNav = () => {
           <NavMenu.Trigger className={styles.trigger}>About</NavMenu.Trigger>
           <NavMenu.Content className={styles.content}>
             <ul className={styles.menu}>
-              <li>About Us</li>
-              <li>Shipping</li>
-              <li>Returns</li>
-              <li>Support</li>
+              <div></div>
+              <ListItem href="#">
+                <div className={styles.logoCard}>
+                  <Image
+                    src={allShoes}
+                    alt="all shoes"
+                    className={styles.logoImage}
+                  />
+                  <div className={styles.logoBox}>
+                    <span className={styles.logo}>
+                      <Logo />
+                    </span>
+                    <span className={styles.tag}>shoes you need</span>
+                  </div>
+                </div>
+              </ListItem>
+              <div className={styles.aboutBox}>
+                <ul className={styles.aboutList}>
+                  <li>
+                    <Link href="/404">About Us</Link>
+                  </li>
+                  <li>
+                    <Link href="/404">Shipping</Link>
+                  </li>
+                  <li>
+                    <Link href="/404">Returns</Link>
+                  </li>
+                  <li>
+                    <Link href="/404">FAQ</Link>
+                  </li>
+                </ul>
+              </div>
+              <div></div>
             </ul>
           </NavMenu.Content>
         </NavMenu.Item>

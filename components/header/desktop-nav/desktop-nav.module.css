@@ -88,35 +88,120 @@
   width: 100%;
 }
 
-.listItem {
-  align-self: center;
-  /* aspect-ratio: 1 / 1; */
-  justify-self: center;
-  /* position: inherit; */
-}
-
-.listItem:hover,
-.listItem:focus {
-  border: 6px solid var(--blue);
+.card {
+  position: relative;
 }
 
 .image {
-  /* grid-column-start: 1; */
-  /* grid-column-end: 2; */
-  /* padding: 1rem 0; */
-  position: relative;
-  /* object-fit: fill; */
+  filter: brightness(75%);
+}
+
+.card:hover .image {
+  filter: brightness(100%);
 }
 
 .title {
   color: var(--white);
   font-size: 2rem;
+  font-weight: 700;
+  left: 50%;
+  line-height: 1;
+  position: absolute;
+  text-align: center;
+  text-shadow: var(--shadow);
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.superTitle {
+  font-size: 5rem;
+  font-weight: 900;
+}
+
+.blogTitle {
+  font-size: 1.5rem;
+  left: 10%;
+  text-align: left;
+  top: 10%;
+  transform: translate(0, 0);
+}
+
+.unfunk {
+  font-size: 2.5rem;
+  /* text-align: center; */
+  /* top: 50%; */
+}
+
+.moodboard {
+  padding-left: 1rem;
+  right: 10%;
+  text-align: right;
+  top: 70%;
+}
+
+.hanging {
+  top: 25%;
+}
+
+.logoCard {
+  background-color: var(--blue);
+  position: relative;
+}
+.logoImage {
+  z-index: -1;
+}
+.logoBox {
+  display: flex;
+  flex-direction: column;
   left: 50%;
   position: absolute;
   text-align: center;
   top: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2;
+  width: 100%;
+}
+.logo {
+  fill: var(--white);
+  transform: scale(1.6);
+}
+.logo path {
+  fill: var(--white);
+}
+.tag {
+  color: var(--white);
+  font-size: 1.4rem;
+  font-weight: 700;
+  /* text-shadow: var(--shadow); */
+}
+
+.aboutBox {
+  background-color: var(--white);
+  border: 2px solid var(--black);
+}
+
+.aboutList {
+  font-size: 1.2rem;
+  list-style: none;
+  /* padding: 1rem; */
+  padding-left: 3rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.aboutList li {
+  margin-bottom: 1.5rem;
+}
+
+.aboutList li:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 900px) {
+  .superTitle {
+    font-size: 4rem;
+  }
 }
 
 @media (max-width: 1200px) {
