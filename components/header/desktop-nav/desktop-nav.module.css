@@ -146,6 +146,7 @@
 
 .logoCard {
   background-color: var(--blue);
+  cursor: default;
   position: relative;
 }
 .logoImage {
