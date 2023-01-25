@@ -4,7 +4,7 @@ const useMatchMedia = () => {
   const [matches, setMatches] = useState(false);
 
   useEffect(() => {
-    const media = window.matchMedia('(max-width: 600px)');
+    const media = window.matchMedia('(max-width: 768px)');
 
     if (media.matches !== matches) setMatches(media.matches);
 

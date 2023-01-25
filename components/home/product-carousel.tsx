@@ -17,9 +17,10 @@ const ProductCarousel = ({ images }: CarouselProps) => {
     <>
       <div className={styles.carouselContainer}>
         <Swiper
-          modules={[Navigation]}
+          modules={[Navigation, A11y]}
           navigation={true}
           spaceBetween={4}
+          autoHeight
           grabCursor
           loop
           loopedSlides={8}
@@ -33,13 +34,14 @@ const ProductCarousel = ({ images }: CarouselProps) => {
               className={styles.slide}
             >
               <Link href={`/shoes/${image.fields.description}`}>
-                <Image
-                  src={`https:${image.fields.file.url}`}
-                  alt="shoe"
-                  layout="fixed"
-                  height={180}
-                  width={180}
-                />
+                <div className={styles.slideImage}>
+                  <Image
+                    src={`https:${image.fields.file.url}`}
+                    alt="shoe"
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                </div>
               </Link>
             </SwiperSlide>
           ))}
