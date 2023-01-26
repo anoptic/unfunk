@@ -39,11 +39,11 @@ const Collection = ({ collection }: { collection: CollectionModelEntry }) => {
 
   return (
     <div className={styles.productPage}>
-      <div className={styles.header}>
-        <div className={styles.title}>{title} Collection</div>
-        <div className={styles.description}>{description}</div>
-      </div>
-      <div className={styles.productList}>
+      <div className={styles.container}>
+        <div className={styles.header}>
+          <div className={styles.title}>{title} Collection</div>
+          <div className={styles.description}>{description}</div>
+        </div>
         {product.map((p) => (
           <div className={styles.productChip} key={p.fields.sku}>
             <ProductChip product={p} />

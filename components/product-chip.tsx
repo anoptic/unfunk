@@ -1,39 +1,29 @@
-import ImageDisplay from '@/image-display';
 import { ProductType } from 'contentful/content-models';
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './product-chip.module.css';
 
 const ProductChip = ({ product }: { product: ProductType }) => {
-  const { name, slug, collection, description, sku, price, image } =
-    product.fields;
-  // console.log(product);
+  const { name, slug, price, image } = product.fields;
 
   return (
-    <Link href={`/shoes/${slug}`}>
-      <div className={styles.card}>
-        <div className={styles.image}>
-          <ImageDisplay
-            source={image.fields.file.url}
-            layout="intrinsic"
-            height={300}
-            width={300}
-          />
-        </div>
-        {/* <div className={styles.info}> */}
-        <div className={styles.header}>
-          <div className={styles.name}>{name}</div>
-          <div className={styles.price}>{price}€</div>
-        </div>
-
-        {/* <div className={styles.footer}>
-          <div className={styles.description}>{description}</div>
-          <div className={styles.cta}>
-            <button>Add to Cart</button>
-            <div className={styles.sku}>SKU {sku}</div>
+    <Link href={`/shoes/${slug}`} legacyBehavior>
+      <a>
+        <div className={styles.card}>
+          <div className={styles.image}>
+            <Image
+              src={`https:${image.fields.file.url}`}
+              alt="a pair of shoes"
+              height={300}
+              width={300}
+            />
           </div>
-        </div> */}
-        {/* </div> */}
-      </div>
+          <div className={styles.header}>
+            <div className={styles.name}>{name}</div>
+            <div className={styles.price}>{price}€</div>
+          </div>
+        </div>
+      </a>
     </Link>
   );
 };
