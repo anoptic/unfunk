@@ -7,26 +7,28 @@ const BlogCard = ({ section, children }: CardProps) => {
   const { type, title, slug, caption } = section.fields;
 
   return (
-    <Link href={`/blog/${slug}`}>
-      <div className={`${blogStyles.card} ${sectionStyles.card}`}>
-        <div className={blogStyles.cover}>
-          <div
-            className={`${blogStyles.id} ${
-              section.fields.slug === 'unfunktion' && blogStyles.vertCenter
-            }`}
-          >
-            <h3
-              className={`${blogStyles.title} ${
-                section.fields.slug !== 'unfunktion' && blogStyles.altTitle
+    <Link href={`/blog/${slug}`} legacyBehavior>
+      <a>
+        <div className={`${blogStyles.card} ${sectionStyles.card}`}>
+          <div className={blogStyles.cover}>
+            <div
+              className={`${blogStyles.id} ${
+                section.fields.slug === 'unfunktion' && blogStyles.vertCenter
               }`}
             >
-              {title}
-            </h3>
+              <h3
+                className={`${blogStyles.title} ${
+                  section.fields.slug !== 'unfunktion' && blogStyles.altTitle
+                }`}
+              >
+                {title}
+              </h3>
+            </div>
+            <div className={blogStyles.image}>{children}</div>
           </div>
-          <div className={blogStyles.image}>{children}</div>
+          <p className={blogStyles.caption}>{caption}</p>
         </div>
-        <p className={blogStyles.caption}>{caption}</p>
-      </div>
+      </a>
     </Link>
   );
 };

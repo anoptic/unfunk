@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Image from 'next/image';
-import ProductChip from '@/product-chip';
+import ProductCard from '@/product-card';
 import { shoeModel } from 'contentful/content-models';
 import useCart, { Product } from 'hooks/useCart';
 import SizeWidget, { Sizes } from 'pages/shoes/size-widget';
@@ -134,8 +134,8 @@ const ShoeDisplay = ({
         <div className={styles.recTitle}>Recommended for you</div>
         <div className={styles.productList}>
           {recommend.map((rec) => (
-            <div className={styles.productChip} key={rec.fields.slug}>
-              <ProductChip product={rec} />
+            <div className={styles.productCard} key={rec.fields.slug}>
+              <ProductCard product={rec} />
             </div>
           ))}
         </div>

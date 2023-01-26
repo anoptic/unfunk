@@ -1,5 +1,5 @@
 import { collectionModel } from 'contentful/content-models';
-import ProductChip from '@/product-chip';
+import ProductCard from '@/product-card';
 import styles from './collection.module.css';
 
 export const getStaticPaths = async () => {
@@ -46,7 +46,7 @@ const Collection = ({ collection }: { collection: CollectionModelEntry }) => {
         </div>
         {product.map((p) => (
           <div className={styles.productChip} key={p.fields.sku}>
-            <ProductChip product={p} />
+            <ProductCard product={p} />
           </div>
         ))}
       </div>

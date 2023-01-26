@@ -1,5 +1,5 @@
 import { allShoesModel } from 'contentful/content-models';
-import ProductChip from '@/product-chip';
+import ProductCard from '@/product-card';
 import { shuffle } from 'utils';
 import styles from './all-shoes.module.css';
 
@@ -25,8 +25,8 @@ const Catalog = ({ allShoes }: { allShoes: ShoeModelEntry[] }) => {
         </div> */}
         <div className={styles.productList}>
           {allShoes.map((shoe: any) => (
-            <div className={styles.productChip} key={shoe.fields.sku}>
-              <ProductChip product={shoe} />
+            <div className={styles.productCard} key={shoe.fields.sku}>
+              <ProductCard product={shoe} />
             </div>
           ))}
         </div>

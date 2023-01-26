@@ -17,17 +17,19 @@ const CollectionCard = ({ section, children }: CardProps) => {
     <>
       <ProductCarousel images={images!} />
 
-      <Link href={`/collections/${slug}`}>
-        <div className={`${collectionStyles.card} ${sectionStyles.card}`}>
-          <div className={collectionStyles.cover}>
-            <div className={collectionStyles.id}>
-              <h3 className={collectionStyles.title}>{title}</h3>
-              <p className={collectionStyles.subtitle}>{type}</p>
+      <Link href={`/collections/${slug}`} legacyBehavior>
+        <a>
+          <div className={`${collectionStyles.card} ${sectionStyles.card}`}>
+            <div className={collectionStyles.cover}>
+              <div className={collectionStyles.id}>
+                <h3 className={collectionStyles.title}>{title}</h3>
+                <p className={collectionStyles.subtitle}>{type}</p>
+              </div>
+              <div className={collectionStyles.image}>{children}</div>
             </div>
-            <div className={collectionStyles.image}>{children}</div>
+            <p className={collectionStyles.caption}>{caption}</p>
           </div>
-          <p className={collectionStyles.caption}>{caption}</p>
-        </div>
+        </a>
       </Link>
     </>
   );

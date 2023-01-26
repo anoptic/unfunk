@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './header-desktop.module.css';
 import Logo from '../logo';
 import DesktopNav from './desktop-nav';
@@ -7,7 +8,11 @@ const HeaderDesktop = () => {
     <>
       <div className={styles.header}>
         <div className={styles.logo}>
-          <Logo />
+          <Link href="/" legacyBehavior>
+            <a>
+              <Logo />
+            </a>
+          </Link>
         </div>
         <DesktopNav />
       </div>
