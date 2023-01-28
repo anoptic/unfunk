@@ -13,14 +13,17 @@ const SizeWidget = ({ selectedSize, setSelectedSize }: SizeWidgetProps) => {
     <div className={styles.widget}>
       <ul className={styles.sizeList}>
         {sizes.map((size) => (
-          <li
-            key={size}
-            className={`${styles.item} ${
-              size === selectedSize ? styles.selected : ''
-            }`}
-            onClick={() => setSelectedSize((s) => (s = size))}
-          >
-            {size}
+          <li key={size}>
+            <button
+              value={size}
+              type="button"
+              className={`${styles.sizeBtn} ${
+                size === selectedSize ? styles.selected : ''
+              }`}
+              onClick={() => setSelectedSize((s) => (s = size))}
+            >
+              {size}
+            </button>
           </li>
         ))}
       </ul>

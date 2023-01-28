@@ -1,6 +1,9 @@
-import { allShoesModel } from 'contentful/content-models';
+import { useState } from 'react';
+import { productSort, SortOrderType } from 'utils';
+import { allShoesModel, ProductType } from 'contentful/content-models';
 import ProductCard from '@/product-card';
 import { shuffle } from 'utils';
+import SortIcon from '@/sort-icon';
 import styles from './all-shoes.module.css';
 
 export const getStaticProps = async () => {
@@ -14,8 +17,18 @@ export const getStaticProps = async () => {
   };
 };
 
-const Catalog = ({ allShoes }: { allShoes: ShoeModelEntry[] }) => {
-  // console.log(allShoes);
+const Catalog = ({ allShoes }: { allShoes: ProductType[] }) => {
+  const [sortOrder, setSortOrder] = useState<SortOrderType>('up');
+
+  const handleClick = () => {
+    if (sortOrder === 'up') {
+      setSortOrder('down');
+    } else {
+      setSortOrder('up');
+    }
+  };
+
+  const sortedProduct: ProductType[] = productSort(allShoes, sortOrder);
 
   return (
     <>
@@ -24,7 +37,7 @@ const Catalog = ({ allShoes }: { allShoes: ShoeModelEntry[] }) => {
           <div className={styles.title}>{title} Collection</div>
         </div> */}
         <div className={styles.productList}>
-          {allShoes.map((shoe: any) => (
+          {sortedProduct.map((shoe: any) => (
             <div className={styles.productCard} key={shoe.fields.sku}>
               <ProductCard product={shoe} />
             </div>

@@ -1,6 +1,9 @@
-import { collectionModel } from 'contentful/content-models';
+import { useState } from 'react';
+import { productSort, SortOrderType } from 'utils';
+import { collectionModel, ProductType } from 'contentful/content-models';
 import ProductCard from '@/product-card';
 import styles from './collection.module.css';
+import Sorter from '@/sorter';
 
 export const getStaticPaths = async () => {
   const items = await collectionModel.getAll();
@@ -34,8 +37,19 @@ export const getStaticProps = async ({
 };
 
 const Collection = ({ collection }: { collection: CollectionModelEntry }) => {
+  const [sortOrder, setSortOrder] = useState<SortOrderType>('up');
   const { title, slug, description, product } = collection.fields;
   // console.log(product);
+
+  const handleSort = () => {
+    if (sortOrder === 'up') {
+      setSortOrder('down');
+    } else {
+      setSortOrder('up');
+    }
+  };
+
+  const sortedProduct: ProductType[] = productSort(product, sortOrder);
 
   return (
     <div className={styles.productPage}>
@@ -44,7 +58,12 @@ const Collection = ({ collection }: { collection: CollectionModelEntry }) => {
           <div className={styles.title}>{title} Collection</div>
           <div className={styles.description}>{description}</div>
         </div>
-        {product.map((p) => (
+
+        <div className={styles.sorter}>
+          <Sorter sortOrder={sortOrder} handleSort={handleSort} />
+        </div>
+
+        {sortedProduct.map((p) => (
           <div className={styles.productChip} key={p.fields.sku}>
             <ProductCard product={p} />
           </div>

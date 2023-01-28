@@ -13,6 +13,7 @@
     "@radix-ui/react-alert-dialog": "^1.0.2",
     "@radix-ui/react-navigation-menu": "^1.1.1",
     "@radix-ui/react-popover": "^1.0.2",
+    "@radix-ui/react-select": "^1.2.0",
     "@radix-ui/react-toast": "^1.1.2",
     "contentful": "^9.2.9",
     "jotai": "^1.10.0",

@@ -16,6 +16,18 @@
   grid-column: 1/-1;
 }
 
+.sorter {
+  grid-column: 1/-1;
+  margin-left: auto;
+  /* margin-right: 1rem; */
+}
+
+.sortIcon {
+  all: unset;
+  cursor: pointer;
+  transform: scale(2);
+}
+
 .title {
   font-size: 1.5rem;
   font-weight: 700;
@@ -23,6 +35,6 @@
 }
 
 .description {
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
   max-width: 60ch;
 }
