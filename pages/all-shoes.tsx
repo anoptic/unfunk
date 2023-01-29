@@ -2,13 +2,11 @@ import { useState } from 'react';
 import { productSort, SortOrderType } from 'utils';
 import { allShoesModel, ProductType } from 'contentful/content-models';
 import ProductCard from '@/product-card';
-import { shuffle } from 'utils';
-import SortIcon from '@/sort-icon';
+import Sorter from '@/sorter';
 import styles from './all-shoes.module.css';
 
 export const getStaticProps = async () => {
-  const response = await allShoesModel.getId();
-  const shoes = shuffle(response.fields.shoes);
+  const shoes = await allShoesModel.getId();
 
   return {
     props: {
@@ -17,10 +15,11 @@ export const getStaticProps = async () => {
   };
 };
 
-const Catalog = ({ allShoes }: { allShoes: ProductType[] }) => {
+const Catalog = ({ allShoes }: { allShoes: AllShoesModelEntry }) => {
   const [sortOrder, setSortOrder] = useState<SortOrderType>('up');
+  const { title, slug, shoes } = allShoes.fields;
 
-  const handleClick = () => {
+  const handleSort = () => {
     if (sortOrder === 'up') {
       setSortOrder('down');
     } else {
@@ -28,23 +27,26 @@ const Catalog = ({ allShoes }: { allShoes: ProductType[] }) => {
     }
   };
 
-  const sortedProduct: ProductType[] = productSort(allShoes, sortOrder);
+  const sortedProduct: ProductType[] = productSort(shoes, sortOrder);
 
   return (
-    <>
-      <div className={styles.catalogPage}>
-        {/* <div className={styles.header}>
-          <div className={styles.title}>{title} Collection</div>
-        </div> */}
-        <div className={styles.productList}>
-          {sortedProduct.map((shoe: any) => (
-            <div className={styles.productCard} key={shoe.fields.sku}>
-              <ProductCard product={shoe} />
-            </div>
-          ))}
+    <div className={styles.catalogPage}>
+      <div className={styles.container}>
+        <div className={styles.header}>
+          <div className={styles.title}>Shoes You Need</div>
         </div>
+
+        <div className={styles.sorter}>
+          <Sorter sortOrder={sortOrder} handleSort={handleSort} />
+        </div>
+
+        {sortedProduct.map((p) => (
+          <div className={styles.productCard} key={p.fields.sku}>
+            <ProductCard product={p} />
+          </div>
+        ))}
       </div>
-    </>
+    </div>
   );
 };
 
