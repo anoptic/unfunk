@@ -48,7 +48,6 @@ a {
 
 .button:hover {
   background-color: var(--blue-dk);
-  /* border: 2px solid var(--orange); */
 }
 
 .button:active {

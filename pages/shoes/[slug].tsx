@@ -56,7 +56,7 @@ const ShoeDisplay = ({
   const { addToCart } = useCart();
   const { toastOpen, openToast, closeToast } = useToast();
   const { alertOpen, openAlert, closeAlert } = useAlert();
-  const [selectedSize, setSelectedSize] = useState<Sizes>(null);
+  const [selectedSize, setSelectedSize] = useState<Sizes>(undefined);
   const { name, slug, description, collection, price, sku, image } =
     shoe.fields;
 
@@ -67,6 +67,11 @@ const ShoeDisplay = ({
     price,
     image: image as Asset,
     sku,
+  };
+
+  const handleSizeChange = (value: Sizes) => {
+    console.log(value);
+    setSelectedSize(() => value);
   };
 
   const checkSize = () => {
@@ -110,7 +115,7 @@ const ShoeDisplay = ({
             <div className={styles.size}>
               <SizeWidget
                 selectedSize={selectedSize}
-                setSelectedSize={setSelectedSize}
+                handleSizeChange={handleSizeChange}
               />
             </div>
             <div className={styles.cta}>

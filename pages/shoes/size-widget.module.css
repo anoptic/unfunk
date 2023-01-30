@@ -1,5 +1,6 @@
 .sizeList {
   all: unset;
+
   display: flex;
   justify-content: space-between;
   list-style: none;
@@ -20,8 +21,7 @@
 }
 
 .sizeBtn:focus {
-  background-color: var(--orange-lt);
-  border: 1px solid var(--orange);
+  border: 1px solid var(--blue);
 }
 
 .selected {

@@ -1,17 +1,16 @@
-import { Dispatch, SetStateAction } from 'react';
 import styles from './size-widget.module.css';
 
 const sizes = ['XS', 'S', 'M', 'L', 'XL'] as const;
-export type Sizes = typeof sizes[number] | null;
+export type Sizes = typeof sizes[number] | undefined;
 interface SizeWidgetProps {
   selectedSize: Sizes;
-  setSelectedSize: Dispatch<SetStateAction<Sizes>>;
+  handleSizeChange: (value: Sizes) => void;
 }
 
-const SizeWidget = ({ selectedSize, setSelectedSize }: SizeWidgetProps) => {
+const SizeWidget = ({ selectedSize, handleSizeChange }: SizeWidgetProps) => {
   return (
     <div className={styles.widget}>
-      <ul className={styles.sizeList}>
+      <ul className={styles.sizeList} arial-label="choose size">
         {sizes.map((size) => (
           <li key={size}>
             <button
@@ -20,7 +19,7 @@ const SizeWidget = ({ selectedSize, setSelectedSize }: SizeWidgetProps) => {
               className={`${styles.sizeBtn} ${
                 size === selectedSize ? styles.selected : ''
               }`}
-              onClick={() => setSelectedSize((s) => (s = size))}
+              onClick={() => handleSizeChange(size)}
             >
               {size}
             </button>
