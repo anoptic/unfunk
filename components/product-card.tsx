@@ -14,6 +14,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
             <Image
               src={`https:${image.fields.file.url}`}
               alt="a pair of shoes"
+              layout="responsive"
               height={300}
               width={300}
             />

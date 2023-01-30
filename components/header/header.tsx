@@ -24,7 +24,7 @@ const Header = () => {
       <hr />
 
       {modalOpen && (
-        <Modal>
+        <Modal modalOpen={modalOpen}>
           <MobileNav showModal={showModal} />
         </Modal>
       )}

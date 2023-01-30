@@ -1,20 +1,20 @@
 .overlay {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
-  bottom: 0;
   display: flex;
+  inset: 0 0 0 -200vw;
   justify-content: center;
-  left: 0;
-  /* padding-top: 56px; */
   position: fixed;
-  right: 0;
-  top: 0;
-  /* transition: left 1s ease-out; */
   z-index: 8;
 }
 
+.overlayOpen {
+  animation: modalIn 600ms ease;
+  left: 0;
+}
+
 .modal {
-  background-color: var(--white);
+  background-color: var(--grey);
   color: var(--black);
   height: 100%;
   padding: 1rem;
@@ -23,8 +23,11 @@
   width: 100%;
 }
 
-@media (min-width: 600px) {
-  .modal {
-    max-height: 40%;
+@keyframes modalIn {
+  from {
+    left: -200vw;
+  }
+  to {
+    left: 0;
   }
 }

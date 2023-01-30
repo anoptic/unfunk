@@ -7,8 +7,8 @@
 .container {
   display: grid;
   gap: 4px;
-  grid-template-columns: repeat(auto-fill, 332px);
-  margin: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(328px, 1fr));
+  margin: 1rem;
   width: 100%;
 }
 

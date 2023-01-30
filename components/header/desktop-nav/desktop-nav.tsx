@@ -2,7 +2,6 @@ import * as NavMenu from '@radix-ui/react-navigation-menu';
 import Link from 'next/link';
 import { ReactNode } from 'react';
 import styles from './desktop-nav.module.css';
-// import CoverImage from '@/home/local-image';
 import Image from 'next/image';
 import Logo from '../logo';
 
@@ -40,7 +39,6 @@ const DesktopNav = () => {
             <ul className={styles.menu}>
               <ListItem href="/all-shoes">
                 <div className={styles.card}>
-                  {/* <CoverImage source={allShoes} /> */}
                   <Image
                     src={allShoes}
                     alt="all shoes"
@@ -53,7 +51,6 @@ const DesktopNav = () => {
               </ListItem>
               <ListItem href="/collections/casual">
                 <div className={styles.card}>
-                  {/* <CoverImage source={casualShoes} /> */}
                   <Image
                     src={casualShoes}
                     alt="casual shoes"
@@ -66,7 +63,6 @@ const DesktopNav = () => {
               </ListItem>
               <ListItem href="/collections/work">
                 <div className={styles.card}>
-                  {/* <CoverImage source={workShoes} /> */}
                   <Image
                     src={workShoes}
                     alt="work shoes"
@@ -79,7 +75,6 @@ const DesktopNav = () => {
               </ListItem>
               <ListItem href="/collections/dress">
                 <div className={styles.card}>
-                  {/* <CoverImage source={dressShoes} /> */}
                   <Image
                     src={dressShoes}
                     alt="dress shoes"
@@ -100,7 +95,6 @@ const DesktopNav = () => {
             <ul className={styles.menu}>
               <ListItem href="/blog/event">
                 <div className={styles.card}>
-                  {/* <CoverImage source={unfunktion} /> */}
                   <Image
                     src={unfunktion}
                     alt="unfunktion event"
@@ -113,7 +107,6 @@ const DesktopNav = () => {
               </ListItem>
               <ListItem href="/blog/moodboard">
                 <div className={styles.card}>
-                  {/* <CoverImage source={moodboard} /> */}
                   <Image
                     src={moodboard}
                     alt="moodboard autumn"
@@ -128,20 +121,20 @@ const DesktopNav = () => {
               </ListItem>
               <ListItem href="/blog/street">
                 <div className={styles.card}>
-                  {/* <CoverImage source={streetStyle} /> */}
                   <Image
                     src={streetStyle}
                     alt="street style"
                     className={styles.image}
                   />
-                  <div className={`${styles.title} ${styles.blogTitle}`}>
+                  <div
+                    className={`${styles.title} ${styles.street} ${styles.blogTitle}`}
+                  >
                     Street Style
                   </div>
                 </div>
               </ListItem>
               <ListItem href="/blog/hanging">
                 <div className={styles.card}>
-                  {/* <CoverImage source={hanging} /> */}
                   <Image
                     src={hanging}
                     alt="hanging around"
@@ -181,16 +174,16 @@ const DesktopNav = () => {
               <div className={styles.aboutBox}>
                 <ul className={styles.aboutList}>
                   <li>
-                    <Link href="/404">About Us</Link>
+                    <Link href="/about">About Us</Link>
                   </li>
                   <li>
-                    <Link href="/404">Shipping</Link>
+                    <Link href="/shipping">Shipping</Link>
                   </li>
                   <li>
-                    <Link href="/404">Returns</Link>
+                    <Link href="/returns">Returns</Link>
                   </li>
                   <li>
-                    <Link href="/404">FAQ</Link>
+                    <Link href="/faq">FAQ</Link>
                   </li>
                 </ul>
               </div>

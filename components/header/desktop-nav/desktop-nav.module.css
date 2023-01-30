@@ -7,10 +7,8 @@
 }
 
 .list {
-  /* align-items: flex-end; */
   display: flex;
   list-style: none;
-
   margin: 0;
   padding: 0;
   padding-bottom: 0.2rem;
@@ -41,28 +39,23 @@
 }
 
 .viewportContainer {
-  /* height: 40vh; */
   left: 0;
   position: fixed;
   top: 58px;
   transform-origin: top;
-  /* transition: width 1s; */
   width: 100%;
-  /* z-index: -999; */
 }
 
 .viewport {
   align-items: center;
   background-color: var(--yellow);
   display: flex;
-  /* height: 100%; */
   justify-content: center;
   overflow: hidden;
   position: absolute;
   top: 0;
   transform-origin: top center;
   width: 100%;
-  /* z-index: -1; */
 }
 .viewport[data-state='open'] {
   animation: viewportIn 200ms ease;
@@ -72,7 +65,6 @@
 }
 
 .content {
-  /* height: 80%; */
   padding: 2rem;
   width: 100%;
 }
@@ -82,7 +74,6 @@
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(4, 1fr);
-  /* height: 100%; */
   list-style: none;
   position: relative;
   width: 100%;
@@ -102,7 +93,7 @@
 
 .title {
   color: var(--white);
-  font-size: 2rem;
+  font-size: 1.25rem;
   font-weight: 700;
   left: 50%;
   line-height: 1;
@@ -113,35 +104,30 @@
   transform: translate(-50%, -50%);
   z-index: 2;
 }
-
 .superTitle {
-  font-size: 5rem;
+  font-size: 2.5rem;
   font-weight: 900;
 }
 
 .blogTitle {
+  font-size: 1.25rem;
+}
+.unfunk {
   font-size: 1.5rem;
+}
+.moodboard {
+  text-align: right;
+  top: 60%;
+  transform: translateX(-45%);
+}
+.street {
   left: 10%;
   text-align: left;
   top: 10%;
   transform: translate(0, 0);
 }
-
-.unfunk {
-  font-size: 2.5rem;
-  /* text-align: center; */
-  /* top: 50%; */
-}
-
-.moodboard {
-  padding-left: 1rem;
-  right: 10%;
-  text-align: right;
-  top: 70%;
-}
-
 .hanging {
-  top: 25%;
+  top: 35%;
 }
 
 .logoCard {
@@ -163,45 +149,136 @@
   width: 100%;
 }
 .logo {
-  fill: var(--white);
-  transform: scale(1.6);
+  transform: scale(1);
 }
 .logo path {
   fill: var(--white);
 }
 .tag {
   color: var(--white);
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-weight: 700;
-  /* text-shadow: var(--shadow); */
+  line-height: 0.75;
 }
 
 .aboutBox {
   background-color: var(--white);
   border: 2px solid var(--black);
 }
-
 .aboutList {
   font-size: 1.2rem;
   list-style: none;
-  /* padding: 1rem; */
-  padding-left: 3rem;
+  padding-left: 2rem;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
-
 .aboutList li {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
 }
-
 .aboutList li:last-child {
   margin-bottom: 0;
 }
 
 @media (min-width: 900px) {
+  .title {
+    font-size: 1.5rem;
+  }
+  .superTitle {
+    font-size: 3rem;
+  }
+  .blogTitle {
+    font-size: 1.5rem;
+  }
+  .unfunk {
+    font-size: 2rem;
+  }
+  .logo {
+    transform: scale(1.25);
+  }
+  .tag {
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+  .aboutList {
+    padding-left: 3rem;
+  }
+  .aboutList li {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  .title {
+    font-size: 2rem;
+  }
   .superTitle {
     font-size: 4rem;
+  }
+  .blogTitle {
+    font-size: 1.5rem;
+  }
+  .moodboard {
+    top: 65%;
+    transform: translateX(-30%);
+  }
+  .logo {
+    transform: scale(1.5);
+  }
+  .tag {
+    font-size: 1.5rem;
+    line-height: 1.5;
+  }
+  .aboutList li {
+    margin-bottom: 1.25rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  .superTitle {
+    font-size: 5rem;
+  }
+  .blogTitle {
+    font-size: 2rem;
+  }
+  .moodboard {
+    top: 65%;
+    transform: translateX(-30%);
+  }
+  .logo {
+    transform: scale(1.5);
+  }
+  .tag {
+    font-size: 1.5rem;
+    line-height: 1.25;
+  }
+  .aboutList {
+    font-size: 1.5rem;
+  }
+  .aboutList li {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (min-width: 1800px) {
+  .unfunk {
+    font-size: 3rem;
+  }
+  .moodboard {
+    top: 70%;
+  }
+  .logo {
+    transform: scale(1.75);
+  }
+  .tag {
+    font-size: 1.75rem;
+    line-height: 1.5;
+  }
+  .aboutList li {
+    margin-bottom: 3rem;
   }
 }
 
@@ -209,7 +286,6 @@
   .content {
     padding: 2rem 1rem;
   }
-
   .menu {
     gap: 1rem;
   }

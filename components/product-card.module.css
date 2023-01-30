@@ -3,7 +3,6 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  height: 400px;
   padding: 1rem;
 }
 
@@ -13,6 +12,7 @@
 
 .image {
   position: relative;
+  width: minmax(300px, 400px);
 }
 
 .header {
