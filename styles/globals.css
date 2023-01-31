@@ -61,7 +61,11 @@ a {
 
 .swiper .swiper-button-prev,
 .swiper .swiper-button-next {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
   color: var(--yellow);
   font-weight: 700;
+  height: 60px;
   text-shadow: var(--shadow);
+  width: 30px;
 }

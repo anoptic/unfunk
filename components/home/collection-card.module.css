@@ -15,7 +15,7 @@
   display: grid;
   grid: 1fr / 1fr;
   height: var(--high);
-  position: relative;
+  /* position: relative; */
   width: 100%;
 }
 

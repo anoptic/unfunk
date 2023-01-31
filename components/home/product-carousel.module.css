@@ -1,6 +1,5 @@
 .carouselContainer {
   margin-bottom: 1rem;
-  position: relative;
   width: 100%;
 }
 
@@ -15,6 +14,7 @@
 .slideImage {
   aspect-ratio: 1/1;
   height: 180px;
+  position: relative;
 }
 
 @media (min-width: 768px) {
