@@ -4,18 +4,9 @@ interface CoverImageProps {
   source: string | StaticImageData;
   style?: object;
 }
-interface LoaderProps {
-  src: string;
-}
-
-const loader = ({ src }: LoaderProps) => {
-  return `https:${src}`;
-};
-
 const CoverImage = ({ source, style }: CoverImageProps) => {
   return (
     <Image
-      // loader={loader}
       src={`https:${source}`}
       alt="section cover"
       layout="fill"

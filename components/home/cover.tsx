@@ -8,14 +8,17 @@ interface CoverProps {
 const Cover = ({ children }: CoverProps) => {
   return (
     <div className={styles.cover}>
-      <div className={styles.overlay}>
-        <h2 className={styles.title}>You Need Shoes</h2>
-        <div className={styles.subtitle}>
-          <h3 className={styles.firstLine}>We got the</h3>
-          <h3 className={styles.secondLine}>shoes you need</h3>
-        </div>
-      </div>
       <div className={styles.image}>{children}</div>
+      <h1 className={styles.title}>
+        You Need
+        <br />
+        Shoes
+      </h1>
+      <h2 className={styles.subtitle}>
+        <span className={styles.firstLine}>We got the</span>
+        <br />
+        <span className={styles.secondLine}>shoes you need</span>
+      </h2>
     </div>
   );
 };

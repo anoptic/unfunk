@@ -1,76 +1,46 @@
 .cover {
-  display: grid;
-  grid: 1fr / 1fr;
   height: 100vh;
-  position: relative;
-  top: -56px;
-  /* width: 100%; */
-}
-
-.overlay {
-  color: var(--white);
-  grid-column-start: 1;
-  grid-column-end: 1;
-  z-index: 1;
-}
-
-.title {
-  font-size: 3rem;
-  font-weight: 700;
-  left: 5vw;
-  line-height: 3rem;
-  position: relative;
-  text-shadow: 0 0 4px black;
-  top: 40vh;
-  width: 80vw;
-  /* z-index: 3; */
-}
-
-.subtitle {
-  font-weight: 700;
-  left: 10vw;
-  line-height: 2rem;
-  position: relative;
-  text-align: right;
-  text-shadow: 0 0 4px black;
-  top: 70vh;
-  width: 85vw;
-}
-
-.firstLine {
-  font-size: 1.8rem;
-}
-
-.secondLine {
-  font-size: 2rem;
 }
 
 .image {
-  grid-column-start: 1;
-  grid-column-end: 1;
   height: 100%;
+  position: relative;
+  top: -56px;
   width: 100%;
 }
 
-@media (min-width: 600px) {
+.title {
+  --titleSize: clamp(3rem, 14vw, 5rem);
+  color: var(--white);
+  font-size: var(--titleSize);
+  font-weight: 700;
+  left: 5vw;
+  line-height: var(--titleSize);
+  position: absolute;
+  text-shadow: var(--shadow);
+  top: 40vh;
+}
+
+.subtitle {
+  --subtitleSize: clamp(2rem, 9vw, 3.5rem);
+  color: var(--white);
+  font-size: var(--subtitleSize);
+  font-weight: 700;
+  line-height: var(--subtitleSize);
+  position: absolute;
+  right: 5vw;
+  text-align: right;
+  text-shadow: var(--shadow);
+  top: 80vh;
+}
+
+.firstLine {
+  font-size: calc(var(--subtitleSize) * 0.9);
+}
+
+@media (min-width: 1100px) {
   .title {
-    font-size: 7rem;
-    left: 10vw;
-    line-height: 7rem;
-    top: 30vh;
-    width: 45vw;
-  }
-
-  .subtitle {
-    left: 5vw;
-    line-height: 3rem;
-    top: 50vh;
-  }
-
-  .firstLine {
-    font-size: 3rem;
-  }
-  .secondLine {
-    font-size: 3.5rem;
+    font-size: 6rem;
+    line-height: 6rem;
   }
 }

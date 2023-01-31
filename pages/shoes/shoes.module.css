@@ -16,13 +16,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* height: 300px; */
   width: 300px;
 }
 
 .header {
   display: flex;
-  /* height: 40px; */
   justify-content: space-between;
   line-height: 1.25rem;
   margin-top: 0.5rem;
@@ -55,15 +53,13 @@
   align-items: flex-end;
   display: flex;
   justify-content: space-between;
-  /* margin-bottom: 1rem; */
 }
 
 .buyBtn {
   all: unset;
   background-color: var(--blue);
-  /* border: 2px solid rgba(0, 0, 0, 0); */
   border-radius: 20px;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.75);
+  box-shadow: var(--shadow);
   color: var(--white);
   cursor: pointer;
   font-size: 1.2rem;
@@ -74,7 +70,6 @@
 
 .buyBtn:hover {
   background-color: var(--blue-dk);
-  /* border: 2px solid var(--orange); */
 }
 
 .buyBtn:active {
@@ -90,14 +85,8 @@
   font-size: 1.2rem;
 }
 
-/* .recContainer {
-  display: flex;
-
-} */
-
 .recommend {
   display: grid;
-  /* justify-content: center; */
   margin-inline: auto;
   width: 90vw;
 }
@@ -109,9 +98,9 @@
 }
 
 .productList {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   gap: 4px;
+  grid-template-columns: repeat(auto-fill, minmax(328px, 1fr));
   justify-content: center;
   padding: 1rem 0 3rem;
 }

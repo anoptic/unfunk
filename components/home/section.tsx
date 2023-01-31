@@ -6,8 +6,6 @@ interface SectionProps {
 }
 
 const Section = ({ children }: SectionProps) => {
-  // console.log(props);
-
   return <div className={styles.section}>{children}</div>;
 };
 
