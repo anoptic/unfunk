@@ -20,11 +20,6 @@ const MessageToast = ({ open, closeToast, children }: ToastProps) => {
         <Toast.Description className={styles.desc}>
           {children}
         </Toast.Description>
-        {/* <Toast.Close asChild className={styles.close}>
-          <button className="button" type="button">
-            OK
-          </button>
-        </Toast.Close> */}
       </Toast.Root>
       <Toast.Viewport className={styles.viewport} />
     </>

@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import styles from './product-carousel.module.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, A11y, Pagination } from 'swiper';
+import { Navigation, A11y } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/a11y';
-import { AssetType, ProductType } from 'contentful/content-models';
+import { AssetType } from 'contentful/content-models';
 import Link from 'next/link';
 
 interface CarouselProps {

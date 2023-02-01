@@ -1,27 +1,12 @@
-/* .header {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.5rem 1rem;
-  padding-inline: 1rem;
-  z-index: 9;
-} */
-
 .header {
   background-color: var(--yellow);
   display: flex;
   height: 56px;
   justify-content: space-between;
-  /* left: 0; */
   padding: 0 1rem;
-  /* position: sticky; */
-  /* right: 0; */
-  /* top: 0; */
-  /* width: 100%; */
-  /* z-index: 9; */
 }
 
 .logo {
   height: 40px;
-  /* padding: 4px 0; */
   transform: scale(0.8);
 }

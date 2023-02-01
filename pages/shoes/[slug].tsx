@@ -128,9 +128,6 @@ const ShoeDisplay = ({
               </button>
               <div className={styles.sku}>SKU: {sku}</div>
             </div>
-            {/* <div className={styles.collection}>
-              Part of the {collection} Collection
-            </div> */}
           </div>
         </div>
       </div>

@@ -18,7 +18,6 @@ export const getStaticProps: GetStaticProps<{
 const AllBlogs = ({
   blogPost,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  // console.log(blogPost);
 
   return (
     <div className={styles.sectionList}>

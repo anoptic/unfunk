@@ -41,6 +41,10 @@
   font-weight: 300;
 }
 
+.vat {
+  font-size: 0.75rem;
+}
+
 .cartActions {
   display: flex;
   justify-content: space-between;

@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 export const contentfulEntrySchema = z.object({
-  fields: z.object({}), // Extend this later
+  fields: z.object({}),
   // metadata: z.object({
   //   tags: z.array(z.any()),
   // }),

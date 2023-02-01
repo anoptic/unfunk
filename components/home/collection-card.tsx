@@ -1,6 +1,5 @@
 import Link from 'next/link';
-import sectionStyles from './section-card.module.css';
-import collectionStyles from './collection-card.module.css';
+import styles from './collection-card.module.css';
 import { ReactNode } from 'react';
 import ProductCarousel from './product-carousel';
 import { SectionType } from 'contentful/content-models';
@@ -19,15 +18,15 @@ const CollectionCard = ({ section, children }: CardProps) => {
 
       <Link href={`/collections/${slug}`} legacyBehavior>
         <a>
-          <div className={`${collectionStyles.card} ${sectionStyles.card}`}>
-            <div className={collectionStyles.cover}>
-              <div className={collectionStyles.id}>
-                <h3 className={collectionStyles.title}>{title}</h3>
-                <p className={collectionStyles.subtitle}>{type}</p>
+          <div className={`${styles.card}`}>
+            <div className={styles.cover}>
+              <div className={styles.id}>
+                <h3 className={styles.title}>{title}</h3>
+                <p className={styles.subtitle}>{type}</p>
               </div>
-              <div className={collectionStyles.image}>{children}</div>
+              <div className={styles.image}>{children}</div>
             </div>
-            <p className={collectionStyles.caption}>{caption}</p>
+            <p className={styles.caption}>{caption}</p>
           </div>
         </a>
       </Link>

@@ -1,11 +1,8 @@
-.carousel {
-}
-
 .card {
-  /* cursor: pointer; */
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* margin: 0 auto; */
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
   max-width: 960px;
   width: 100%;
 }
@@ -15,7 +12,6 @@
   display: grid;
   grid: 1fr / 1fr;
   height: var(--high);
-  /* position: relative; */
   width: 100%;
 }
 

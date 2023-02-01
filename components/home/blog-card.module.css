@@ -1,9 +1,9 @@
 .card {
   --wide: clamp(300px, 90vw, 720px);
-  /* cursor: pointer; */
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* margin: 0 auto; */
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
   width: var(--wide);
 }
 
@@ -22,29 +22,41 @@
   z-index: 2;
 }
 
+.logoUnderlay {
+  background-color: rgba(0, 0, 0, 0.35);
+  height: 25%;
+  position: relative;
+  top: 38.5%;
+  width: 100%;
+}
+
+.logoContainer {
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  width: 75%;
+}
+
+.eventLogo {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
 .image {
   grid-column-start: 1;
   grid-row-start: 1;
   position: relative;
 }
 
-.vertCenter {
-  margin: auto 0;
-}
-
 .title {
   background-color: rgba(0, 0, 0, 0.35);
   color: var(--white);
-  font-size: 3rem;
-  text-align: center;
-}
-
-.altTitle {
   font-size: 1.5rem;
-  padding: 1rem 0;
-  padding-left: 1rem;
+  padding-left: 2rem;
   position: relative;
   text-align: left;
+  text-shadow: var(--shadow);
   top: 15%;
 }
 
@@ -56,8 +68,7 @@
 }
 
 @media (min-width: 600px) {
-  .altTitle {
+  .title {
     font-size: 2rem;
-    padding-left: 3rem;
   }
 }

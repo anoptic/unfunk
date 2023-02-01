@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import sectionStyles from './section-card.module.css';
-import blogStyles from './blog-card.module.css';
+import styles from './blog-card.module.css';
 import { CardProps } from './collection-card';
+import Unfunktion from '@/home/unfunktion';
 
 const BlogCard = ({ section, children }: CardProps) => {
   const { type, title, slug, caption } = section.fields;
@@ -9,24 +9,22 @@ const BlogCard = ({ section, children }: CardProps) => {
   return (
     <Link href={`/blog/${slug}`} legacyBehavior>
       <a>
-        <div className={`${blogStyles.card} ${sectionStyles.card}`}>
-          <div className={blogStyles.cover}>
-            <div
-              className={`${blogStyles.id} ${
-                section.fields.slug === 'unfunktion' && blogStyles.vertCenter
-              }`}
-            >
-              <h3
-                className={`${blogStyles.title} ${
-                  section.fields.slug !== 'unfunktion' && blogStyles.altTitle
-                }`}
-              >
-                {title}
-              </h3>
+        <div className={`${styles.card}`}>
+          <div className={styles.cover}>
+            <div className={styles.id}>
+              {section.fields.slug === 'event' ? (
+                <div className={styles.logoUnderlay}>
+                  <div className={styles.logoContainer}>
+                    <Unfunktion />
+                  </div>
+                </div>
+              ) : (
+                <h3 className={styles.title}>{title}</h3>
+              )}
             </div>
-            <div className={blogStyles.image}>{children}</div>
+            <div className={styles.image}>{children}</div>
           </div>
-          <p className={blogStyles.caption}>{caption}</p>
+          <p className={styles.caption}>{caption}</p>
         </div>
       </a>
     </Link>

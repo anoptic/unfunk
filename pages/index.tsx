@@ -1,6 +1,4 @@
 import type { GetStaticProps, InferGetStaticPropsType } from 'next';
-import { contentfulClient } from 'contentful/client';
-
 import BlogCard from '@/home/blog-card';
 import CollectionCard from '@/home/collection-card';
 import CoverImage from '@/home/cover-image';
@@ -10,32 +8,6 @@ import Cover from '@/home/cover';
 import useMatchMedia from 'hooks/useMatchmedia';
 import { homepageModel, blogpostModel } from 'contentful/content-models';
 
-// interface HomepageProps {
-//   homePage: InferGetStaticPropsType<typeof getStaticProps>;
-// }
-// export const getStaticProps: GetStaticProps = async () => {
-//   const response = await contentfulClient.getEntry('CaPxFldqNC38EM4QU7Ju5');
-
-//   return {
-//     props: {
-//       homePage: response,
-//     },
-//   };
-// };
-
-//* homePage EntryID: CaPxFldqNC38EM4QU7Ju5
-//* getAll
-// export const getStaticProps: GetStaticProps<{
-//   homePage: HomepageModelEntry[];
-// }> = async () => {
-//   return {
-//     props: {
-//       homePage: await homepageModel.getAll(),
-//     },
-//   };
-// };
-
-//* getId - homePage
 export const getStaticProps: GetStaticProps<{
   homePage: HomepageModelEntry;
 }> = async () => {
@@ -51,8 +23,6 @@ const coverOverlay = {
 };
 
 const Home = ({ homePage }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  // const Home = ({ homePage }: HomeProps) => {
-  // console.log('**Home Page**', homePage);
   const mobileMatches = useMatchMedia();
 
   const sections = homePage.fields.sections;

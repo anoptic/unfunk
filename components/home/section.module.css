@@ -1,5 +1,11 @@
 .section {
   height: auto;
-  margin-block: 5rem;
+  margin-block: 3rem;
   width: 100%;
+}
+
+@media (min-width: 900px) {
+  .section {
+    margin-block: 5rem;
+  }
 }

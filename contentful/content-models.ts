@@ -43,7 +43,6 @@ const section = z.object({
     caption: z.string(),
     cover: asset,
     images: z.array(asset).optional(),
-    // catalogItems: z.array(product).optional(),
   }),
   sys: z.object({
     id: z.string(),
