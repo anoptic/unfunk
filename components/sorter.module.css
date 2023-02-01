@@ -1,11 +1,10 @@
 .trigger {
   all: unset;
-  /* border: 1px solid black; */
   align-items: center;
   cursor: pointer;
-  display: inline-flex;
+  display: flex;
   gap: 0.5rem;
-  height: 44px;
+  height: 40px;
   justify-content: center;
   line-height: 1;
   padding-left: 0.5rem;
@@ -24,7 +23,7 @@
 }
 
 .viewport {
-  padding: 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .label {
@@ -35,17 +34,10 @@
   align-items: center;
   cursor: pointer;
   display: flex;
-  height: 44px;
-  /* justify-content: center; */
+  height: 30px;
   user-select: none;
 }
 
 .item[data-highlighted] {
   font-weight: 700;
-}
-
-@media (min-width: 769px) {
-  .item {
-    height: auto;
-  }
 }

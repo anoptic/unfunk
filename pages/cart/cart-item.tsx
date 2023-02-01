@@ -55,7 +55,7 @@ const CartItem = ({ item }: CartItemProps) => {
                 </span>
               </button>
               <div>
-                <Popover.Root>
+                <Popover.Root modal={true}>
                   <Popover.Trigger asChild>
                     <button
                       aria-label="change quantity"

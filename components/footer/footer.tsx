@@ -9,7 +9,6 @@ const Footer = () => {
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
-    console.log('Please enter a valid email address');
     openAlert();
   };
 

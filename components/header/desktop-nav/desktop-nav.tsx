@@ -156,7 +156,7 @@ const DesktopNav = () => {
           <NavMenu.Content className={styles.content}>
             <ul className={styles.menu}>
               <div></div>
-              <ListItem href="#">
+              <ListItem href="/">
                 <div className={styles.logoCard}>
                   <Image
                     src={allShoes}
@@ -177,13 +177,13 @@ const DesktopNav = () => {
                     <Link href="/about">About Us</Link>
                   </li>
                   <li>
-                    <Link href="/shipping">Shipping</Link>
+                    <Link href="/404">Shipping</Link>
                   </li>
                   <li>
-                    <Link href="/returns">Returns</Link>
+                    <Link href="/404">Returns</Link>
                   </li>
                   <li>
-                    <Link href="/faq">FAQ</Link>
+                    <Link href="/404">FAQ</Link>
                   </li>
                 </ul>
               </div>

@@ -18,17 +18,19 @@ const Sorter = ({ sortOrder, handleSort }: SorterProps) => {
         </Select.Icon>
       </Select.Trigger>
       <Select.Portal>
-        <Select.Content className={styles.content}>
+        <Select.Content
+          position="popper"
+          side="top"
+          sideOffset={-48}
+          className={styles.content}
+        >
           <Select.Viewport className={styles.viewport}>
-            <Select.Group>
-              <Select.Label className={styles.label}>Sort by</Select.Label>
-              <Select.Item value="up" className={styles.item}>
-                <Select.ItemText>Price (Low-High)</Select.ItemText>
-              </Select.Item>
-              <Select.Item value="down" className={styles.item}>
-                <Select.ItemText>Price (High-Low)</Select.ItemText>
-              </Select.Item>
-            </Select.Group>
+            <Select.Item value="up" className={styles.item}>
+              <Select.ItemText>Price (Low-High)</Select.ItemText>
+            </Select.Item>
+            <Select.Item value="down" className={styles.item}>
+              <Select.ItemText>Price (High-Low)</Select.ItemText>
+            </Select.Item>
           </Select.Viewport>
         </Select.Content>
       </Select.Portal>
