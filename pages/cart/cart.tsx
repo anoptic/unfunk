@@ -2,7 +2,7 @@ import { useAtom } from 'jotai';
 import useCart, { contentsAtom } from 'hooks/useCart';
 import Link from 'next/link';
 import styles from './cart.module.css';
-import CartItem from 'pages/cart/cart-item';
+import CartItem from '@/cart-components/cart-item';
 
 const Cart = () => {
   const { clearCart } = useCart();

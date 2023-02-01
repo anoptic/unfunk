@@ -1,6 +1,6 @@
 import { Asset } from 'contentful';
 import { atom, useAtom } from 'jotai';
-import { Sizes } from 'pages/shoes/size-widget';
+import { Sizes } from '@/size-widget';
 
 export interface Product {
   name: string;

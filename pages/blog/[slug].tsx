@@ -2,10 +2,10 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import CoverImage from '@/home/cover-image';
 import { blogpostModel } from 'contentful/content-models';
 import styles from './blogPost.module.css';
-import StreetGallery from './street-gallery';
-import EventGallery from './event-gallery';
-import MoodboardGallery from './moodboard-gallery';
-import HangingGallery from './hanging-gallery';
+import StreetGallery from '@/blog-galleries/street-gallery';
+import EventGallery from '@/blog-galleries/event-gallery';
+import MoodboardGallery from '@/blog-galleries/moodboard-gallery';
+import HangingGallery from '@/blog-galleries/hanging-gallery';
 
 export const getStaticPaths = async () => {
   const items = await blogpostModel.getAll();

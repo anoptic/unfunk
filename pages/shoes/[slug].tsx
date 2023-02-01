@@ -3,7 +3,7 @@ import Image from 'next/image';
 import ProductCard from '@/product-card';
 import { shoeModel } from 'contentful/content-models';
 import useCart, { Product } from 'hooks/useCart';
-import SizeWidget, { Sizes } from 'pages/shoes/size-widget';
+import SizeWidget, { Sizes } from '@/size-widget';
 import { shuffle } from 'utils';
 import styles from './shoes.module.css';
 import { Asset } from 'contentful';

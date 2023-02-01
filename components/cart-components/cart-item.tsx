@@ -3,7 +3,7 @@ import Link from 'next/link';
 import * as Popover from '@radix-ui/react-popover';
 import useCart, { Product } from 'hooks/useCart';
 import styles from './cart-item.module.css';
-import ChangeQty from 'pages/cart/change-qty';
+import ChangeQty from '@/cart-components/change-qty';
 
 interface CartItemProps {
   item: Product;

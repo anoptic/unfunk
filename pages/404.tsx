@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import notFound from 'public/assets/not-found.jpg';
-import Glyph404 from './404-glyph';
+import Glyph404 from '@/404-glyph';
 import styles from './404.module.css';
 
 const NotFound = () => {
