@@ -18,11 +18,11 @@ export const getStaticProps: GetStaticProps<{
 const AllBlogs = ({
   blogPost,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-
   return (
     <div className={styles.sectionList}>
       {blogPost.map((post) => (
         <Section key={post.sys.id}>
+          {/* @ts-ignore */}
           <BlogCard section={post}>
             <CoverImage source={post.fields.cover.fields.file.url} />
           </BlogCard>
