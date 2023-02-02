@@ -70,7 +70,6 @@ const ShoeDisplay = ({
   };
 
   const handleSizeChange = (value: Sizes) => {
-    console.log(value);
     setSelectedSize(() => value);
   };
 
