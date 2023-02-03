@@ -23,6 +23,7 @@ const coverOverlay = {
 };
 
 const Home = ({ homePage }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  // console.log(homePage);
   const mobileMatches = useMatchMedia();
 
   const sections = homePage.fields.sections;

@@ -1,0 +1,658 @@
+{
+  "fields": {
+    "title": "Home Page",
+    "slug": "home-page",
+    "coverDesktop": {
+      "fields": {
+        "file": {
+          "contentType": "image/jpeg",
+          "details": {
+            "image": {
+              "height": 1280,
+              "width": 1920
+            },
+            "size": 268074
+          },
+          "fileName": "desktop-cover.jpg",
+          "url": "//images.ctfassets.net/qrq1sxq1xfrw/s9eJ9X9IFwbHdzBohq0Vy/8efbe0193217297d656906e025203930/desktop-cover.jpg"
+        },
+        "title": "desktop-cover"
+      }
+    },
+    "coverMobile": {
+      "fields": {
+        "file": {
+          "contentType": "image/jpeg",
+          "details": {
+            "image": {
+              "height": 960,
+              "width": 640
+            },
+            "size": 114963
+          },
+          "fileName": "mobile-cover.jpg",
+          "url": "//images.ctfassets.net/qrq1sxq1xfrw/5yccl6PekNtT46AuSYnEMo/6d5621e405c94ab9fea1ce8478ecb9e2/mobile-cover.jpg"
+        },
+        "title": "mobile-cover"
+      }
+    },
+    "sections": [
+      {
+        "fields": {
+          "title": "Casual",
+          "slug": "casual",
+          "type": "Collection",
+          "caption": "Shoes for everyday",
+          "cover": {
+            "fields": {
+              "file": {
+                "contentType": "image/jpeg",
+                "details": {
+                  "image": {
+                    "height": 1370,
+                    "width": 1920
+                  },
+                  "size": 616018
+                },
+                "fileName": "casual-shoes.jpg",
+                "url": "//images.ctfassets.net/qrq1sxq1xfrw/7HweDWEyRwaRu4d0wuommE/08895abd2049994b9276e472af27c4a0/casual-shoes.jpg"
+              },
+              "title": "casual-shoes"
+            }
+          },
+          "images": [
+            {
+              "fields": {
+                "file": {
+                  "contentType": "image/jpeg",
+                  "details": {
+                    "image": {
+                      "height": 1280,
+                      "width": 1280
+                    },
+                    "size": 525590
+                  },
+                  "fileName": "casual07.jpg",
+                  "url": "//images.ctfassets.net/qrq1sxq1xfrw/qRiLQC7u07qmARFczfw8n/176e00a82e2138f365f955b1a9ccb9b0/casual07.jpg"
+                },
+                "title": "casual07",
+                "description": "ordinary-shoes"
+              }
+            },
+            {
+              "fields": {
+                "file": {
+                  "contentType": "image/jpeg",
+                  "details": {
+                    "image": {
+                      "height": 1280,
+                      "width": 1280
+                    },
+                    "size": 837118
+                  },
+                  "fileName": "casual02.jpg",
+                  "url": "//images.ctfassets.net/qrq1sxq1xfrw/12BykKJ3O0bZE8zf0k2Lt4/55a62f661cddce394081395cfde60450/casual02.jpg"
+                },
+                "title": "casual02",
+                "description": "flippity-flops"
+              }
+            },
+            {
+              "fields": {
+                "file": {
+                  "contentType": "image/jpeg",
+                  "details": {
+                    "image": {
+                      "height": 1280,
+                      "width": 1280
+                    },
+                    "size": 664041
+                  },
+                  "fileName": "casual08.jpg",
+                  "url": "//images.ctfassets.net/qrq1sxq1xfrw/2pOS5E4nFZkUbXnW0S0Mir/71d71a3a878495f7a6acf6b90d11c729/casual08.jpg"
+                },
+                "title": "casual08",
+                "description": "all-american-sneakers"
+              }
+            },
+            {
+              "fields": {
+                "file": {
+                  "contentType": "image/jpeg",
+                  "details": {
+                    "image": {
+                      "height": 1280,
+                      "width": 1280
+                    },
+                    "size": 548197
+                  },
+                  "fileName": "casual04.jpg",
+                  "url": "//images.ctfassets.net/qrq1sxq1xfrw/3hIKstaH7nhK2MtIe4XLJQ/b037dd7067d93138135003f71b3baf5a/casual04.jpg"
+                },
+                "title": "casual04",
+                "description": "critter-slippers"
+              }
+            },
+            {
+              "fields": {
+                "file": {
+                  "contentType": "image/jpeg",
+                  "details": {
+                    "image": {
+                      "height": 1280,
+                      "width": 1280
+                    },
+                    "size": 376914
+                  },
+                  "fileName": "casual05.jpg",
+                  "url": "//images.ctfassets.net/qrq1sxq1xfrw/2BqKYYBGbpdU3pXlAuE0L0/d140b0e5ba25806dd1d0ed664785271c/casual05.jpg"
+                },
+                "title": "casual05",
+                "description": "hip-brand-name-sneakers"
+              }
+            },
+            {
+              "fields": {
+                "file": {
+                  "contentType": "image/jpeg",
+                  "details": {
+                    "image": {
+                      "height": 1280,
+                      "width": 1280
+                    },
+                    "size": 547034
+                  },
+                  "fileName": "casual01.jpg",
+                  "url": "//images.ctfassets.net/qrq1sxq1xfrw/6HD5b1vnaACVGumC9kpgiG/f325f473491cfa673b6a7c814df90559/casual01.jpg"
+                },
+                "title": "casual01",
+                "description": "red-shoes"
+              }
+            },
+            {
+              "fields": {
+                "file": {
+                  "contentType": "image/jpeg",
+                  "details": {
+                    "image": {
+                      "height": 1280,
+                      "width": 1280
+                    },
+                    "size": 732738
+                  },
+                  "fileName": "casual03.jpg",
+                  "url": "//images.ctfassets.net/qrq1sxq1xfrw/4O6YgMj1q3ed8ejFXceZ8s/43ed352625cb51a0718f87461cf32be3/casual03.jpg"
+                },
+                "title": "casual03",
+                "description": "open-toed-sandals"
+              }
+            },
+            {
+              "fields": {
+                "file": {
+                  "contentType": "image/jpeg",
+                  "details": {
+                    "image": {
+                      "height": 1280,
+                      "width": 1280
+                    },
+                    "size": 433572
+                  },
+                  "fileName": "casual06.jpg",
+                  "url": "//images.ctfassets.net/qrq1sxq1xfrw/6hOGRlWaiGBxbN9bxWx9JG/12ae81cb22019564d1e48fc97b81e3d9/casual06.jpg"
+                },
+                "title": "casual06",
+                "description": "basketball-shoes"
+              }
+            }
+          ]
+        },
+        "sys": {
+          "id": "5YPy4jUCKPaGYl6k7V3kAC"
+        }
+      },
+      {
+        "fields": {
+          "title": "Unfunktion",
+          "slug": "event",
+          "type": "Blog",
+          "caption": "The event of the year!",
+          "cover": {
+            "fields": {
+              "file": {
+                "contentType": "image/jpeg",
+                "details": {
+                  "image": {
+                    "height": 1276,
+                    "width": 1920
+                  },
+                  "size": 269114
+                },
+                "fileName": "unfunktion-bg.jpg",
+                "url": "//images.ctfassets.net/qrq1sxq1xfrw/ptx6b8RRw0d2YnOfc5Kve/9a62c04bc3968933620ce5969112c007/unfunktion-bg.jpg"
+              },
+              "title": "unfunktion-bg"
+            }
+          }
+        },
+        "sys": {
+          "id": "6Lm0qM0IemstPvJKzsnzG3"
+        }
+      },
+      {
+        "fields": {
+          "title": "Work",
+          "slug": "work",
+          "type": "Collection",
+          "caption": "Shoes for getting shit done",
+          "cover": {
+            "fields": {
+              "file": {
+                "contentType": "image/jpeg",
+                "details": {
+                  "image": {
+                    "height": 1281,
+                    "width": 1920
+                  },
+                  "size": 541999
+                },
+                "fileName": "work-shoes.jpg",
+                "url": "//images.ctfassets.net/qrq1sxq1xfrw/745hzaSjhmsfGAwXDEC48Z/26f26782e83b1834b837943a4151eaa8/work-shoes.jpg"
+              },
+              "title": "work-shoes"
+            }
+          },
+          "images": [
+            {
+              "fields": {
+                "file": {
+                  "contentType": "image/jpeg",
+                  "details": {
+                    "image": {
+                      "height": 1280,
+                      "width": 1280
+                    },
+                    "size": 617094
+                  },
+                  "fileName": "work03.jpg",
+                  "url": "//images.ctfassets.net/qrq1sxq1xfrw/1hpX38dm7oaMRYrbLNnwIL/333e12976f8d8981bd07e69093fb46b7/work03.jpg"
+                },
+                "title": "work03",
+                "description": "muddy-boots"
+              }
+            },
+            {
+              "fields": {
+                "file": {
+                  "contentType": "image/jpeg",
+                  "details": {
+                    "image": {
+                      "height": 1280,
+                      "width": 1280
+                    },
+                    "size": 740759
+                  },
+                  "fileName": "work02.jpg",
+                  "url": "//images.ctfassets.net/qrq1sxq1xfrw/2TFred7gT4zRig3bqssbWr/b4ba647779620c7fc9c67e1880d1be00/work02.jpg"
+                },
+                "title": "work02",
+                "description": "clodhoppers"
+              }
+            },
+            {
+              "fields": {
+                "file": {
+                  "contentType": "image/jpeg",
+                  "details": {
+                    "image": {
+                      "height": 1280,
+                      "width": 1280
+                    },
+                    "size": 523069
+                  },
+                  "fileName": "work08.jpg",
+                  "url": "//images.ctfassets.net/qrq1sxq1xfrw/5wI6hAP4lN7BQZk8SPKW5u/6bd77f07d722575f10417ee5e03919d6/work08.jpg"
+                },
+                "title": "work07",
+                "description": "hipster-hobnail-boots"
+              }
+            },
+            {
+              "fields": {
+                "file": {
+                  "contentType": "image/jpeg",
+                  "details": {
+                    "image": {
+                      "height": 1280,
+                      "width": 1280
+                    },
+                    "size": 471058
+                  },
+                  "fileName": "work04.jpg",
+                  "url": "//images.ctfassets.net/qrq1sxq1xfrw/AeTxuxD3a42GtPL3WiU20/70dd136ae7d0e27607a64471ec5b0882/work04.jpg"
+                },
+                "title": "work04",
+                "description": "worn-out-work-shoes"
+              }
+            },
+            {
+              "fields": {
+                "file": {
+                  "contentType": "image/jpeg",
+                  "details": {
+                    "image": {
+                      "height": 1280,
+                      "width": 1280
+                    },
+                    "size": 785640
+                  },
+                  "fileName": "work07.jpg",
+                  "url": "//images.ctfassets.net/qrq1sxq1xfrw/2b515SfoQZjfKCrFZHrOt0/9087bd006264fdaa45a5df0c66c9555a/work07.jpg"
+                },
+                "title": "work06",
+                "description": "rubber-boots"
+              }
+            },
+            {
+              "fields": {
+                "file": {
+                  "contentType": "image/jpeg",
+                  "details": {
+                    "image": {
+                      "height": 1280,
+                      "width": 1280
+                    },
+                    "size": 424045
+                  },
+                  "fileName": "work09.jpg",
+                  "url": "//images.ctfassets.net/qrq1sxq1xfrw/196J49Fr9ittpX4XeZOsAn/954437d0dc4de317f563834d7eb7ce24/work09.jpg"
+                },
+                "title": "work08",
+                "description": "cowboy-boots"
+              }
+            },
+            {
+              "fields": {
+                "file": {
+                  "contentType": "image/jpeg",
+                  "details": {
+                    "image": {
+                      "height": 1280,
+                      "width": 1280
+                    },
+                    "size": 523995
+                  },
+                  "fileName": "work01.jpg",
+                  "url": "//images.ctfassets.net/qrq1sxq1xfrw/5PCqo9yAjeqMgRvrK0a7Fr/1511b734648b8e212ff8feb4a9e4dac8/work01.jpg"
+                },
+                "title": "work01",
+                "description": "cement-shoes"
+              }
+            },
+            {
+              "fields": {
+                "file": {
+                  "contentType": "image/jpeg",
+                  "details": {
+                    "image": {
+                      "height": 1280,
+                      "width": 1280
+                    },
+                    "size": 502404
+                  },
+                  "fileName": "work05.jpg",
+                  "url": "//images.ctfassets.net/qrq1sxq1xfrw/oZxvZDRh80x7Q0VEWkpYn/e8865bd316e24942fb6971d31e520cad/work05.jpg"
+                },
+                "title": "work05",
+                "description": "tough-boots"
+              }
+            }
+          ]
+        },
+        "sys": {
+          "id": "1h0jzieTKwTRMbZCCMKHYb"
+        }
+      },
+      {
+        "fields": {
+          "title": "Moodboard: Autumn",
+          "slug": "moodboard",
+          "type": "Blog",
+          "caption": "New season, new styles",
+          "cover": {
+            "fields": {
+              "file": {
+                "contentType": "image/jpeg",
+                "details": {
+                  "image": {
+                    "height": 1280,
+                    "width": 1920
+                  },
+                  "size": 428323
+                },
+                "fileName": "moodboard.jpg",
+                "url": "//images.ctfassets.net/qrq1sxq1xfrw/7MFumyMsPCVtZOgcsVURwS/2725600883da3d18ba1f80ba6430c8f1/moodboard.jpg"
+              },
+              "title": "moodboard"
+            }
+          }
+        },
+        "sys": {
+          "id": "23i83q2J8mJInUhjnAWSCA"
+        }
+      },
+      {
+        "fields": {
+          "title": "Dress",
+          "slug": "dress",
+          "type": "Collection",
+          "caption": "Shoes for going places",
+          "cover": {
+            "fields": {
+              "file": {
+                "contentType": "image/jpeg",
+                "details": {
+                  "image": {
+                    "height": 1280,
+                    "width": 1920
+                  },
+                  "size": 274788
+                },
+                "fileName": "dress-shoes.jpg",
+                "url": "//images.ctfassets.net/qrq1sxq1xfrw/4UD6LR8k4rVZeY2pCYFzL1/2ff2bb48be1959ba965efaa8f1375f1f/dress-shoes.jpg"
+              },
+              "title": "dress-shoes"
+            }
+          },
+          "images": [
+            {
+              "fields": {
+                "file": {
+                  "contentType": "image/jpeg",
+                  "details": {
+                    "image": {
+                      "height": 1280,
+                      "width": 1280
+                    },
+                    "size": 402444
+                  },
+                  "fileName": "dress03.jpg",
+                  "url": "//images.ctfassets.net/qrq1sxq1xfrw/6ffYpkcVy8oj6EbNr5rYH5/d26780c18edf49944414f6b30e911b68/dress03.jpg"
+                },
+                "title": "dress03",
+                "description": "party-shoes"
+              }
+            },
+            {
+              "fields": {
+                "file": {
+                  "contentType": "image/jpeg",
+                  "details": {
+                    "image": {
+                      "height": 1280,
+                      "width": 1280
+                    },
+                    "size": 437742
+                  },
+                  "fileName": "dress04.jpg",
+                  "url": "//images.ctfassets.net/qrq1sxq1xfrw/3xypiv8nubQUhb6DgcT208/ba404ba2f36bfae726714d1892d0f397/dress04.jpg"
+                },
+                "title": "dress04",
+                "description": "high-fashion-slings"
+              }
+            },
+            {
+              "fields": {
+                "file": {
+                  "contentType": "image/jpeg",
+                  "details": {
+                    "image": {
+                      "height": 1280,
+                      "width": 1280
+                    },
+                    "size": 429307
+                  },
+                  "fileName": "dress06.jpg",
+                  "url": "//images.ctfassets.net/qrq1sxq1xfrw/6BQTTlPQIWybHr4oeb8Lfg/3840607e40a78df69abb78c770857b28/dress06.jpg"
+                },
+                "title": "dress06",
+                "description": "glamour-pumps"
+              }
+            },
+            {
+              "fields": {
+                "file": {
+                  "contentType": "image/jpeg",
+                  "details": {
+                    "image": {
+                      "height": 1280,
+                      "width": 1280
+                    },
+                    "size": 371298
+                  },
+                  "fileName": "dress08.jpg",
+                  "url": "//images.ctfassets.net/qrq1sxq1xfrw/2ReUn8k1lrxJ5G5DnoyBTP/cc97fd9ae907739d4fa3934c289fa64c/dress08.jpg"
+                },
+                "title": "dress08",
+                "description": "luxury-loafers"
+              }
+            },
+            {
+              "fields": {
+                "file": {
+                  "contentType": "image/jpeg",
+                  "details": {
+                    "image": {
+                      "height": 1280,
+                      "width": 1280
+                    },
+                    "size": 352721
+                  },
+                  "fileName": "dress05.jpg",
+                  "url": "//images.ctfassets.net/qrq1sxq1xfrw/6dM1ggmO9XBRUHlu2tV7fF/3ba4a09b2431f26baac722018cccdad0/dress05.jpg"
+                },
+                "title": "dress05",
+                "description": "green-shoes"
+              }
+            },
+            {
+              "fields": {
+                "file": {
+                  "contentType": "image/jpeg",
+                  "details": {
+                    "image": {
+                      "height": 1280,
+                      "width": 1280
+                    },
+                    "size": 191819
+                  },
+                  "fileName": "dress01.jpg",
+                  "url": "//images.ctfassets.net/qrq1sxq1xfrw/1gi5syZuo6d8PfPPccZilo/c2b689a857dda2235ce9762322c7c931/dress01.jpg"
+                },
+                "title": "dress01",
+                "description": "funeral-shoes"
+              }
+            },
+            {
+              "fields": {
+                "file": {
+                  "contentType": "image/jpeg",
+                  "details": {
+                    "image": {
+                      "height": 1280,
+                      "width": 1280
+                    },
+                    "size": 511849
+                  },
+                  "fileName": "dress02.jpg",
+                  "url": "//images.ctfassets.net/qrq1sxq1xfrw/5Ij23GNkzKCsZwPuQC4YXe/771409280daeed3e16e22c6e55090f4f/dress02.jpg"
+                },
+                "title": "dress02",
+                "description": "cubicle-cowboy-boots"
+              }
+            },
+            {
+              "fields": {
+                "file": {
+                  "contentType": "image/jpeg",
+                  "details": {
+                    "image": {
+                      "height": 1280,
+                      "width": 1280
+                    },
+                    "size": 664684
+                  },
+                  "fileName": "dress07.jpg",
+                  "url": "//images.ctfassets.net/qrq1sxq1xfrw/3VXIG0WS7KQhQfLtmzSfsQ/42e37e46779d1065906f0a6a4281cff3/dress07.jpg"
+                },
+                "title": "dress07",
+                "description": "natty-oxfords"
+              }
+            }
+          ]
+        },
+        "sys": {
+          "id": "6wQlf9HT992m05ZPwWiIdt"
+        }
+      },
+      {
+        "fields": {
+          "title": "Street Style",
+          "slug": "street",
+          "type": "Blog",
+          "caption": "Show us how you work it!",
+          "cover": {
+            "fields": {
+              "file": {
+                "contentType": "image/jpeg",
+                "details": {
+                  "image": {
+                    "height": 1272,
+                    "width": 1920
+                  },
+                  "size": 1226043
+                },
+                "fileName": "street-style.jpg",
+                "url": "//images.ctfassets.net/qrq1sxq1xfrw/T0wKkGfmpS9idaG1RA6ax/5d96f6349946308b058191c7b8be576f/street-style.jpg"
+              },
+              "title": "street-style"
+            }
+          }
+        },
+        "sys": {
+          "id": "6nK1g0kZW6Y5t1OeyD2EPY"
+        }
+      }
+    ]
+  },
+  "sys": {
+    "id": "CaPxFldqNC38EM4QU7Ju5",
+    "contentType": {
+      "sys": {
+        "type": "Link",
+        "linkType": "ContentType",
+        "id": "homePage"
+      }
+    }
+  }
+}
