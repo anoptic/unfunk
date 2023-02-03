@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import userEvent from '@testing-library/user-event';
 import Home from 'pages/index';
 import * as homePage from './homepage.json';
 
@@ -26,8 +27,13 @@ Object.defineProperty(window, 'matchMedia', {
 });
 
 describe('Home', () => {
-  it('renders Home page', () => {
+  it('renders Home page', async () => {
+    const user = userEvent.setup();
     render(<Home homePage={homePage} />);
+
+    const homepageLinks = await screen.findAllByRole('link');
+    expect(homepageLinks).toHaveLength(6);
+    
+    // user.click(screen.getByRole('link', { name: /event/i }));
   });
-  screen.debug();
 });

@@ -37,6 +37,7 @@ export const getStaticProps = async ({
 };
 
 const Collection = ({ collection }: { collection: CollectionModelEntry }) => {
+  // console.log('collection', collection);
   const [sortOrder, setSortOrder] = useState<SortOrderType>('up');
   const { title, slug, description, product } = collection.fields;
 

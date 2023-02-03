@@ -18,14 +18,16 @@ const Layout = ({ children }: LayoutProps) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.wrapper}>
-        <header className={styles.header}>
+        <header className={styles.header} data-testid="header">
           <Header />
           {/* <hr /> */}
         </header>
 
-        <main className={styles.main}>{children}</main>
+        <main className={styles.main} data-testid="main">
+          {children}
+        </main>
 
-        <footer className={styles.footer}>
+        <footer className={styles.footer} data-testid="footer">
           <hr />
           <Footer />
         </footer>
