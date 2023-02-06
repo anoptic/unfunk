@@ -12,7 +12,7 @@ const HeaderMobile = ({ modalOpen, showModal }: MenuProps) => {
     <>
       <div className={styles.header}>
         <Hamburger modalOpen={modalOpen} showModal={showModal} />
-        <div className={styles.logo}>
+        <div className={styles.logo} aria-label="unfunk logo">
           <Logo />
         </div>
       </div>

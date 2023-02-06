@@ -13,7 +13,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
           <div className={styles.image}>
             <Image
               src={`https:${image.fields.file.url}`}
-              alt="a pair of shoes"
+              alt={name}
               layout="responsive"
               height={300}
               width={300}

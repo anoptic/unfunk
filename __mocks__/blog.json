@@ -1,0 +1,339 @@
+{
+  "fields": {
+    "title": "Unfunktion",
+    "slug": "event",
+    "heading": "The Event of the Year",
+    "caption": "The event of the year!",
+    "cover": {
+      "fields": {
+        "file": {
+          "contentType": "image/jpeg",
+          "details": {
+            "image": {
+              "height": 1276,
+              "width": 1920
+            },
+            "size": 269114
+          },
+          "fileName": "unfunktion-bg.jpg",
+          "url": "//images.ctfassets.net/qrq1sxq1xfrw/ptx6b8RRw0d2YnOfc5Kve/9a62c04bc3968933620ce5969112c007/unfunktion-bg.jpg"
+        },
+        "title": "unfunktion-bg"
+      }
+    },
+    "rtext": {
+      "data": {},
+      "content": [
+        {
+          "data": {},
+          "content": [
+            {
+              "data": {},
+              "marks": [],
+              "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus \nest, si videtur, et recta quidem ad me. Hanc ergo intuens debet \ninstitutum illud quasi signum absolvere. Primum Theophrasti, Strato, \nphysicum se voluit. Quia, si mala sunt, is, qui erit in iis, beatus non erit. Quam illa \nardentis amores excitaret sui! Cur tandem? ",
+              "nodeType": "text"
+            }
+          ],
+          "nodeType": "paragraph"
+        },
+        {
+          "data": {},
+          "content": [
+            {
+              "data": {},
+              "marks": [],
+              "value": "Tu vero, inquam, ducas licet, si sequetur; Aliter enim nosmet ipsos \nnosse non possumus. Obsecro, inquit, Torquate, haec dicit Epicurus? Ut \nid aliis narrare gestiant! Sed quid attinet de rebus tam apertis plura \nrequirere? Qualem igitur hominem natura inchoavit!",
+              "nodeType": "text"
+            }
+          ],
+          "nodeType": "paragraph"
+        }
+      ],
+      "nodeType": "document"
+    },
+    "blogImages": [
+      {
+        "fields": {
+          "file": {
+            "contentType": "image/jpeg",
+            "details": {
+              "image": {
+                "height": 1276,
+                "width": 1920
+              },
+              "size": 420863
+            },
+            "fileName": "event07b.jpg",
+            "url": "//images.ctfassets.net/qrq1sxq1xfrw/4AgPy1J8NNvgpbbFfqkcI0/1b434e5ab8e6dd23acf787ac08ba4546/event07b.jpg"
+          },
+          "title": "event07b"
+        }
+      },
+      {
+        "fields": {
+          "file": {
+            "contentType": "image/jpeg",
+            "details": {
+              "image": {
+                "height": 1285,
+                "width": 1920
+              },
+              "size": 440124
+            },
+            "fileName": "event12.jpg",
+            "url": "//images.ctfassets.net/qrq1sxq1xfrw/5FrRYK9SNdoevl1OmdnxaJ/751d8febc0feb7c0f963c31c6ddcf8e2/event12.jpg"
+          },
+          "title": "event12"
+        }
+      },
+      {
+        "fields": {
+          "file": {
+            "contentType": "image/jpeg",
+            "details": {
+              "image": {
+                "height": 1276,
+                "width": 1920
+              },
+              "size": 305294
+            },
+            "fileName": "event07a.jpg",
+            "url": "//images.ctfassets.net/qrq1sxq1xfrw/41MKfz2i8FuXM93qOvmngg/9319ec646bf8c04f0f93cec3dafef899/event07a.jpg"
+          },
+          "title": "event07a"
+        }
+      },
+      {
+        "fields": {
+          "file": {
+            "contentType": "image/jpeg",
+            "details": {
+              "image": {
+                "height": 1276,
+                "width": 1920
+              },
+              "size": 326253
+            },
+            "fileName": "event07c.jpg",
+            "url": "//images.ctfassets.net/qrq1sxq1xfrw/RlfDK3ctwwlW3YybY0gxO/c02081a15f0898f46c5a122e4b5ce614/event07c.jpg"
+          },
+          "title": "event07c"
+        }
+      },
+      {
+        "fields": {
+          "file": {
+            "contentType": "image/jpeg",
+            "details": {
+              "image": {
+                "height": 1440,
+                "width": 1920
+              },
+              "size": 195268
+            },
+            "fileName": "event06b.jpg",
+            "url": "//images.ctfassets.net/qrq1sxq1xfrw/56LVIkT7ynWSEFhx00tU5S/c8b62cae51e474440a10145400f568ab/event06b.jpg"
+          },
+          "title": "event06b"
+        }
+      },
+      {
+        "fields": {
+          "file": {
+            "contentType": "image/jpeg",
+            "details": {
+              "image": {
+                "height": 1280,
+                "width": 1920
+              },
+              "size": 705393
+            },
+            "fileName": "event08.jpg",
+            "url": "//images.ctfassets.net/qrq1sxq1xfrw/2zRuzgCIsgigoABMQXFEAj/a1b5342b23c7db026775c58be01c5fba/event08.jpg"
+          },
+          "title": "event08"
+        }
+      },
+      {
+        "fields": {
+          "file": {
+            "contentType": "image/jpeg",
+            "details": {
+              "image": {
+                "height": 1276,
+                "width": 1920
+              },
+              "size": 337394
+            },
+            "fileName": "event01.jpg",
+            "url": "//images.ctfassets.net/qrq1sxq1xfrw/14d3ghQlDKoMQUEXmt7lWS/90d8a5d69bc300a76ea4acd3f7397f83/event01.jpg"
+          },
+          "title": "event01"
+        }
+      },
+      {
+        "fields": {
+          "file": {
+            "contentType": "image/jpeg",
+            "details": {
+              "image": {
+                "height": 1706,
+                "width": 1280
+              },
+              "size": 683620
+            },
+            "fileName": "event03a.jpg",
+            "url": "//images.ctfassets.net/qrq1sxq1xfrw/aZZxVKkW3z7CSzh99dijw/7efcd43206168881be9050f775265c11/event03a.jpg"
+          },
+          "title": "event03a"
+        }
+      },
+      {
+        "fields": {
+          "file": {
+            "contentType": "image/jpeg",
+            "details": {
+              "image": {
+                "height": 1280,
+                "width": 1920
+              },
+              "size": 259267
+            },
+            "fileName": "event04.jpg",
+            "url": "//images.ctfassets.net/qrq1sxq1xfrw/01CBzbahSpoxL4uyrSiFjd/b6cf60d5bec184077c59b81e7deb1859/event04.jpg"
+          },
+          "title": "event04"
+        }
+      },
+      {
+        "fields": {
+          "file": {
+            "contentType": "image/jpeg",
+            "details": {
+              "image": {
+                "height": 1276,
+                "width": 1920
+              },
+              "size": 292872
+            },
+            "fileName": "event02.jpg",
+            "url": "//images.ctfassets.net/qrq1sxq1xfrw/4zK2RmJOAJv1BTnttTreQP/517e57b0170b12325e6b6edddf621598/event02.jpg"
+          },
+          "title": "event02"
+        }
+      },
+      {
+        "fields": {
+          "file": {
+            "contentType": "image/jpeg",
+            "details": {
+              "image": {
+                "height": 1920,
+                "width": 1280
+              },
+              "size": 536662
+            },
+            "fileName": "event03b.jpg",
+            "url": "//images.ctfassets.net/qrq1sxq1xfrw/2gbqzs3kS8TqkF4z0EfB6Q/fbeea21f348a751e7e97a79411a8abc5/event03b.jpg"
+          },
+          "title": "event03b"
+        }
+      },
+      {
+        "fields": {
+          "file": {
+            "contentType": "image/png",
+            "details": {
+              "image": {
+                "height": 842,
+                "width": 595
+              },
+              "size": 153089
+            },
+            "fileName": "unfunktion-flyer.png",
+            "url": "//images.ctfassets.net/qrq1sxq1xfrw/6RcQf7SlTNpERBPMnOwGsP/1cb68228939e248c2e0283e1c3d0a3a7/unfunktion-flyer.png"
+          },
+          "title": "unfunktion-flyer"
+        }
+      },
+      {
+        "fields": {
+          "file": {
+            "contentType": "image/jpeg",
+            "details": {
+              "image": {
+                "height": 1280,
+                "width": 1920
+              },
+              "size": 636887
+            },
+            "fileName": "event05.jpg",
+            "url": "//images.ctfassets.net/qrq1sxq1xfrw/7F0rLsXq89fgW3aB8scEoO/e2b31fa955e6d3794eecef8ecb7b948c/event05.jpg"
+          },
+          "title": "event05"
+        }
+      },
+      {
+        "fields": {
+          "file": {
+            "contentType": "image/jpeg",
+            "details": {
+              "image": {
+                "height": 1276,
+                "width": 1920
+              },
+              "size": 242617
+            },
+            "fileName": "event07d.jpg",
+            "url": "//images.ctfassets.net/qrq1sxq1xfrw/5WW7vVc9yU4JyWXfv8Hxcr/40970a539150f0582bdcbf2e7e74490f/event07d.jpg"
+          },
+          "title": "event07d"
+        }
+      },
+      {
+        "fields": {
+          "file": {
+            "contentType": "image/jpeg",
+            "details": {
+              "image": {
+                "height": 1280,
+                "width": 1920
+              },
+              "size": 659103
+            },
+            "fileName": "event11.jpg",
+            "url": "//images.ctfassets.net/qrq1sxq1xfrw/1QhKNPjLXZLxP5shnvXaUs/7b33b09a074e15dc97c567766b97593d/event11.jpg"
+          },
+          "title": "event11"
+        }
+      },
+      {
+        "fields": {
+          "file": {
+            "contentType": "image/jpeg",
+            "details": {
+              "image": {
+                "height": 1706,
+                "width": 1280
+              },
+              "size": 275064
+            },
+            "fileName": "event06a.jpg",
+            "url": "//images.ctfassets.net/qrq1sxq1xfrw/51D9wGK8A59DKp2aVZZaQI/1334ee0c32c6cc2693b102bd4ff608e3/event06a.jpg"
+          },
+          "title": "event06a"
+        }
+      }
+    ]
+  },
+  "sys": {
+    "id": "256NOS3DOcxGQywNjZgPLq",
+    "contentType": {
+      "sys": {
+        "type": "Link",
+        "linkType": "ContentType",
+        "id": "blogPost"
+      }
+    }
+  }
+}

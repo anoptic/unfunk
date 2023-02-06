@@ -193,8 +193,8 @@ const DesktopNav = () => {
         </NavMenu.Item>
       </NavMenu.List>
 
-      <div className={styles.viewportContainer}>
-        <NavMenu.Viewport className={styles.viewport} />
+      <div className={styles.viewportContainer} data-testid="viewportContainer">
+        <NavMenu.Viewport className={styles.viewport} data-testid="viewport" />
       </div>
     </NavMenu.Root>
   );

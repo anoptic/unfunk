@@ -23,6 +23,7 @@ const Sorter = ({ sortOrder, handleSort }: SorterProps) => {
           side="top"
           sideOffset={-48}
           className={styles.content}
+          data-testid="sorter"
         >
           <Select.Viewport className={styles.viewport}>
             <Select.Item value="up" className={styles.item}>

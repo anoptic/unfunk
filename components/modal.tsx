@@ -14,7 +14,9 @@ const Modal = ({ modalOpen, children }: ModalProps) => {
         modalOpen ? styles.overlayOpen : styles.overlayClosed
       }`}
     >
-      <div className={styles.modal}>{children}</div>
+      <div className={styles.modal} data-testid="modal">
+        {children}
+      </div>
     </div>,
     document.body
   );

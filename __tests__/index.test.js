@@ -18,7 +18,7 @@ Object.defineProperty(window, 'matchMedia', {
 
 describe('Home', () => {
   it('renders Home page', async () => {
-    const user = userEvent.setup();
+    // const user = userEvent.setup();
     render(<Home homePage={homePage} />);
 
     const homepageLinks = await screen.findAllByRole('link');

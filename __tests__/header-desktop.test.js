@@ -15,12 +15,13 @@ Object.defineProperty(window, 'matchMedia', {
   })),
 });
 
-describe('Header', () => {
-  it('renders <Header> component', async () => {
+describe('Desktop Header', () => {
+  it('renders <HeaderDesktop> component', async () => {
     const user = userEvent.setup();
     render(<Header />);
 
-    expect(await screen.findByLabelText(/unfunk logo/i)).toBeInTheDocument();
+    expect(await screen.findByLabelText(/logo/i)).toBeInTheDocument();
+    expect(screen.queryByTestId('viewport')).not.toBeInTheDocument();
 
     const navLinks = screen
       .getAllByRole('button')
@@ -32,11 +33,15 @@ describe('Header', () => {
       waitFor(() => {
         user.hover(navBtn);
         expect(navBtn).toHaveAttribute('data-state', 'open');
+        expect(screen.getByTestId('viewport')).toBeVisible();
       });
       waitFor(() => {
         user.unhover(navBtn);
         expect(navBtn).toHaveAttribute('data-state', 'closed');
+        expect(screen.queryByTestId('viewport')).not.toBeInTheDocument();
       });
     });
+
+    expect(screen.getByLabelText(/bag/i)).toBeInTheDocument();
   });
 });
