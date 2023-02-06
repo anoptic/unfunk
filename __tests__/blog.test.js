@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import BlogPost from 'pages/blog/[slug]';
 import * as blogPost from '__mocks__/blog.json';
 

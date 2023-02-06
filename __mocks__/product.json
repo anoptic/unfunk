@@ -1,0 +1,26 @@
+{
+  "name": "Ordinary Shoes",
+  "slug": "ordinary-shoes",
+  "size": "M",
+  "price": 85,
+  "image": {
+    "fields": {
+      "file": {
+        "contentType": "image/jpeg",
+        "details": {
+          "image": {
+            "height": 1280,
+            "width": 1280
+          },
+          "size": 525590
+        },
+        "fileName": "casual07.jpg",
+        "url": "//images.ctfassets.net/qrq1sxq1xfrw/qRiLQC7u07qmARFczfw8n/176e00a82e2138f365f955b1a9ccb9b0/casual07.jpg"
+      },
+      "title": "casual07",
+      "description": "ordinary-shoes"
+    }
+  },
+  "sku": "CS7-3M67",
+  "qty": 1
+}

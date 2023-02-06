@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
-import userEvent from '@testing-library/user-event';
+// import '@testing-library/jest-dom';
+// import userEvent from '@testing-library/user-event';
 import Home from 'pages/index';
 import * as homePage from '__mocks__/homepage.json';
 
