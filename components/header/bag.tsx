@@ -9,7 +9,7 @@ const Bag = () => {
 
   return (
     <Link href="/cart">
-      <button className={styles.bag} type="button">
+      <button className={styles.bag} type="button" aria-label="shopping bag">
         <span className={styles.icon}>
           <ShoppingBag />
           {cartContents.length > 0 ? (

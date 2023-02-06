@@ -1,4 +1,5 @@
 import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import { loadEnvConfig } from '@next/env';
 
 jest.mock('swiper/css', jest.fn());

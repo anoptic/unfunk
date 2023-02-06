@@ -18,7 +18,7 @@ const Layout = ({ children }: LayoutProps) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.wrapper}>
-        <header className={styles.header} data-testid="header">
+        <header className={styles.header}>
           <Header />
           {/* <hr /> */}
         </header>
@@ -27,7 +27,7 @@ const Layout = ({ children }: LayoutProps) => {
           {children}
         </main>
 
-        <footer className={styles.footer} data-testid="footer">
+        <footer className={styles.footer}>
           <hr />
           <Footer />
         </footer>

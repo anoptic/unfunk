@@ -7,7 +7,7 @@ const HeaderDesktop = () => {
   return (
     <>
       <div className={styles.header}>
-        <div className={styles.logo}>
+        <div className={styles.logo} aria-label="unfunk logo">
           <Link href="/" legacyBehavior>
             <a>
               <Logo />

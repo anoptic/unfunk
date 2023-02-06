@@ -2,17 +2,7 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
 import Home from 'pages/index';
-import * as homePage from './homepage.json';
-
-// describe('true is true and false is false', () => {
-//   test('true is true', () => {
-//     expect(true).toBe(true);
-//   });
-
-//   test('false is false', () => {
-//     expect(false).toBe(false);
-//   });
-// });
+import * as homePage from '__mocks__/homepage.json';
 
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
@@ -33,7 +23,7 @@ describe('Home', () => {
 
     const homepageLinks = await screen.findAllByRole('link');
     expect(homepageLinks).toHaveLength(6);
-    
+
     // user.click(screen.getByRole('link', { name: /event/i }));
   });
 });
