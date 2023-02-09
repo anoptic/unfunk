@@ -21,7 +21,7 @@ const AllBlogs = ({
   return (
     <div className={styles.sectionList}>
       {blogPost.map((post) => (
-        <Section key={post.sys.id}>
+        <Section key={post.sys.id} title={post.fields.title}>
           {/* @ts-ignore */}
           <BlogCard section={post}>
             <CoverImage source={post.fields.cover.fields.file.url} />

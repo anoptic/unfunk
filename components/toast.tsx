@@ -16,6 +16,7 @@ const MessageToast = ({ open, closeToast, children }: ToastProps) => {
         onOpenChange={closeToast}
         className={styles.root}
         duration={3000}
+        data-testid="toast"
       >
         <Toast.Description className={styles.desc}>
           {children}

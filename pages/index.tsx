@@ -44,7 +44,7 @@ const Home = ({ homePage }: InferGetStaticPropsType<typeof getStaticProps>) => {
         </Cover>
         <div className={styles.sectionList}>
           {sections.map((section) => (
-            <Section key={section.sys.id}>
+            <Section key={section.sys.id} title={section.fields.title}>
               {section.fields.type === 'Collection' && (
                 <CollectionCard section={section}>
                   <CoverImage source={section.fields.cover.fields.file.url} />

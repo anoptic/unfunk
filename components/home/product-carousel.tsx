@@ -32,12 +32,13 @@ const ProductCarousel = ({ images }: CarouselProps) => {
             <SwiperSlide
               key={image.fields.file.fileName}
               className={styles.slide}
+              title={image.fields.description}
             >
               <Link href={`/shoes/${image.fields.description}`}>
                 <div className={styles.slideImage}>
                   <Image
                     src={`https:${image.fields.file.url}`}
-                    alt="shoe"
+                    alt={image.fields.description}
                     layout="fill"
                     objectFit="cover"
                   />

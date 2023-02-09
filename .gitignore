@@ -20,6 +20,7 @@
 *.pem
 /public/assets/images
 x_*
+/playwright*
 
 # debug
 npm-debug.log*

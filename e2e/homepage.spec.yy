@@ -4,7 +4,7 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/');
 });
 
-test('Home page', async ({ page }) => {
+test('Home page links', async ({ page }) => {
   await expect(page).toHaveTitle(/unfunk/i);
   await expect(page.locator('h1')).toContainText(/shoes/i);
 });

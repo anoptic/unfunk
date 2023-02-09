@@ -3,6 +3,8 @@ import Cart from 'pages/cart/cart';
 import CartItem from '@/cart-components/cart-item';
 import * as item from '__mocks__/product.json';
 
+//* have to mock <CartItem /> here and test it separately
+
 describe('Cart', () => {
   // it('renders an empty cart', async () => {
   //   render(<Cart />);
