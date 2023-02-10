@@ -36,7 +36,8 @@ const Cart = () => {
             <div className={styles.total}>
               <div className={styles.pageTitle}>Cart Total</div>
               <div className={styles.price}>
-                {cartTotal}€ <span className={styles.vat}>(VAT included)</span>
+                <span aria-label="cart total">{cartTotal}</span>€{' '}
+                <span className={styles.vat}>(VAT included)</span>
               </div>
             </div>
             <div className={styles.cartActions}>

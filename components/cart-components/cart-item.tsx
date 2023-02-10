@@ -38,8 +38,13 @@ const CartItem = ({ item }: CartItemProps) => {
               </div>
 
               <div>
-                <div className={styles.qty}>Qty: {item.qty}</div>
-                <div className={styles.price}>{item.price}€</div>
+                <div className={styles.qty}>
+                  <span aria-hidden>Qty:</span>{' '}
+                  <span aria-label="item quantity">{item.qty}</span>
+                </div>
+                <div className={styles.price} aria-label="item price">
+                  {item.price}€
+                </div>
               </div>
             </div>
 

@@ -13,7 +13,9 @@ const Bag = () => {
         <span className={styles.icon}>
           <ShoppingBag />
           {cartContents.length > 0 ? (
-            <div className={styles.mark}>{cartContents.length}</div>
+            <div className={styles.mark} aria-label="cart quantity">
+              {cartContents.length}
+            </div>
           ) : null}
         </span>
       </button>
