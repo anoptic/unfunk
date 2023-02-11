@@ -22,7 +22,6 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  /* width: 100%; */
 }
 
 a {
@@ -61,11 +60,23 @@ a {
 
 .swiper .swiper-button-prev,
 .swiper .swiper-button-next {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--yellow);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
   border-radius: 4px;
-  color: var(--yellow);
-  font-weight: 700;
-  height: 60px;
-  text-shadow: var(--shadow);
-  width: 30px;
+  height: 40px;
+  width: 40px;
+}
+
+.swiper .swiper-button-prev {
+  background-image: url(/prev.svg);
+}
+.swiper .swiper-button-next {
+  background-image: url(/next.svg);
+}
+
+.swiper .swiper-button-prev::after,
+.swiper .swiper-button-next::after {
+  display: none;
 }
