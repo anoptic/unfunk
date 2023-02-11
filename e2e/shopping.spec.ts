@@ -42,11 +42,6 @@ test('from Catalog', async ({ page }) => {
   await page.goto('/all-shoes');
   await expect(page).toHaveURL('all-shoes');
 
-  //* unable to test sorter here - need to mock data to test sorted array
-  // await expect(page.getByRole('link', { name: 'cubicle' })).toBeVisible();
-  // await page.getByRole('combobox').click();
-  // await expect(page.getByTestId('sorter')).toBeVisible();
-
   await page.getByAltText(/muddy/i).click();
   await expect(page).toHaveURL(/muddy/);
 
@@ -59,7 +54,6 @@ test('from Catalog', async ({ page }) => {
   await expect(page).toHaveURL('cart');
 
   await expect(page.getByText('muddy boots')).toBeVisible();
-
   await expect(page.getByLabel('item quantity')).toHaveText('1');
   await expect(page.getByLabel('item price')).toHaveText('195€');
   await expect(page.getByLabel('cart total')).toHaveText('195');
@@ -73,6 +67,7 @@ test('from Catalog', async ({ page }) => {
   await expect(page.getByLabel('item quantity')).toHaveText('2');
   await expect(page.getByLabel('cart total')).toHaveText('390');
   await page.getByRole('dialog').press('Escape');
+  await expect(page.getByRole('dialog')).not.toBeVisible();
 
   await page.getByRole('button', { name: 'checkout' }).click();
   await expect(page).toHaveURL('404');
